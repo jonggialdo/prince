@@ -30,3 +30,7 @@ Route::get('/contact', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
