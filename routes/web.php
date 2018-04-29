@@ -12,10 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', function () {
     return view('index');
 });
 
@@ -30,8 +26,24 @@ Route::get('/contact', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
-
+Route::get('/register', ['as' => 'register'])->name('register');
+Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
 Route::get('/adminpage', 'HomeController@admin')->name('admin');
+=======
+Route::group(array('before' => 'auth'), function() {
+
+	/*
+	 | Sign Out (GET)
+	 | --
+	 */
+	Route::get('/account/sign-out', array(
+		'as' => 'account-sign-out',
+		'uses' => 'AccountController@getSignOut'
+	));
+
+});
+>>>>>>> 7f2e7e6d218a9c8e2eb339c6ec5adad1734c34a2

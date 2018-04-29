@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <title>Prince IPB</title>
+=======
+<title>Categories</title>
+>>>>>>> 7f2e7e6d218a9c8e2eb339c6ec5adad1734c34a2
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
@@ -11,9 +15,14 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_responsive.css')}}">
+=======
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/main_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
+>>>>>>> 7f2e7e6d218a9c8e2eb339c6ec5adad1734c34a2
 </head>
 
 <body>
