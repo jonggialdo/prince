@@ -7,9 +7,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    public function roles()
+    public function role()
     {
-    return $this->belongsToMany(Role::class);
+        return $this->hasOne('App\Role','id');
     }
     use Notifiable;
 
