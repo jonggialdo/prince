@@ -15,16 +15,12 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
 </head>
 
-
 <body>
 
 <div class="super_container">
 
 	<!-- Header -->
 
-<<<<<<< HEAD
-@include('header');
-=======
 	<header class="header trans_300">
 		<!-- Top Navigation -->
 
@@ -127,7 +123,6 @@
 		</div>
 
 	</header>
->>>>>>> 7f2e7e6d218a9c8e2eb339c6ec5adad1734c34a2
 
 	<div class="fs_menu_overlay"></div>
 	<div class="hamburger_menu">
@@ -202,21 +197,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI A</a>
+							<a href="categories.html">women's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI B</a>
+							<a href="categories.html">accessories's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI C</a>
+							<a href="categories.html">men's</a>
 						</div>
 					</div>
 				</div>
@@ -231,7 +226,7 @@
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title new_arrivals_title">
-						<h2>New Innovations</h2>
+						<h2>New Arrivals</h2>
 					</div>
 				</div>
 			</div>
@@ -240,9 +235,9 @@
 					<div class="new_arrivals_sorting">
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">KATEGORI A</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">KATEGORI B</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">KATEGORI C</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
 						</ul>
 					</div>
 				</div>
@@ -712,7 +707,52 @@
 		</div>
 	</div>
 
-	
+	<!-- Blogs -->
+
+	<div class="blogs">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_title">
+						<h2>Latest Blogs</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row blogs_container">
+				<div class="col-lg-4 blog_item_col">
+					<div class="blog_item">
+						<div class="blog_background" style="background-image:url(assets/images/blog_1.jpg)"></div>
+						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+							<span class="blog_meta">by admin | dec 01, 2017</span>
+							<a class="blog_more" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 blog_item_col">
+					<div class="blog_item">
+						<div class="blog_background" style="background-image:url(assets/images/blog_2.jpg)"></div>
+						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+							<span class="blog_meta">by admin | dec 01, 2017</span>
+							<a class="blog_more" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 blog_item_col">
+					<div class="blog_item">
+						<div class="blog_background" style="background-image:url(assets/images/blog_3.jpg)"></div>
+						<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+							<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+							<span class="blog_meta">by admin | dec 01, 2017</span>
+							<a class="blog_more" href="#">Read more</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Newsletter -->
 
 	<div class="newsletter">
