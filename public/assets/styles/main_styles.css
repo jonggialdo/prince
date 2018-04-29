@@ -812,7 +812,7 @@ section
 }
 .logo_container a span
 {
-	color: #35A2D0;
+	color: #2AA2D5;
 }
 
 /*********************************
@@ -826,7 +826,7 @@ section
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	margin-top: 150px;
+	margin-top: 75px !important;
 }
 .main_slider_content
 {

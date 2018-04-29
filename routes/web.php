@@ -34,3 +34,4 @@ Route::get('/categories', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/adminpage', 'HomeController@admin')->name('admin');
