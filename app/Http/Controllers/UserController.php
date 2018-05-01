@@ -12,7 +12,7 @@ class UserController extends Controller
   public function index()
   {
     $user = User::all();
-    return view('manage_user', ['user'=>$user]);
+    return view('admin/manage_user', ['user'=>$user]);
   }
 
   public function view()
