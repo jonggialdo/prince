@@ -19,4 +19,13 @@
     </div>
     <!-- /.content-header -->
 
+    
 @endsection
+
+//name
+//email 
+//pass 
+//jenis kelamin 
+//no telp 
+// alamat 
+// foto 
