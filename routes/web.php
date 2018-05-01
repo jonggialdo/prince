@@ -10,11 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', array(
+		'as' => 'home',
+		'uses' => 'HomeController@index'
+));
 Route::get('/profile', array(
 		'as' => 'profile',
 		'uses' => 'ProfileController@index'
 ));
-
 Route::get('/Single', function () {
     return view('single');
 });
@@ -33,7 +36,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 
-// sidebar
+// sidebarp
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'SidebarController@manage_user')->name('admin.manage_user');
 
@@ -56,7 +59,10 @@ Route::get('/contact', array(
 		'as' => 'contact',
 		'uses' => 'ContactController@index'
 ));
-
+Route::get('/categories', array(
+		'as' => 'categories',
+		'uses' => 'CategoriesController@index'
+));
 Route::get('/profile', array(
 		'as' => 'profile',
 		'uses' => 'ProfileController@index'

@@ -12,8 +12,8 @@
           </div>
           <nav class="navbar">
             <ul class="navbar_menu">
-              <li><a href="#">home</a></li>
-              <li><a href="#">shop</a></li>
+              <li><a href="{{ route('home') }}">home</a></li>
+              <li><a href="{{ route('categories') }}">shop</a></li>
               <li><a href="{{ route('contact') }}">contact</a></li>
 
             </ul>
@@ -31,7 +31,7 @@
                   </ul>
                   @else
                   <ul class="account_selection">
-                    <li><a href="{{ route('login') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>Profile</a></li>
+                    <li><a href="{{ route('profile') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>Profile</a></li>
                     <li><a href="{{ URL::route('account-sign-out') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                   </ul>
                   @endif
@@ -56,3 +56,4 @@
   </div>
 
 </header>
+
