@@ -23,9 +23,6 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <ul class="nav nav-treeview">
-          
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-user-o"></i>
@@ -36,14 +33,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.create_user') }}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Create user</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                <a href="{{ route('admin.manage_user') }}" class="nav-link">
+                  <i class="fa fa-cog nav-icon"></i>
                   <p>Manage user</p>
                 </a>
               </li>
@@ -51,7 +48,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user-o"></i>
+              <i class="nav-icon fa fa-dropbox"></i>
               <p>
                 Product
                 <i class="fa fa-angle-left right"></i>
@@ -66,7 +63,7 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-cog nav-icon"></i>
                   <p>Manage product</p>
                 </a>
               </li>
@@ -89,34 +86,20 @@
               </li>
               <li class="nav-item">
                 <a href="pages/forms/advanced.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-archive nav-icon"></i>
                   <p>Shipping</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-note"></i>
+              <i class="nav-icon fa fa-sticky-note-o"></i>
               <p>
                 Review
-                <i class="fa fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Data Tables</p>
-                </a>
-              </li>
-            </ul>
+            
           </li>
         </ul>
       </nav>
