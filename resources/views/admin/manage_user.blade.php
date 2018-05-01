@@ -1,22 +1,4 @@
 
-
-@section('content')
-    <!-- content header -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Manage User</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-
-              <li class="breadcrumb-item active">Manage User</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-@endsection
+@foreach($users as $user)
+<li>{{$user->name}}</li>
+@endforeach
