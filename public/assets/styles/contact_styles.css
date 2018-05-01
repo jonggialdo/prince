@@ -448,7 +448,6 @@ section
 /*********************************
 3.3 Account
 *********************************/
-
 .account
 {
 	display: inline-block;
@@ -457,7 +456,7 @@ section
 	padding-left: 20px;
 	text-align: center;
 	vertical-align: middle;
-	background: #1e1e27;
+	background: #FFFFFF;
 }
 .account > a
 {
@@ -527,6 +526,7 @@ section
 {
 	margin-right: 10px;
 }
+
 
 /*********************************
 3.4 Main Navigation
@@ -814,7 +814,7 @@ section
 }
 .logo_container a span
 {
-	color: #fe4c50;
+	color: #2AA2D5;
 }
 .red_button
 {
