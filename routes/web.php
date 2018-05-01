@@ -31,9 +31,23 @@ Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@admin')->name('admin');
+Route::group(array('before' => 'auth'), function() {
 
-// sidebar
-Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
-Route::get('/manage-user', 'SidebarController@manage_user')->name('admin.manage_user');
+	/*
+	 | Sign Out (GET)
+	 | --
+	 */
+	Route::get('/account/sign-out', array(
+		'as' => 'account-sign-out',
+		'uses' => 'AccountController@getSignOut'
+	));
+});
 
+// Route::get('/viewuser', array(
+//     'as' => 'admin',
+//     'uses' => 'UserController@index'
+// ));
+
+Route::get('/viewuser', 'UserController@index');
+Route::get('/create', 'UserController@view');
+Route::post('/create','UserController@create');
