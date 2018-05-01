@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -30,5 +30,9 @@ class HomeController extends Controller
             abort(404);
         }
         return view('index',compact('user'));
+    }
+    public function admin()
+    {
+        return view('admin.index');
     }
 }
