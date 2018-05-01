@@ -8,15 +8,13 @@
       <div class="row">
         <div class="col-lg-12 text-right">
           <div class="logo_container">
-            <a href="#">Prince<span> IPB</span></a>
+            <a href="{{ route('home') }}">Prince<span> IPB</span></a>
           </div>
           <nav class="navbar">
             <ul class="navbar_menu">
               <li><a href="#">home</a></li>
               <li><a href="#">shop</a></li>
               <li><a href="{{ route('contact') }}">contact</a></li>
-
-              <li><a href="contact.html">contact</a></li>
 
             </ul>
             <ul class="navbar_user">
@@ -33,20 +31,10 @@
                   </ul>
                   @else
                   <ul class="account_selection">
-                    <li><a href="{{ route('login') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>Profile</a></li>
+                    <li><a href="{{ route('profile') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>Profile</a></li>
                     <li><a href="{{ URL::route('account-sign-out') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
                   </ul>
                   @endif
-              <li>
-                <a href="#">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                </a>
-
-                  <ul class="account_selection">
-                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                    <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                  </ul>
-              </li>
 
 
 
@@ -68,3 +56,4 @@
   </div>
 
 </header>
+

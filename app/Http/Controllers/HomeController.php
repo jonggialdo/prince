@@ -26,13 +26,11 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if ($user->role_id != 3){
-            abort(404);
+        if ($user->role_id == 3){
+            return view('index',compact('user'));
         }
-        return view('index',compact('user'));
-    }
-    public function admin()
-    {
-        return view('admin.index');
+        if ($user->role_id == 1){
+            return view('admin.index',compact('user'));
+        }
     }
 }
