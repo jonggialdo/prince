@@ -36,7 +36,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 
-// sidebarp
+// sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'SidebarController@manage_user')->name('admin.manage_user');
 
@@ -68,6 +68,16 @@ Route::get('/profile', array(
 		'uses' => 'ProfileController@index'
 ));
 
+// Route::resource('admin', 'UserController');
+
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
+<<<<<<< HEAD
 Route::post('/create','UserController@create');
+Route::get('/viewuser/{id}', 'UserController@show');
+
+Route::get('/viewuser/{id}/edit', 'UserController@edit');
+Route::patch('/viewuser/{id}', 'UserController@update');
+=======
+Route::post('/create','UserController@create');
+>>>>>>> 5c696359c4bbb895eb5154a337ff3eb5729079dc
