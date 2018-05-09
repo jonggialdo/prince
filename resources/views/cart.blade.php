@@ -15,6 +15,15 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_responsive.css')}}">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="{{asset('assets/admin/dist/css/adminlte.min.css')}}">
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body>
@@ -29,244 +38,186 @@
 		<div class="row">
 			<div class="col">
 
-				<!-- Breadcrumbs -->
+	<!-- Contentnya -->
+	<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+				<div class="col-12">
+					<div class="callout callout-info">
+					<h1> Cart</h1>
+					</div>
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
-					<ul>
-						<li><a href="index.html">Cart</a></li>
-						<li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Buy</a></li>
-					</ul>
-				</div>
 
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-lg-7">
-				<div class="single_product_pics">
+					<!-- Main content -->
+					<div class="invoice p-3 mb-3">
+					<!-- title row -->
 					<div class="row">
-						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-							<div class="single_product_thumbnails">
-								<ul>
-									<li><img src="assets/images/single_1_thumb.jpg" alt="" data-image="assets/images/single_1.jpg"></li>
-									<li class="active"><img src="assets/images/single_2_thumb.jpg" alt="" data-image="assets/images/single_2.jpg"></li>
-									<li><img src="assets/images/single_3_thumb.jpg" alt="" data-image="assets/images/single_3.jpg"></li>
-								</ul>
-							</div>
+						<div class="col-12">
+						<h4>
+							<i class="fa fa-info"></i> Resi Pembelian
+							<small class="float-right">Date: 9/05/2018</small>
+						</h4>
 						</div>
-						<div class="col-lg-9 image_col order-lg-2 order-1">
-							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(assets/images/single_2.jpg)"></div>
-							</div>
+						<!-- /.col -->
+					</div>
+					<!-- info row -->
+					<div class="row invoice-info">
+						<div class="col-sm-4 invoice-col">
+						From :
+						<address>
+							<strong>Direktorat Kemahasiswaan IPB Dramaga</strong><br>
+							Jl. Dramaga Raya harus bahagia<br>
+							Bogor, Jawa Barat 30128<br>
+							Phone: (0321) 359590<br>
+							Email: ditmawa@apps.ipb.ac.id
+						</address>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-5">
-				<div class="product_details">
-					<div class="product_details_title">
-						<h2>Pocket cotton sweatshirt</h2>
-						<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-					</div>
-					<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-						<span class="ti-truck"></span><span>free delivery</span>
-					</div>
-					<div class="original_price">$629.99</div>
-					<div class="product_price">$495.00</div>
-					<ul class="star_rating">
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star" aria-hidden="true"></i></li>
-						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-					</ul>
-					<div class="product_color">
-						<span>Select Color:</span>
-						<ul>
-							<li style="background: #e54e5d"></li>
-							<li style="background: #252525"></li>
-							<li style="background: #60b3f3"></li>
-						</ul>
-					</div>
-					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-						<span>Quantity:</span>
-						<div class="quantity_selector">
-							<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-							<span id="quantity_value">1</span>
-							<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
+						<!-- /.col -->
+						<div class="col-sm-4 invoice-col">
+						To :
+						<address>
+							<strong>Sultan Jonggi Abialdo</strong><br>
+							Jl. Abadi jadi sultan ya jong<br>
+							Kenangan, Jakarta Timur 30121<br>
+							Phone: (021) 359590<br>
+							Email: sultan.jonggi@apps.ipb.ac.id
+						</address>
 						</div>
-						<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<!-- Tabs -->
-
-	<div class="tabs_section_container">
-
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="tabs_container">
-						<ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
-							<li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
-							<li class="tab" data-active-tab="tab_2"><span>Additional Information</span></li>
-							<li class="tab" data-active-tab="tab_3"><span>Reviews (2)</span></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-
-					<!-- Tab Description -->
-
-					<div id="tab_1" class="tab_container active">
-						<div class="row">
-							<div class="col-lg-5 desc_col">
-								<div class="tab_title">
-									<h4>Description</h4>
-								</div>
-								<div class="tab_text_block">
-									<h2>Pocket cotton sweatshirt</h2>
-									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-								</div>
-								<div class="tab_image">
-									<img src="assets/images/desc_1.jpg" alt="">
-								</div>
-								<div class="tab_text_block">
-									<h2>Pocket cotton sweatshirt</h2>
-									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-								</div>
-							</div>
-							<div class="col-lg-5 offset-lg-2 desc_col">
-								<div class="tab_image">
-									<img src="assets/images/desc_2.jpg" alt="">
-								</div>
-								<div class="tab_text_block">
-									<h2>Pocket cotton sweatshirt</h2>
-									<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-								</div>
-								<div class="tab_image desc_last">
-									<img src="assets/images/desc_3.jpg" alt="">
-								</div>
-							</div>
+						<!-- /.col -->
+						<div class="col-sm-4 invoice-col">
+						<b>Invoice #007612</b><br>
+						<br>
+						<b>Order ID:</b> 4F3S8J<br>
+						<b>Payment Due:</b> 2/22/2014<br>
+						<b>Account:</b> 968-34567
 						</div>
+						<!-- /.col -->
 					</div>
+					<!-- /.row -->
 
-					<!-- Tab Additional Info -->
-
-					<div id="tab_2" class="tab_container">
-						<div class="row">
-							<div class="col additional_info_col">
-								<div class="tab_title additional_info_title">
-									<h4>Additional Information</h4>
-								</div>
-								<p>COLOR:<span>Gold, Red</span></p>
-								<p>SIZE:<span>L,M,XL</span></p>
-							</div>
+					<!-- Table row -->
+					<div class="row">
+						<div class="col-12 table-responsive">
+						<table class="table table-striped">
+							<thead>
+							<tr>
+							<th>No.</th>
+							<th>Qty</th>
+							<th>Product</th>
+							<th>Serial #</th>
+							<th>Description</th>
+							<th>Subtotal</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>1</td>
+							<td>1</td>
+							<td>Call of Duty</td>
+							<td>455-981-221</td>
+							<td>El snort testosterone trophy driving gloves handsome</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>2</td>
+							<td>1</td>
+							<td>Need for Speed IV</td>
+							<td>247-925-726</td>
+							<td>Wes Anderson umami biodiesel</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>3</td>
+							<td>1</td>
+							<td>Monsters DVD</td>
+							<td>735-845-642</td>
+							<td>Terry Richardson helvetica tousled street art master</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>4</td>
+							<td>1</td>
+							<td>Grown Ups Blue Ray</td>
+							<td>422-568-642</td>
+							<td>Tousled lomo letterpress</td>
+							<td>Rp 200.000</td>
+							</tr>
+							</tbody>
+						</table>
 						</div>
+						<!-- /.col -->
 					</div>
+					<!-- /.row -->
 
-					<!-- Tab Reviews -->
+					<div class="row">
+						<!-- accepted payments column -->
+						<div class="col-6">
+						<p class="lead">Payment Methods:</p>
+						<img src="{{asset('assets/admin/dist/img/credit/visa.png')}}" alt="Visa">
+						<img src="{{asset('assets/admin/dist/img/credit/mastercard.png')}}" alt="Mastercard">
+						<img src="{{asset('assets/admin/dist/img/credit/american-express.png')}}" alt="American Express">
+						<img src="{{asset('assets/admin/dist/img/credit/paypal2.png')}}" alt="Paypal">
 
-					<div id="tab_3" class="tab_container">
-						<div class="row">
+						<p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+							Kamu bisa melakukan transaksi dengan metode diatas. Jangan ragu ya, Kami situs terpercaya.
+							Jika ragu, hubungi IPB segera dan tanya aja PRINCE IPB abal abal ga? hehe. Silahkan bayar
+						</p>
+						</div>
+						<!-- /.col -->
+						<div class="col-6">
+						<p class="lead">Amount Due 9/05/2018</p>
 
-							<!-- User Reviews -->
+						<div class="table-responsive">
+							<table class="table">
+							<tr>
+								<th style="width:50%">Subtotal:</th>
+								<td>Rp 800.000</td>
+							</tr>
+							<tr>
+								<th>Tax (10%):</th>
+								<td>Rp 80.000</td>
+							</tr>
+							<tr>
+								<th>Shipping:</th>
+								<td>Rp 10.000</td>
+							</tr>
+							<tr>
+								<th>Total:</th>
+								<td>Rp 890.000</td>
+							</tr>
+							</table>
+						</div>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
 
-							<div class="col-lg-6 reviews_col">
-								<div class="tab_title reviews_title">
-									<h4>Reviews (2)</h4>
-								</div>
-
-								<!-- User Review -->
-
-								<div class="user_review_container d-flex flex-column flex-sm-row">
-									<div class="user">
-										<div class="user_pic"></div>
-										<div class="user_rating">
-											<ul class="star_rating">
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-											</ul>
-										</div>
-									</div>
-									<div class="review">
-										<div class="review_date">27 Aug 2016</div>
-										<div class="user_name">Brandon William</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									</div>
-								</div>
-
-								<!-- User Review -->
-
-								<div class="user_review_container d-flex flex-column flex-sm-row">
-									<div class="user">
-										<div class="user_pic"></div>
-										<div class="user_rating">
-											<ul class="star_rating">
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-											</ul>
-										</div>
-									</div>
-									<div class="review">
-										<div class="review_date">27 Aug 2016</div>
-										<div class="user_name">Brandon William</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									</div>
-								</div>
-							</div>
-
-							<!-- Add Review -->
-
-							<div class="col-lg-6 add_review_col">
-
-								<div class="add_review">
-									<form id="review_form" action="post">
-										<div>
-											<h1>Add Review</h1>
-											<input id="review_name" class="form_input input_name" type="text" name="name" placeholder="Name*" required="required" data-error="Name is required.">
-											<input id="review_email" class="form_input input_email" type="email" name="email" placeholder="Email*" required="required" data-error="Valid email is required.">
-										</div>
-										<div>
-											<h1>Your Rating:</h1>
-											<ul class="user_star_rating">
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star" aria-hidden="true"></i></li>
-												<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-											</ul>
-											<textarea id="review_message" class="input_review" name="message"  placeholder="Your Review" rows="4" required data-error="Please, leave us a review."></textarea>
-										</div>
-										<div class="text-left text-sm-right">
-											<button id="review_submit" type="submit" class="red_button review_submit_btn trans_300" value="Submit">submit</button>
-										</div>
-									</form>
-								</div>
-
-							</div>
-
+					<!-- this row will not appear when printing -->
+					<div class="row no-print">
+						<div class="col-12">
+						<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+						<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
+							Payment
+						</button>
+						<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+							<i class="fa fa-download"></i> Generate PDF
+						</button>
 						</div>
 					</div>
+					</div>
+					<!-- /.invoice -->
+				</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container-fluid -->
+			</section>
+
 
 				</div>
 			</div>
 		</div>
 
-	</div>
+		
+		
 
 @include('part.footer');
 
@@ -280,6 +231,16 @@
 <script src="{{asset('assets/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/js/single_custom.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- FastClick -->
+<script src="{{asset('assets/admin/plugins/fastclick/fastclick.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('assets/admin/dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('assets/admin/dist/js/demo.js')}}"></script>
+
 </body>
 
 </html>

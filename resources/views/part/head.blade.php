@@ -30,4 +30,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_responsive.css')}}">
 
+
+
+
+
 </head>
