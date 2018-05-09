@@ -46,26 +46,30 @@
                     </div>
                     <div class="form-group">
                         <label for="photo_user">Photo profile</label>
-                        <div class="input-group">
+                        <input type="text" class="form-control" name="photo_user" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
+
+                        <!-- <div class="input-group">
                         <input type="file" class="custom-file-input" id="photo_user">
                         <div class="custom-file">
                             <label class="custom-file-label" for="photo_user">Choose file</label>
-                        </div>
+                        </div> -->
                         <div class="input-group-append">
                             <span class="input-group-text" id="">Upload</span>
                         </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="gender2">Gender</label>
-                        <div class="form-check">
+                        <label for="gender">Gender</label>
+                        <input type="text" class="form-control" name="gender" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
+
+                        <!-- <div class="form-check">
                             <input class="form-check-input" type="radio" value="female">
                             <label class="form-check-label">Female</label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="male">
                             <label class="form-check-label">Male</label>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
@@ -75,7 +79,7 @@
                         <label for="no_telp">Phone Number</label>
                         <input type="text" align="middle" class="form-control" name="no_telp" value="" required autofocus id="name" placeholder="Enter phone number">
                     </div>
-  
+
                 <div class="card-footer">
                   <button type="submit" name="submit" value="Create" class="btn btn-success pull-right">
                   Submit
@@ -88,7 +92,7 @@
             <!-- /.row -->
           </div>
           <!-- /.card-body -->
-          
+
         </div>
         <!-- /.card -->
       </div>

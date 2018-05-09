@@ -72,12 +72,8 @@ Route::get('/profile', array(
 
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
-<<<<<<< HEAD
 Route::post('/create','UserController@create');
 Route::get('/viewuser/{id}', 'UserController@show');
 
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
 Route::patch('/viewuser/{id}', 'UserController@update');
-=======
-Route::post('/create','UserController@create');
->>>>>>> 5c696359c4bbb895eb5154a337ff3eb5729079dc
