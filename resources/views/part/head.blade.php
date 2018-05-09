@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
 <link rel="icon" type="image/png" href="{{asset('assets/images/logo_web.png')}}"><title>Prince IPB</title>
 <meta charset="utf-8">
@@ -13,27 +11,23 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/animate.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
-    <!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<!-- single -->
+<link rel="stylesheet" href="{{asset('assets/plugins/themify-icons/themify-icons.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_responsive.css')}}">
+
+<!-- profile -->
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/profile_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/profile_responsive.css')}}">
+
+<!-- contact -->
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/contact_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/contact_responsive.css')}}">
+
+<!-- categories -->
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_responsive.css')}}">
+
 </head>
-
-<body>
-
-    <!-- @include('part.header') -->
-
-    @yield('content')
-    
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
-    <script src="{{asset('assets/styles/bootstrap4/popper.js')}}"></script>
-    <script src="{{asset('assets/styles/bootstrap4/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/Isotope/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
-    <script src="{{asset('assets/plugins/easing/easing.js')}}"></script>
-    <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
-    <script src="{{asset('assets/js/categories_custom.js')}}"></script>
-
-</body>
-
-</html>

@@ -21,12 +21,6 @@
 
     <section class="content">
       <div class="container-fluid col-md-8">
-        <!-- CREATE FORM -->
-        <!-- <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">Create User</h3>
-          </div>
-          <!-- /.card-header -->
           <div class="card-body">
             <div class="row"> -->
               <div class="col-md-8">
@@ -71,7 +65,8 @@
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" align="middle" class="form-control" name="address" value="" required autofocus id="name" placeholder="Enter address">
+                        <textarea class="form-control" rows="3" name="address"
+                        placeholder="Enter address..." required autofocus></textarea>
                     </div>
                     <div class="form-group">
                         <label for="no_telp">Phone Number</label>
