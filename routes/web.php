@@ -18,7 +18,7 @@ Route::get('/profile', array(
 		'as' => 'profile',
 		'uses' => 'ProfileController@index'
 ));
-Route::get('/Single', function () {
+Route::get('/single', function () {
     return view('single');
 });
 

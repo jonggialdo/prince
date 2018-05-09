@@ -36,9 +36,6 @@
                   </ul>
                   @endif
 
-
-
-
               <li class="checkout">
                 <a href="#">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>

@@ -22,13 +22,13 @@
     <section class="content">
       <div class="container-fluid col-md-8">
         <!-- CREATE FORM -->
-        <div class="card card-primary">
+        <!-- <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Create User</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <div class="row">
+            <div class="row"> -->
               <div class="col-md-8">
                 <form method="POST" class="/users" action="#">
                     {{ csrf_field() }}
@@ -46,9 +46,9 @@
                     </div>
                     <div class="form-group">
                         <label for="photo_user">Photo profile</label>
-                        <input type="text" class="form-control" name="photo_user" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
-
-                        <!-- <div class="input-group">
+                        <input type="text" align="middle" class="form-control" name="photo_user" value="" required autofocus id="name" placeholder="Enter name">
+<!--
+                        <div class="input-group">
                         <input type="file" class="custom-file-input" id="photo_user">
                         <div class="custom-file">
                             <label class="custom-file-label" for="photo_user">Choose file</label>
@@ -56,18 +56,16 @@
                         <div class="input-group-append">
                             <span class="input-group-text" id="">Upload</span>
                         </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
-                        <input type="text" class="form-control" name="gender" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
-
-                        <!-- <div class="form-check">
-                            <input class="form-check-input" type="radio" value="female">
+                        <div class="form-check">
+                            <input class="form-check-input" name="gender" type="radio" value="Female">
                             <label class="form-check-label">Female</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" value="male">
+                            <input class="form-check-input" name="gender" type="radio" value="Male">
                             <label class="form-check-label">Male</label>
                         </div> -->
                     </div>
@@ -80,20 +78,20 @@
                         <input type="text" align="middle" class="form-control" name="no_telp" value="" required autofocus id="name" placeholder="Enter phone number">
                     </div>
 
-                <div class="card-footer">
+                <!-- <div class="card-footer"> -->
                   <button type="submit" name="submit" value="Create" class="btn btn-success pull-right">
                   Submit
-                </div>
+                <!-- </div> -->
 
                 </form>
               </div>
               <!-- /.col -->
             </div>
             <!-- /.row -->
-          </div>
+          <!-- </div>
           <!-- /.card-body -->
 
-        </div>
+        </div> -->
         <!-- /.card -->
       </div>
     </section>
