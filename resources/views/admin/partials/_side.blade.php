@@ -56,13 +56,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.create_product') }}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Add product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.manage_product') }}" class="nav-link">
                   <i class="fa fa-cog nav-icon"></i>
                   <p>Manage product</p>
                 </a>
