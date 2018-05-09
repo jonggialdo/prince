@@ -29,6 +29,11 @@ Route::get('/contact', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
 Route::get('/register', ['as' => 'register'])->name('register');
 Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
