@@ -78,3 +78,9 @@ Route::get('/profile', array(
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
 Route::post('/create','UserController@create');
+
+Route::get('/dashboard', function () {
+    return view('tes');
+});
+Route::get('/viewuser/{id}/edit', 'UserController@edit');
+Route::patch('/viewuser/{id}', 'UserController@update');

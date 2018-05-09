@@ -19,7 +19,11 @@
 
 <body>
 
+<<<<<<< HEAD
     <!-- @include('part.header'); -->
+=======
+    <!-- @include('part.header') -->
+>>>>>>> 1b6f7121d95d3fe22a1b922a44f9b70b177584ee
 
     @yield('content')
     

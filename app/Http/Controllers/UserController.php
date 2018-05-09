@@ -15,12 +15,12 @@ class UserController extends Controller
   public function index()
   {
     $user = User::all();
-    return view('admin/manage_user', ['users'=>$user]);
+    return view('admin.manage_user', ['users'=>$user]);
   }
 
   public function view()
   {
-    return view('admin/create_user');
+    return view('admin.create_user');
   }
 
   public function show($id)
@@ -39,7 +39,6 @@ class UserController extends Controller
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
-    $user->photo_user = $request->photo_user;
     $user->save();
 
     return redirect('view_user');
@@ -53,7 +52,6 @@ class UserController extends Controller
 
   public function update(Request $request, $id)
   {
-    dd ($request);
     $user = User::where('id', $id)->get();
   //  $user->role_id = $request->role_id;
     $user->name = $request->name;
@@ -62,7 +60,6 @@ class UserController extends Controller
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
-    $user->photo_user = $request->photo_user;
     $user->save();
 
     // return redirect();
