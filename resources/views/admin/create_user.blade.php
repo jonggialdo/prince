@@ -41,12 +41,12 @@
                     <div class="form-group">
                         <label for="photo_user">Photo profile</label>
                         <input type="text" align="middle" class="form-control" name="photo_user" value="" required autofocus id="name" placeholder="Enter name">
-<!--                     
+<!--
                         <div class="input-group">
                         <input type="file" class="custom-file-input" id="photo_user">
                         <div class="custom-file">
                             <label class="custom-file-label" for="photo_user">Choose file</label>
-                        </div>
+                        </div> -->
                         <div class="input-group-append">
                             <span class="input-group-text" id="">Upload</span>
                         </div>
@@ -61,7 +61,7 @@
                         <div class="form-check">
                             <input class="form-check-input" name="gender" type="radio" value="Male">
                             <label class="form-check-label">Male</label>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>
@@ -72,7 +72,7 @@
                         <label for="no_telp">Phone Number</label>
                         <input type="text" align="middle" class="form-control" name="no_telp" value="" required autofocus id="name" placeholder="Enter phone number">
                     </div>
-  
+
                 <!-- <div class="card-footer"> -->
                   <button type="submit" name="submit" value="Create" class="btn btn-success pull-right">
                   Submit
@@ -85,7 +85,7 @@
             <!-- /.row -->
           <!-- </div>
           <!-- /.card-body -->
-          
+
         </div> -->
         <!-- /.card -->
       </div>
