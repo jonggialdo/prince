@@ -9,3 +9,4 @@
         {{ csrf_field() }}
       <input type="hidden" name="_method" value="PUT">
     </form>
+// edit satuan
