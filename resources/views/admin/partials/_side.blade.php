@@ -79,7 +79,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{ route('admin.payment') }}" class="nav-link">
                   <i class="fa fa-money nav-icon"></i>
                   <p>Payment</p>
                 </a>

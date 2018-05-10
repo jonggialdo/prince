@@ -21,5 +21,8 @@ class SidebarController extends Controller
     public function manage_product(){
         return view('admin.manage_product');
     }
+    public function payment(){
+        return view('admin.payment');
+    }
 }
 
