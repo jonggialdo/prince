@@ -15,15 +15,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
         <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
+    
 </head>
 
 <body>
 
-<<<<<<< HEAD
-    <!-- @include('part.header'); -->
-=======
     <!-- @include('part.header') -->
->>>>>>> 1b6f7121d95d3fe22a1b922a44f9b70b177584ee
 
     @yield('content')
     
@@ -37,6 +35,16 @@
     <script src="{{asset('assets/plugins/easing/easing.js')}}"></script>
     <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
     <script src="{{asset('assets/js/categories_custom.js')}}"></script>
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
 
 </body>
 
