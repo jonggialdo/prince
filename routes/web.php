@@ -69,11 +69,9 @@ Route::get('/profile', array(
 ));
 
 // Route::resource('admin', 'UserController');
-
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
 Route::post('/create','UserController@create');
 Route::get('/viewuser/{id}', 'UserController@show');
-
+Route::put('/viewuser/{id}', 'UserController@update');
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
-Route::patch('/viewuser/{id}', 'UserController@update');
