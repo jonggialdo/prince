@@ -42,7 +42,7 @@ class UserController extends Controller
     $user->photo_user = $request->photo_user;
     $user->save();
 
-    return redirect('view_user');
+    return redirect('viewuser');
   }
 
   public function edit($id)
