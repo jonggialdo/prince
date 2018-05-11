@@ -14,7 +14,7 @@
           <img src="{{ asset('assets/admin/dist/img/profile-photo.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Nama Admin</a>
+          <a href="#" class="d-block">Nama</a>
         </div>
       </div>
 
@@ -56,13 +56,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.create_product') }}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Add product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.manage_product') }}" class="nav-link">
                   <i class="fa fa-cog nav-icon"></i>
                   <p>Manage product</p>
                 </a>
@@ -79,7 +79,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{ route('admin.payment') }}" class="nav-link">
                   <i class="fa fa-money nav-icon"></i>
                   <p>Payment</p>
                 </a>

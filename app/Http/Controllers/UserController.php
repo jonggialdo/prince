@@ -39,7 +39,6 @@ class UserController extends Controller
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
-    $user->photo_user = $request->photo_user;
     $user->save();
 
     return redirect('viewuser');
@@ -61,7 +60,6 @@ class UserController extends Controller
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
-    $user->photo_user = $request->photo_user;
     $user->save();
 
     // return redirect();
