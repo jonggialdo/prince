@@ -39,7 +39,6 @@ class UserController extends Controller
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
-    $user->photo_user = $request->photo_user;
     $user->save();
 
     return redirect('view_user');
@@ -57,6 +56,11 @@ class UserController extends Controller
   //  $user->role_id = $request->role_id;
     $user->name = $request->name;
     $user->email = $request->email;
+
+    $user->password = bcrypt($request->password);
+    $user->gender = $request->gender;
+    $user->no_telp = $request->no_telp;
+    $user->address = $request->address;
     $user->save();
 
     // return redirect();

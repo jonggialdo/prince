@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
-              <li class="breadcrumb-item active">Create User</li>
+              <li class="breadcrumb-item active">Create Product</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,7 +27,7 @@
                 <form method="POST" class="/users" action="#">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Product Name</label>
                         <input type="text" align="middle" class="form-control" name="name" value="" required autofocus id="name" placeholder="Enter name">
                     </div>
                     <div class="form-group">

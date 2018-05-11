@@ -923,7 +923,8 @@ section
 .single_product_container
 {
 	margin-top: 100px;
-	padding-bottom: 80px;
+	padding-top: 10px; 
+	padding-bottom: 10px;
 	border-bottom: solid 1px #ebebeb;
 }
 .single_product_thumbnails
