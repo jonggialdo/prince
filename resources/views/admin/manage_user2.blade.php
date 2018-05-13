@@ -49,36 +49,47 @@
                     <th>Gender</th>
                     <th>Manage</th>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>linda@gmail.com</td>
-                    <td>Linda</td>
-                    <td>Puri Sekarwangi, Babakan Lebak, Bogor</td>
-                    <td>082213781699</td>
-                    <td>Female</td>
+                  @foreach($users as $user)
+                  <tr> 
+                    <td>{{ $number+=1 }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->address }}</td>
+                    <td>{{ $user->no_telp }}</td>
+                    <td>{{ $user->gender }}</td>
                     <td>
                       <div class="btn-group">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-edit nav-icon"></i>
                           </button>
-                          <div class="modal fade" id="modal-edit">
+                          <div class="modal fade" id="modal-edit{{ $user->id }}">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                       <h4 class="modal-title">Edit User's Profile</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="POST" role="form" action="#">
+                                    <form  action="/viewuser/{{$user->id}}" method="POST">
                                         {{ csrf_field() }}
-                                        {{ method_field('PATCH')}}
-                                        <input type="hidden" name="model" value="sodung">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
+                                        </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <input type="text" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <textarea class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" class="form-control" placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -97,6 +108,7 @@
                       </div>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
               </div>

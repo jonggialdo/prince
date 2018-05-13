@@ -10,23 +10,30 @@ use Auth;
 
 class UserController extends Controller
 {
-
+  public function manage_user(){
+    $number = 0;
+    $id_admin = 1;
+    $users = User::All()->where('role_id', '!=', $id_admin);
+    //dd($users);
+    return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
+}
 
   public function index()
   {
     $user = User::all();
-    return view('admin.manage_user', ['users'=>$user]);
+    dd($user);
+    return view('admin.manage_user2', ['users'=>$user]);
   }
 
   public function view()
   {
-    return view('admin.manage_user');
+    return view('admin.manage_user2');
   }
 
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.single_user',['user' => $user] );
+    return view('admin.manage_user2',['user' => $user] );
   }
 
   public function create(Request $request)
@@ -47,7 +54,7 @@ class UserController extends Controller
   public function edit($id)
   {
     $user = User::find($id);
-    return view('admin.edit_user',['user' => $user] );
+    return view('admin.manage_user2',['user' => $user] );
   }
 
   public function update(Request $request, $id)
