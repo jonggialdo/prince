@@ -20,7 +20,7 @@ class UserController extends Controller
 
   public function view()
   {
-    return view('admin.create_user');
+    return view('admin.manage_user');
   }
 
   public function show($id)
@@ -41,7 +41,7 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
 
-    return redirect('view_user');
+    return redirect('admin.manage_user2');
   }
 
   public function edit($id)

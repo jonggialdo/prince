@@ -1,5 +1,3 @@
-
-
     <form  action="/viewuser/{{$user->id}}" method="PATCH">
       <input type="text" name="" value="{{ $user->name }}">
         <input type="text" name="" value="{{ $user->email }}">

@@ -39,7 +39,6 @@ Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@admin')->name('admin');
 
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
@@ -81,7 +80,7 @@ Route::get('/profile', array(
 
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
-Route::post('/create','UserController@create');
+Route::post('/create','UserController@create')->name('create_user');
 
 Route::get('/dashboard', function () {
     return view('tes');
