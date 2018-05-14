@@ -62,6 +62,7 @@
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-edit nav-icon"></i>
                           </button>
+                          <!-- .modal edit -->
                           <div class="modal fade" id="modal-edit{{ $user->id }}">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -69,7 +70,7 @@
                                       <h4 class="modal-title">Edit User's Profile</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form  action="/viewuser/{{$user->id}}" method="POST">
+                                    <form  action="{{ route('admin.edit_user', $user) }}" method="POST">
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label>Email</label>
@@ -81,7 +82,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required></textarea>
+                                            <textarea class="form-control" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
@@ -89,12 +90,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
+                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
                                   </div>
@@ -102,9 +104,33 @@
                               </div>
                               <!-- /.modal-dialog -->
                           </div>                         
-                          <button type="button" class="btn btn-danger">
+                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-trash nav-icon"></i>
                           </button>
+                          <!-- .modal delete -->
+                          <div class="modal fade" id="modal-delete{{ $user->id }}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Delete Account</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    Are you sure want to delete this account?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form method="POST" action="{{ route('delete.user', $user) }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                      </form>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                          </div>
                       </div>
                     </td>
                   </tr>

@@ -22,18 +22,18 @@ class UserController extends Controller
   {
     $user = User::all();
     dd($user);
-    return view('admin.manage_user', ['users'=>$user]);
+    return view('admin.manage_user2', ['users'=>$user]);
   }
 
   public function view()
   {
-    return view('admin.manage_user');
+    return view('admin.manage_user2');
   }
 
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.manage_user',['user' => $user] );
+    return view('admin.manage_user2',['user' => $user] );
   }
 
   public function create(Request $request)
@@ -48,13 +48,13 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
 
-    return redirect('admin.manage_user2');
+    return redirect()->route('admin.manage_user');
   }
 
   public function edit($id)
   {
     $user = User::find($id);
-    return view('admin.manage_user2',['user' => $user] );
+    return redirect()->route('admin.manage_user');
   }
 
   public function update(Request $request, $id)
@@ -73,10 +73,9 @@ class UserController extends Controller
     // return redirect();
   }
 
-  public function delete($id)
+  public function delete(User $user)
   {
-    $user = User::find($id);
     $user->delete();
-    return redirect('userview');
+    return redirect()->route('admin.manage_user');
   }
 }
