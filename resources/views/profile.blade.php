@@ -30,27 +30,28 @@
 				</div>
 			</div>
 			<div class="col-lg-5">
+				<form  action="/profile" method="POST">
 				<div class="product_details">
 					<div class="product_details_title">
                         <h2> Edit Profile</i></h2>
-                        <div class="form-group">
-                            <input type="text"  class="form-control" placeholder="Rio Al Rasyid" >
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="rioalrasyid97@gmail.com" >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="081354639063" >
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Dramaga, Bogor, Jabar, Indonesia" >
-                        </div>
+	                        <div class="form-group">
+	                            <input type="text"  name = "name" value="{{ $user->name }}" >
+	                        </div>
+	                        <div class="form-group">
+	                            <input type="email" name = "email" value="{{ $user->email }}" >
+	                        </div>
+	                        <div class="form-group">
+	                            <input type="text" name = "no_telp" value="{{$user->no_telp}}" >
+	                        </div>
+	                        <div class="form-group">
+	                            <input type="text" name = "address" value="{{$user->address}}" >
+	                        </div>
                     </div>
-                  
-                    <div class="red_button d-flex flex-row align-items-center justify-content-center"><a href="#">Save</a></div>
-                    
-                    
+                    <button type="submit" name="submit" class="red_button d-flex flex-row align-items-center justify-content-center"><a href="#">Save</a></button></div> 
+                    {{ csrf_field() }}
 				</div>
+				<input type="hidden" name="_method" value="PUT">
+				</form>
 			</div>
 		</div>
 
