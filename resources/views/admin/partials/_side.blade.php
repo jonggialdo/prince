@@ -85,7 +85,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="{{ route('admin.shipping') }}" class="nav-link">
                   <i class="fa fa-archive nav-icon"></i>
                   <p>Shipping</p>
                 </a>
