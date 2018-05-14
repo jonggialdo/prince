@@ -70,31 +70,32 @@
                                     </div>
                                     <div class="modal-body">
                                     <form  action="/viewuser/{{$user->id}}" method="POST">
-                                        {{ csrf_field() }}
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
+                                            <input type="text" name = "email" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
+                                            <input type="text" name = "name" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required></textarea>
+                                            <textarea class="form-control" name = "address" placeholder="{{ $user->address }}" value="{{ $user->address }}" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
+                                            <input type="text" class="form-control" name = "no_telp"placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
+                                            <input type="text" class="form-control" name = "gender"placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
                                   </div>
