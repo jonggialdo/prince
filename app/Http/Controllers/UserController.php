@@ -60,6 +60,7 @@ class UserController extends Controller
   public function update(Request $request, $id)
   {
     $user = User::where('id', $id)->first();
+    //dd($request);
   //  $user->role_id = $request->role_id;
     $user->name = $request->name;
     $user->email = $request->email;
@@ -69,7 +70,10 @@ class UserController extends Controller
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
     $user->save();
-
+    $id_admin = 1;
+    $users = User::All()->where('role_id', '!=', $id_admin);
+    $number = 0;
+    return view('admin.manage_user2',compact('users','number') );
     // return redirect();
   }
 

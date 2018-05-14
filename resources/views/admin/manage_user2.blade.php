@@ -70,15 +70,14 @@
                                       <h4 class="modal-title">Edit User's Profile</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form  action="{{ route('admin.edit_user', $user) }}" method="POST">
-                                        {{ csrf_field() }}
+                                    <form  action="/viewuser/{{$user->id}}" method="POST">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
+                                            <input type="text" name = "email" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
+                                            <input type="text" name = "name" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
@@ -86,7 +85,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
+                                            <input type="text" class="form-control" name = "no_telp"placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
