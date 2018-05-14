@@ -22,18 +22,18 @@ class UserController extends Controller
   {
     $user = User::all();
     dd($user);
-    return view('admin.manage_user2', ['users'=>$user]);
+    return view('admin.manage_user', ['users'=>$user]);
   }
 
   public function view()
   {
-    return view('admin.manage_user2');
+    return view('admin.manage_user');
   }
 
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.manage_user2',['user' => $user] );
+    return view('admin.manage_user',['user' => $user] );
   }
 
   public function create(Request $request)
