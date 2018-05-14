@@ -28,11 +28,11 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" align="middle" class="form-control" name="name" value="" required autofocus id="name" placeholder="Enter name">
+                        <input type="text" align="middle" class="form-control" name="name" value="" required autofocus placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" name="email" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
+                        <input type="email" class="form-control" name="email" value="" required autofocus placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

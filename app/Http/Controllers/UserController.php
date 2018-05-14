@@ -14,6 +14,7 @@ class UserController extends Controller
     $number = 0;
     $id_admin = 1;
     $users = User::All()->where('role_id', '!=', $id_admin);
+    $users = User::latest()->paginate(10);
     //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
 }
