@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
+                                            <textarea class="form-control" name = "address" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
@@ -89,12 +89,17 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
+<<<<<<< HEAD
                                             <input type="text" class="form-control" placeholder="{{ $user->gender }}" value="{{ $user->gender }}" required>
+=======
+                                            <input type="text" class="form-control" name = "gender"placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
+>>>>>>> 4ef694e71f2c97973a1019d457bab61f3d8761a4
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
