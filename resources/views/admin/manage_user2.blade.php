@@ -89,11 +89,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
-<<<<<<< HEAD
-                                            <input type="text" class="form-control" placeholder="{{ $user->gender }}" value="{{ $user->gender }}" required>
-=======
-                                            <input type="text" class="form-control" name = "gender"placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
->>>>>>> 4ef694e71f2c97973a1019d457bab61f3d8761a4
+                                            <input type="text" class="form-control" name = "gender" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
