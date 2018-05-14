@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Gender</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
+                                            <input type="text" class="form-control" placeholder="{{ $user->gender }}" value="{{ $user->gender }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
