@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'no_telp' => 'required',
             'address' => 'required',
             'gender' => 'required',
-          //  'photo_user' => 'required',
+            // 'photo_user' => 'required',
         ]);
     }
 
@@ -74,7 +74,18 @@ class RegisterController extends Controller
             'gender' => $data['gender'],
             'no_telp' => $data['no_telp'],
             'address' => $data['address'],
-            'photo_user' => $data['photo_user']->file('photo_user')->store('photo_user'),
-        ]);
-    }
+            // 'photo_user' => $data['photo_user']->file('photo_user')->store('photo_user'),
+          ]);
+      }
+
+        // $order = $order->create([
+        //   'name' => $request->name,
+        //   'email' => $request->email,
+        //   'password' => bcrypt($request->password),
+        //   'gender' => $request->gender,
+        //   'no_telp' => $request->no_telp,
+        //   'address' => $request->address,
+        //   'photo_user' => $request->file('photo_user')->store('users/order/'),
+        // ]);
+
 }

@@ -15,9 +15,9 @@ class SidebarController extends Controller
     public function manage_user(){
         return view('admin.manage_user2');
     }
-    public function create_product(){
-        return view('admin.create_product');
-    }
+    // public function create_product(){
+    //     return view('admin.create_product');
+    // }
     public function manage_product(){
         return view('admin.manage_product');
     }
@@ -25,4 +25,3 @@ class SidebarController extends Controller
         return view('admin.payment');
     }
 }
-

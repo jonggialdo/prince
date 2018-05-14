@@ -83,13 +83,16 @@ Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
 Route::post('/create','UserController@create');
 
+Route::get('/create-product', 'ProductController@view');
+Route::post('/create-product', 'ProductController@create');
+
 Route::get('/dashboard', function () {
     return view('tes');
 });
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
 Route::patch('/viewuser/{id}', 'UserController@update');
-
-Route::get('form','FormController@create');
-Route::post('form','FormController@store');
-
-Route::get('viewform/{id}', 'FormController@view');
+//
+// Route::get('form','FormController@create');
+// Route::post('form','FormController@store');
+//
+// Route::get('viewform/{id}', 'FormController@view');

@@ -21,27 +21,34 @@ class ProductController extends Controller
       return view('admin.create_product');
     }
 
-    public function show($id)
-    {
-      $product = Product::find($id);
-      return view('admin.single_product', ['product'=>$product]);
-    }
-
     public function create(Request $request)
     {
+      dd($request);
       $product = new Product;
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
       $product->description = $request->description;
       $product->price = $request->price;
       $product->variant = $request->variant;
-      $product->photo_product = $requets->photo_product;
+
+      $product->photo_product =
       $product->stock = $request->stock;
       $product->purchase = $request->purchase;
       $product->viewer = $request->viewer;
       $product->save();
 
+      $photo_product = $request->photo_product->file('photo_product')->store('photo_product');
+      $request->product()->update([
+        'photo_product' => $photo_product
+      ]);
+
       return redirect('admin.view_product');
+    }
+
+    public function show($id)
+    {
+      $product = Product::find($id);
+      return view('admin.single_product', ['product'=>$product]);
     }
 
     public function edit($id)

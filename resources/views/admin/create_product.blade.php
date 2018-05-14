@@ -22,37 +22,60 @@
     <section class="content">
       <div class="container-fluid col-md-8">
           <div class="card-body">
-            <div class="row"> -->
+            <div class="row">
               <div class="col-md-8">
-                <form method="POST" class="/users" action="#">
+                <form method="POST" class="/products" action="" enctype="multipart/form-data">
                     {{ csrf_field() }}
+
+
                     <div class="form-group">
-                        <label for="name">Product Name</label>
-                        <input type="text" align="middle" class="form-control" name="name" value="" required autofocus id="name" placeholder="Enter name">
+                        <!-- <label for="id_user">id_user</label>
+                        <input type="id_user" class="form-control" id="id_user" placeholder="id_user" required>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="product_name">Product Name</label>
+                        <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter name">
                     </div>
+
                     <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" name="email" value="" required autofocus id="exampleInputEmail1" placeholder="Enter email">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" name="description" value="" required autofocus id="description" placeholder="Enter email">
                     </div>
+
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        <label for="price">price</label>
+                        <input type="price" class="form-control" id="price" placeholder="price" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="photo_user">Photo profile</label>
-                        <input type="text" align="middle" class="form-control" name="photo_user" value="" required autofocus id="name" placeholder="Enter name">
-<!--
-                        <div class="input-group">
-                        <input type="file" class="custom-file-input" id="photo_user">
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="photo_user">Choose file</label>
-                        </div> -->
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="">Upload</span>
+                        <label for="variant">variant</label>
+                        <input type="variant" class="form-control" id="variant" placeholder="variant" required>
+                    </div>
+
+                    <div class="form-group{{ $errors->has('photo_product') ? ' has-error' : '' }}">
+                        <label for="photo_product" class="col-md-4 control-label">photo_product</label>
+                        <div class="col-md-6">
+                            <input id="photo_product" type="file" class="form-control" name="photo_product" value="{{ old('photo_product') }}" required autofocus>
                         </div>
-                        </div> -->
                     </div>
+
                     <div class="form-group">
+                        <label for="stock">stock</label>
+                        <input type="stock" class="form-control" id="stock" placeholder="stock" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purchase">purchase</label>
+                        <input type="purchase" class="form-control" id="purchase" placeholder="purchase" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="viewer">viewer</label>
+                        <input type="viewer" class="form-control" id="viewer" placeholder="viewer" required>
+                    </div>
+
+                    <!-- <div class="form-group">
                         <label for="gender">Gender</label>
                         <div class="form-check">
                             <input class="form-check-input" name="gender" type="radio" value="Female">
@@ -61,8 +84,8 @@
                         <div class="form-check">
                             <input class="form-check-input" name="gender" type="radio" value="Male">
                             <label class="form-check-label">Male</label>
-                        </div> -->
-                    </div>
+                        </div>
+
                     <div class="form-group">
                         <label for="address">Address</label>
                         <textarea class="form-control" rows="3" name="address"
@@ -71,7 +94,7 @@
                     <div class="form-group">
                         <label for="no_telp">Phone Number</label>
                         <input type="text" align="middle" class="form-control" name="no_telp" value="" required autofocus id="name" placeholder="Enter phone number">
-                    </div>
+                    </div> -->
 
                 <!-- <div class="card-footer"> -->
                   <button type="submit" name="submit" value="Create" class="btn btn-success pull-right">
@@ -86,7 +109,7 @@
           <!-- </div>
           <!-- /.card-body -->
 
-        </div> -->
+        </div>
         <!-- /.card -->
       </div>
     </section>

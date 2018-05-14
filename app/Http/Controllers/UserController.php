@@ -6,16 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use Auth;
+use App\Role;
 
 
 class UserController extends Controller
 {
-
-
   public function index()
   {
-    $user = User::all();
-    return view('admin.manage_user', ['users'=>$user]);
+      // $user = User::all();
+      $users = User::where('role_id', '2')
+		                        ->orWhere('role_id', '3')
+		                        ->get();
+    return view('admin.manage_user', ['users'=>$users]);
   }
 
   public function view()
