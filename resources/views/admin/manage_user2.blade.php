@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required>
+                                            <textarea class="form-control" placeholder="{{ $user->address }}" value="{{ $user->address }}" required></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
