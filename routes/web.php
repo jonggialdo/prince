@@ -40,14 +40,14 @@ Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@admin')->name('admin');
 
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
-Route::get('/manage-user', 'SidebarController@manage_user')->name('admin.manage_user');
+Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
 Route::get('/create-product', 'SidebarController@create_product')->name('admin.create_product');
 Route::get('/manage-product', 'SidebarController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
+Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -81,7 +81,7 @@ Route::get('/profile', array(
 // Route::resource('admin', 'UserController');
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
-Route::post('/create','UserController@create');
+Route::post('/create','UserController@create')->name('create_user');
 
 Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
