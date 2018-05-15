@@ -6,27 +6,36 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use Auth;
+use App\Role;
 
 
 class UserController extends Controller
 {
-
+  public function manage_user(){
+    $number = 0;
+    $id_admin = 1;
+    $users = User::All()->where('role_id', '!=', $id_admin);
+    $users = User::latest()->paginate(10);
+    //dd($users);
+    return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
+}
 
   public function index()
   {
     $user = User::all();
-    return view('admin.manage_user', ['users'=>$user]);
-  }
-
-  public function view()
-  {
-    return view('admin.create_user');
+    dd($user);
+    return view('admin.manage_user2', ['users'=>$user]);
   }
 
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.single_user',['user' => $user] );
+    return view('admin.manage_user2',['user' => $user] );
+  }
+
+  public function view()
+  {
+    return view('admin.create_user');
   }
 
   public function create(Request $request)
@@ -41,34 +50,38 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
 
-    return redirect('view_user');
+    return redirect()->route('admin.manage_user');
   }
 
   public function edit($id)
   {
     $user = User::find($id);
-    return view('admin.edit_user',['user' => $user] );
+    return redirect()->route('admin.manage_user');
   }
 
   public function update(Request $request, $id)
   {
-    $user = User::where('id', $id)->get();
+    $user = User::where('id', $id)->first();
+    //dd($request);
   //  $user->role_id = $request->role_id;
     $user->name = $request->name;
     $user->email = $request->email;
+
     $user->password = bcrypt($request->password);
     $user->gender = $request->gender;
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
     $user->save();
-
+    $id_admin = 1;
+    $users = User::All()->where('role_id', '!=', $id_admin);
+    $number = 0;
+    return view('admin.manage_user2',compact('users','number') );
     // return redirect();
   }
 
-  public function delete($id)
+  public function delete(User $user)
   {
-    $user = User::find($id);
     $user->delete();
-    return redirect('userview');
+    return redirect()->route('admin.manage_user');
   }
 }

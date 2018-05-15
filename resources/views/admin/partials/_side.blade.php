@@ -56,7 +56,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.create_product') }}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Add product</p>
                 </a>
@@ -79,13 +79,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{ route('admin.payment') }}" class="nav-link">
                   <i class="fa fa-money nav-icon"></i>
                   <p>Payment</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
+                <a href="{{ route('admin.shipping') }}" class="nav-link">
                   <i class="fa fa-archive nav-icon"></i>
                   <p>Shipping</p>
                 </a>
@@ -99,7 +99,7 @@
                 Review
               </p>
             </a>
-            
+
           </li>
         </ul>
       </nav>

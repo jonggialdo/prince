@@ -10,7 +10,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('admin') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
               <li class="breadcrumb-item active">Manage User</li>
             </ol>
           </div><!-- /.col -->
@@ -21,6 +21,10 @@
 
     <section class="content">
       <div class="row">
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 28db9af90f894977f66ae432ef893402dfcebc06
       <div class="col-12">
             <div class="card">
               <div class="card-header">
@@ -49,57 +53,107 @@
                     <th>Gender</th>
                     <th>Manage</th>
                   </tr>
+                  @foreach($users as $user)
                   <tr>
-                    <td>2</td>
-                    <td>linda@gmail.com</td>
-                    <td>Linda</td>
-                    <td>Puri Sekarwangi, Babakan Lebak, Bogor</td>
-                    <td>082213781699</td>
-                    <td>Female</td>
+                    <td>{{ $number+=1 }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->address }}</td>
+                    <td>{{ $user->no_telp }}</td>
+                    <td>{{ $user->gender }}</td>
                     <td>
                       <div class="btn-group">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-edit nav-icon"></i>
                           </button>
-                          <div class="modal fade" id="modal-edit">
+                          <!-- .modal edit -->
+                          <div class="modal fade" id="modal-edit{{ $user->id }}">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                       <h4 class="modal-title">Edit User's Profile</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="POST" role="form" action="#">
-                                        {{ csrf_field() }}
-                                        {{ method_field('PATCH')}}
-                                        <input type="hidden" name="model" value="sodung">
+                                    <form  action="/viewuser/{{$user->id}}" method="POST">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="text" name = "email" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
+                                        </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <input type="text" name = "name" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <textarea class="form-control" name = "address" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <input type="text" class="form-control" name = "no_telp"placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="gender" type="radio" value="Female" {{ $user->gender == 'Female' ? 'checked' : ''}}>
+                                                <label class="form-check-label">Female</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="gender" type="radio" value="Male" {{ $user->gender == 'Male' ? 'checked' : ''}}>
+                                                <label class="form-check-label">Male</label>
+                                            </div> 
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label>Gender</label>
+                                            <input type="text" class="form-control" name = "gender" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
+                                        </div> -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
                                   </div>
                                   <!-- /.modal-content -->
                               </div>
                               <!-- /.modal-dialog -->
-                          </div>                         
-                          <button type="button" class="btn btn-danger">
+                          </div>
+                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-trash nav-icon"></i>
                           </button>
+                          <!-- .modal delete -->
+                          <div class="modal fade" id="modal-delete{{ $user->id }}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Delete Account</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    Are you sure want to delete this account?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form method="POST" action="{{ route('delete.user', $user) }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                      </form>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                          </div>
                       </div>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
               </div>
+              {!! $user->render() !!}
               <!-- /.card-body -->
               <!-- ./card-footer -->
               <div class="card-footer clearfix">
