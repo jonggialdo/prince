@@ -149,7 +149,7 @@
                 </tbody>
               </table>
               </div>
-              {!! $user->render() !!}
+              {!! $users->render() !!}
               <!-- /.card-body -->
               <!-- ./card-footer -->
               <div class="card-footer clearfix">

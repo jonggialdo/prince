@@ -11,10 +11,10 @@ use Auth;
 class UserController extends Controller
 {
   public function manage_user(){
-    $number = 0;
     $id_admin = 1;
-    $users = User::All()->where('role_id', '!=', $id_admin);
-    $users = User::latest()->paginate(10);
+    $users = User::latest()->paginate(2);
+    $number = $users->currentPage() * 2;
+    $number -=2;
     //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
 }
