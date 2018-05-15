@@ -82,20 +82,32 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
+                                            <textarea class="form-control" name = "address" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
                                             <input type="text" class="form-control" name = "no_telp"placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Gender</label>
-                                            <input type="text" class="form-control" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
+                                            <label for="gender">Gender</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="gender" type="radio" value="Female" {{ $user->gender == 'Female' ? 'checked' : ''}}>
+                                                <label class="form-check-label">Female</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="gender" type="radio" value="Male" {{ $user->gender == 'Male' ? 'checked' : ''}}>
+                                                <label class="form-check-label">Male</label>
+                                            </div> 
                                         </div>
+                                        <!-- <div class="form-group">
+                                            <label>Gender</label>
+                                            <input type="text" class="form-control" name = "gender" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
+                                        </div> -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
@@ -138,6 +150,7 @@
                 </tbody>
               </table>
               </div>
+              {!! $user->render() !!}
               <!-- /.card-body -->
               <!-- ./card-footer -->
               <div class="card-footer clearfix">

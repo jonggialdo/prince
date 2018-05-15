@@ -82,9 +82,8 @@ Route::get('/profile', array(
 Route::get('/viewuser', 'UserController@index');
 Route::get('/create', 'UserController@view');
 Route::post('/create','UserController@create')->name('create_user');
-Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
 Route::get('/viewuser/{id}', 'UserController@show');
-Route::put('/manage_user', 'UserController@update');
+Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 
 Route::get('/create-product', 'ProductController@view')->name('create_product');
