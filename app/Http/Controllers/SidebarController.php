@@ -12,10 +12,11 @@ class SidebarController extends Controller
     public function create_user(){
         return view('admin.create_user');
     }
-    
+
     public function create_product(){
         return view('admin.create_product');
     }
+
     public function manage_product(){
         return view('admin.manage_product');
     }
@@ -26,4 +27,3 @@ class SidebarController extends Controller
         return view('admin.shipping');
     }
 }
-

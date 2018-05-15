@@ -21,6 +21,7 @@
 
     <section class="content">
       <div class="row">
+=======
       <div class="col-12">
             <div class="card">
               <div class="card-header">
@@ -50,7 +51,7 @@
                     <th>Manage</th>
                   </tr>
                   @foreach($users as $user)
-                  <tr> 
+                  <tr>
                     <td>{{ $number+=1 }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->name }}</td>
@@ -114,7 +115,7 @@
                                   <!-- /.modal-content -->
                               </div>
                               <!-- /.modal-dialog -->
-                          </div>                         
+                          </div>
                           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $user->id }}" value="{{ $user->id }}">
                             <i class="fa fa-trash nav-icon"></i>
                           </button>

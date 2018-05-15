@@ -47,7 +47,7 @@
                         <div class="form-check">
                             <input class="form-check-input" name="gender" type="radio" value="Male">
                             <label class="form-check-label">Male</label>
-                        </div> 
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="address">Address</label>

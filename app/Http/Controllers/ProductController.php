@@ -21,27 +21,50 @@ class ProductController extends Controller
       return view('admin.create_product');
     }
 
-    public function show($id)
-    {
-      $product = Product::find($id);
-      return view('admin.single_product', ['product'=>$product]);
-    }
-
     public function create(Request $request)
     {
+
+      // $request = $request->create([
+      //   'id_user'              => $request->id_user,
+      //   'product_name'  => $request->product_name,
+      //   'description'       => $request->description,
+      //   'price'                 => $request->price,
+      //   'variant'              => $request->variant,
+      //   'photo_product' => $request->photo_product,
+      //   'stock'                 => $request->stock,
+      //   'purchase'           => $request->purchase,
+      //   'viewer'               => $request->viewer,
+      // ]);
+      //
+      // $photo_product = $request->file('photo_product')->store('photo_product');
+      // $request->product()->update([
+      //   'photo_product' => $photo_product
+      // ]);
+
       $product = new Product;
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
       $product->description = $request->description;
       $product->price = $request->price;
       $product->variant = $request->variant;
-      $product->photo_product = $requets->photo_product;
+      // $product->photo_product = $request->photo_product;
+      $photo_product = $request->file('photo_product')->store('photo_product');
+      $request->->update([
+        'photo_product' => $photo_product
+      ]);
       $product->stock = $request->stock;
       $product->purchase = $request->purchase;
       $product->viewer = $request->viewer;
+
       $product->save();
 
       return redirect('admin.view_product');
+    }
+
+    public function show($id)
+    {
+      $product = Product::find($id);
+      return view('admin.single_product', ['product'=>$product]);
     }
 
     public function edit($id)
