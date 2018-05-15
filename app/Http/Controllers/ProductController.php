@@ -12,8 +12,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-      $product = Product::all();
-      return view('admin.manage_product', ['product'=>$product]);
+      //dd($product);
+      return view('admin.manage_product');
     }
 
     public function view()
@@ -48,16 +48,17 @@ class ProductController extends Controller
       $product->price = $request->price;
       $product->variant = $request->variant;
       // $product->photo_product = $request->photo_product;
-      $photo_product = $request->file('photo_product')->store('photo_product');
-      $request->->update([
-        'photo_product' => $photo_product
-      ]);
+      if ($request->hasFile('photo_product'))
+      {
+            $file = $request->file('photo_product');
+            $name = $file->getClientOriginalName();
+            $product->photo_product = $name;
+            $file->move(public_path().'/images/', $name);                     
+      }   
       $product->stock = $request->stock;
       $product->purchase = $request->purchase;
       $product->viewer = $request->viewer;
-
       $product->save();
-
       return redirect('admin.view_product');
     }
 

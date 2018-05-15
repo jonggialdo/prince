@@ -12,11 +12,11 @@ use App\Role;
 class UserController extends Controller
 {
   public function manage_user(){
-    $number = 0;
     $id_admin = 1;
-    //$users = DB::table('users')->where('role_id', '>', $id_admin)->get();
-    $users = User::where('role_id','=', '3')->first()->paginate(10);
-    // dd($users);
+    $users = User::latest()->paginate(2);
+    $number = $users->currentPage() * 2;
+    $number -=2;
+    //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
 }
 
