@@ -29,9 +29,9 @@
 
 
                     <div class="form-group">
-                        <!-- <label for="id_user">id_user</label>
-                        <input type="id_user" class="form-control" id="id_user" placeholder="id_user" required>
-                    </div> -->
+                        <label for="id_user">id_user</label>
+                        <input type="text" class="form-control" name="id_user" id="id_user" placeholder="id_user" required>
+                    </div>
 
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
@@ -45,34 +45,39 @@
 
                     <div class="form-group">
                         <label for="price">price</label>
-                        <input type="price" class="form-control" id="price" placeholder="price" required>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
 
                     <div class="form-group">
                         <label for="variant">variant</label>
-                        <input type="variant" class="form-control" id="variant" placeholder="variant" required>
+                        <input type="text" class="form-control" name="variant" id="variant" placeholder="variant" required>
                     </div>
 
-                    <div class="form-group{{ $errors->has('photo_product') ? ' has-error' : '' }}">
+                    <!-- <div class="form-group">
+                        <label for="photo_product">photo_product</label>
+                        <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
+                    </div> -->
+
+                    <div class="form-group">
                         <label for="photo_product" class="col-md-4 control-label">photo_product</label>
                         <div class="col-md-6">
-                            <input id="photo_product" type="file" class="form-control" name="photo_product" value="{{ old('photo_product') }}" required autofocus>
+                            <input id="photo_product" type="file" class="form-control" name="photo_product"  required autofocus>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="stock">stock</label>
-                        <input type="stock" class="form-control" id="stock" placeholder="stock" required>
+                        <input type="text" class="form-control" name="stock" id="stock" placeholder="stock" required>
                     </div>
 
                     <div class="form-group">
                         <label for="purchase">purchase</label>
-                        <input type="purchase" class="form-control" id="purchase" placeholder="purchase" required>
+                        <input type="text" class="form-control" name="purchase" id="purchase" placeholder="purchase" required>
                     </div>
 
                     <div class="form-group">
                         <label for="viewer">viewer</label>
-                        <input type="viewer" class="form-control" id="viewer" placeholder="viewer" required>
+                        <input type="text" class="form-control" name="viewer" id="viewer" placeholder="viewer" required>
                     </div>
 
                     <!-- <div class="form-group">

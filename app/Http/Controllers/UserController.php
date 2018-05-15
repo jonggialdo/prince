@@ -26,15 +26,15 @@ class UserController extends Controller
     return view('admin.manage_user2', ['users'=>$user]);
   }
 
-  public function view()
-  {
-    return view('admin.manage_user2');
-  }
-
   public function show($id)
   {
     $user = User::find($id);
     return view('admin.manage_user2',['user' => $user] );
+  }
+
+  public function view()
+  {
+    return view('admin.create_user');
   }
 
   public function create(Request $request)

@@ -13,9 +13,10 @@ class SidebarController extends Controller
         return view('admin.create_user');
     }
 
-    // public function create_product(){
-    //     return view('admin.create_product');
-    // }
+    public function create_product(){
+        return view('admin.create_product');
+    }
+
     public function manage_product(){
         return view('admin.manage_product');
     }

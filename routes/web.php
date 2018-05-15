@@ -87,7 +87,7 @@ Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/manage_user', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 
-Route::get('/create-product', 'ProductController@view');
+Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
 Route::get('/dashboard', function () {
@@ -95,12 +95,10 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
-<<<<<<< HEAD
+
 Route::patch('/viewuser/{id}', 'UserController@update');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');
 //
 // Route::get('viewform/{id}', 'FormController@view');
-=======
->>>>>>> f4051567aa5a99c77f50466fa377a04d35b58e1a
