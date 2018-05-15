@@ -21,10 +21,7 @@
 
     <section class="content">
       <div class="row">
-<<<<<<< HEAD
 =======
-=======
->>>>>>> 28db9af90f894977f66ae432ef893402dfcebc06
       <div class="col-12">
             <div class="card">
               <div class="card-header">
