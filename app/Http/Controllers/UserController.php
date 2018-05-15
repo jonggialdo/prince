@@ -14,9 +14,9 @@ class UserController extends Controller
   public function manage_user(){
     $number = 0;
     $id_admin = 1;
-    $users = User::All()->where('role_id', '!=', $id_admin);
-    $users = User::latest()->paginate(10);
-    //dd($users);
+    //$users = DB::table('users')->where('role_id', '>', $id_admin)->get();
+    $users = User::where('role_id','=', '3')->first()->paginate(10);
+    // dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
 }
 
@@ -75,13 +75,12 @@ class UserController extends Controller
     $id_admin = 1;
     $users = User::All()->where('role_id', '!=', $id_admin);
     $number = 0;
-    return view('admin.manage_user2',compact('users','number') );
-    // return redirect();
+    return view('admin.manage_user2',compact('users','number') )->withSuccess('User has been edited.');
   }
 
   public function delete(User $user)
   {
     $user->delete();
-    return redirect()->route('admin.manage_user');
+    return redirect()->route('admin.manage_user')->withSuccess('User has been deleted.');
   }
 }
