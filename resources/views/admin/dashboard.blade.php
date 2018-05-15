@@ -6,6 +6,7 @@
        @include('admin.partials._nav')
        @include('admin.partials._side')
       <div class="content-wrapper">
+        @include('admin.partials._alert')
         @yield('content')
       </div>
       @include('admin.partials._footer')

@@ -50,7 +50,7 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
 
-    return redirect()->route('admin.manage_user');
+    return redirect()->route('admin.manage_user')->withSuccess('New user is created');
   }
 
   public function edit($id)
