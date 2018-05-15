@@ -41,6 +41,7 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
+                    <img src="{{ asset('images/'.$product->photo_product) }}">
                     <th>ID</th>
                     <th>Email</th>
                     <th>Name</th>
