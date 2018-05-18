@@ -127,10 +127,10 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                      <h4 class="modal-title">Delete Account</h4>
+                                      <h4 class="modal-title">Delete Product</h4>
                                     </div>
                                     <div class="modal-body">
-                                    Are you sure want to delete this account?
+                                    Are you sure want to delete this product?
                                     </div>
                                     <div class="modal-footer">
                                       <form method="POST" action="{{ route('delete.product', $product) }}">

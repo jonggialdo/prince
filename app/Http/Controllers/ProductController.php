@@ -108,9 +108,8 @@ class ProductController extends Controller
       return redirect('admin.view_product',['products'=>$product]);
     }
 
-    public function delete($id)
+    public function delete(Product $product)
     {
-      $product = Product::find($id);
       $product->delete();
       return redirect('admin.view_product');
     }
