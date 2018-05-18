@@ -127,6 +127,15 @@
                                     </div>
                                     <div class="modal-body">
                                     Are you sure want to delete this account?
+                                    <div class="callout callout-danger">
+                                      <p>
+                                        {{ $user->email }}<br>
+                                        {{ $user->name }}<br>
+                                        {{ $user->no_telp }}<br>
+                                        {{ $user->address }}<br>
+                                        {{ $user->gender }}
+                                      </p>
+                                    </div>
                                     </div>
                                     <div class="modal-footer">
                                       <form method="POST" action="{{ route('delete.user', $user) }}">

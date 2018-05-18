@@ -75,13 +75,12 @@ class UserController extends Controller
     $id_admin = 1;
     $users = User::All()->where('role_id', '!=', $id_admin);
     $number = 0;
-    return view('admin.manage_user2',compact('users','number') );
-    // return redirect();
+    return view('admin.manage_user2',compact('users','number') )->withSuccess('User has been edited.');
   }
 
   public function delete(User $user)
   {
     $user->delete();
-    return redirect()->route('admin.manage_user');
+    return redirect()->route('admin.manage_user')->withSuccess('User has been deleted.');
   }
 }
