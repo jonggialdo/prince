@@ -41,66 +41,119 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-                    <img src="{{ asset('images/'.$product->photo_product) }}">
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Gender</th>
-                    <th>Manage</th>
+                    <th>User_ID</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Variant</th>
+                    <th>Stock</th>
+                    <th>Purchase</th>
+                    <th>Viewer</th>
                   </tr>
+                  @foreach($products as $product)
                   <tr>
-                    <td>2</td>
-                    <td>linda@gmail.com</td>
-                    <td>Linda</td>
-                    <td>Puri Sekarwangi, Babakan Lebak, Bogor</td>
-                    <td>082213781699</td>
-                    <td>Female</td>
+                    <th>{{$product->id_user}}</th>
+                    <th>{{$product->product_name}}</th>
+                    <th>{{$product->description}}</th>
+                    <th>{{$product->price}}</th>
+                    <th>{{$product->variant}}</th>
+                    <th>{{$product->stock}}</th>
+                    <th>{{$product->purchase}}</th>
+                    <th>{{$product->viewer}}</th>
                     <td>
                       <div class="btn-group">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{ $product->id }}" value="{{ $product->id }}">
                             <i class="fa fa-edit nav-icon"></i>
                           </button>
-                          <div class="modal fade" id="modal-edit">
+                          <!-- .modal edit -->
+                          <div class="modal fade" id="modal-edit{{ $product->id }}">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                      <h4 class="modal-title">Edit User's Profile</h4>
+                                      <h4 class="modal-title">Edit Product</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="POST" role="form" action="#">
-                                        {{ csrf_field() }}
-                                        {{ method_field('PATCH')}}
-                                        <input type="hidden" name="model" value="sodung">
+                                    <form  action="/viewproduct/{{$product->id}}" method="POST">
                                         <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <label>ID User</label>
+                                            <input type="text" name = "id_user" class="form-control" placeholder="{{ $product->id_user }}" value="{{ $product->id_user }}" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="" value="" disabled>
+                                            <label>Product name</label>
+                                            <input type="text" name = "product_name" class="form-control" placeholder="{{ $product->product_name }}" value="{{ $product->product_name }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <input type="text" name = "product_name" class="form-control" placeholder="{{ $product->description }}" value="{{ $product->description }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price</label>
+                                            <input type="text" name = "price" class="form-control" placeholder="{{ $product->price }}" value="{{ $product->price }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Variant</label>
+                                            <input type="text" name = "variant" class="form-control" placeholder="{{ $product->variant }}" value="{{ $product->variant }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Stock</label>
+                                            <input type="text" name = "stock" class="form-control" placeholder="{{ $product->stock }}" value="{{ $product->stock }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Purchase</label>
+                                            <input type="text" name = "purchase" class="form-control" placeholder="{{ $product->purchase }}" value="{{ $product->purchase }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Viewer</label>
+                                            <input type="text" name = "viewer" class="form-control" placeholder="{{ $product->viewer }}" value="{{ $product->viewer }}" required>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="_method" value="PUT">
                                     </div>
                                     </form>
                                   </div>
                                   <!-- /.modal-content -->
                               </div>
                               <!-- /.modal-dialog -->
-                          </div>                         
-                          <button type="button" class="btn btn-danger">
+                          </div>
+                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $product->id }}" value="{{ $product->id }}">
                             <i class="fa fa-trash nav-icon"></i>
                           </button>
+                        <!-- .modal delete -->
+                          <div class="modal fade" id="modal-delete{{ $product->id }}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Delete Account</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    Are you sure want to delete this account?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form method="POST" action="{{ route('delete.product', $product) }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                      </form>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                          </div>
                       </div>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
               </div>
+              {!! $products->render() !!}
               <!-- /.card-body -->
               <!-- ./card-footer -->
               <div class="card-footer clearfix">

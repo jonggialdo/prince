@@ -49,7 +49,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
 Route::get('/create-product', 'SidebarController@create_product')->name('admin.create_product');
-Route::get('/manage-product', 'SidebarController@manage_product')->name('admin.manage_product');
+Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
 
@@ -89,7 +89,7 @@ Route::post('/create','UserController@create')->name('create_user');
 Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
-
+Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
 Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
@@ -98,8 +98,9 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
-
 Route::patch('/viewuser/{id}', 'UserController@update');
+Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
+Route::patch('/viewproduct/{id}', 'ProductController@update');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');
