@@ -18,7 +18,7 @@ class UserController extends Controller
     $number -=2;
     //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
-}
+  }
 
   public function index()
   {
