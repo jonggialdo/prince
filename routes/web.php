@@ -27,9 +27,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/categories', function () {
-    return view('categories');
-});
+
 
 Route::get('/checkout', function () {
     return view('checkout');
@@ -52,8 +50,7 @@ Route::get('/create-product', 'SidebarController@create_product')->name('admin.c
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
-
-
+Route::get('/categories', 'UserController@view')->name('categories');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
 
@@ -72,10 +69,6 @@ Route::group(array('before' => 'auth'), function() {
 Route::get('/contact', array(
 		'as' => 'contact',
 		'uses' => 'ContactController@index'
-));
-Route::get('/categories', array(
-		'as' => 'categories',
-		'uses' => 'CategoriesController@index'
 ));
 Route::get('/profile', array(
 		'as' => 'profile',

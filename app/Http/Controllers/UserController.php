@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Product;
 use Auth;
 use App\Role;
 
@@ -35,7 +36,8 @@ class UserController extends Controller
 
   public function view()
   {
-    return view('admin.create_user');
+    $products = Product::all();
+    return view('categories',['products' => $products]);
   }
 
   public function create(Request $request)
