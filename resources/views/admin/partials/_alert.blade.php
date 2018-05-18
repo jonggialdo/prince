@@ -12,16 +12,3 @@
         <h4><i class="icon fa fa-times-circle"></i> {{ session ('danger') }}</h4>
     </div>
 @endif
-
-<script type="text/javascript">
-
-$(document).ready(function () {
- 
-window.setTimeout(function() {
-    $("#close").fadeTo(1000, 0).slideUp(1000, function(){
-        $(this).remove(); 
-    });
-}, 5000);
- 
-});
-</script>

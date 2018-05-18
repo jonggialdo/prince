@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class SidebarController extends Controller
@@ -18,7 +18,8 @@ class SidebarController extends Controller
     }
 
     public function manage_product(){
-        return view('admin.manage_product');
+        $product = Product::find(3);
+        return view('admin.manage_product',['product' => $product]);
     }
     public function payment(){
         return view('admin.payment');
