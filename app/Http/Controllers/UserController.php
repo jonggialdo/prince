@@ -30,7 +30,7 @@ class UserController extends Controller
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.manage_user2',['user' => $user] );
+    return view('admin.single_user',['users' => $user] );
   }
 
   public function view()

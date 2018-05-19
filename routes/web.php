@@ -93,6 +93,8 @@ Route::get('/dashboard', function () {
     return view('tes');
 });
 
+Route::get('viewproduct/{id}', 'ProductController@show');
+
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
 
 Route::patch('/viewuser/{id}', 'UserController@update');
