@@ -44,72 +44,102 @@
 				<div class="row">
 				<div class="col-12">
 					<div class="callout callout-info">
-					<h1> Cart</h1>
+					<h1> Checkout</h1>
 					</div>
 
-			<!--BARANG KE-1-->				
-			<!-- Main content -->
-			<div class="invoice p-3 mb-3">
+
+					<!-- Main content -->
+					<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Rio Al Rasyid
+							<i class="fa fa-info"></i> Resi Pembelian
+							<small class="float-right">Date: 9/05/2018</small>
 						</h4>
 						</div>
 						<!-- /.col -->
 					</div>
-					
+					<!-- info row -->
+					<div class="row invoice-info">
+						<div class="col-sm-4 invoice-col">
+						From :
+						<address>
+							<strong>Direktorat Kemahasiswaan IPB Dramaga</strong><br>
+							Jl. Dramaga Raya harus bahagia<br>
+							Bogor, Jawa Barat 30128<br>
+							Phone: (0321) 359590<br>
+							Email: ditmawa@apps.ipb.ac.id
+						</address>
+						</div>
+						<!-- /.col -->
+						<div class="col-sm-4 invoice-col">
+						To :
+						<address>
+							<strong>Sultan Jonggi Abialdo</strong><br>
+							Jl. Abadi jadi sultan ya jong<br>
+							Kenangan, Jakarta Timur 30121<br>
+							Phone: (021) 359590<br>
+							Email: sultan.jonggi@apps.ipb.ac.id
+						</address>
+						</div>
+						<!-- /.col -->
+						<div class="col-sm-4 invoice-col">
+						<b>Invoice #007612</b><br>
+						<br>
+						<b>Order ID:</b> 4F3S8J<br>
+						<b>Payment Due:</b> 2/22/2014<br>
+						<b>Account:</b> 968-34567
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+
 					<!-- Table row -->
 					<div class="row">
 						<div class="col-12 table-responsive">
 						<table class="table table-striped">
 							<thead>
 							<tr>
-							<th>Alamat Pengiriman</th>
-
-							<th>Produk</th>
-							
+							<th>No.</th>
+							<th>Qty</th>
 							<th>Product</th>
-
-							<th>Quality</th>
-							
+							<th>Serial #</th>
 							<th>Description</th>
-							
 							<th>Subtotal</th>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-							<td>
-							Dikirim ke :
-							<address>
-								<strong>Sultan Jonggi Abialdo</strong><br>
-								Jl. Abadi jadi sultan ya jong<br>
-								Kenangan, Jakarta Timur 30121<br>
-								Phone: (021) 359590<br>
-								Email: sultan.jonggi@apps.ipb.ac.id
-							</address>
-							</td>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Keset Kaki Ajaib</td>
-							
-							<td>
-								<div class="quantity_selector">
-									<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-									<span id="quantity_value">1</span>
-									<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</div>
-							</td>
-														
-							<td>Alas kaki anti basah dan air, dijamin keren sekali gan</td>
-							
+							<td>1</td>
+							<td>1</td>
+							<td>Call of Duty</td>
+							<td>455-981-221</td>
+							<td>El snort testosterone trophy driving gloves handsome</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>2</td>
+							<td>1</td>
+							<td>Need for Speed IV</td>
+							<td>247-925-726</td>
+							<td>Wes Anderson umami biodiesel</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>3</td>
+							<td>1</td>
+							<td>Monsters DVD</td>
+							<td>735-845-642</td>
+							<td>Terry Richardson helvetica tousled street art master</td>
+							<td>Rp 200.000</td>
+							</tr>
+							<tr>
+							<td>4</td>
+							<td>1</td>
+							<td>Grown Ups Blue Ray</td>
+							<td>422-568-642</td>
+							<td>Tousled lomo letterpress</td>
 							<td>Rp 200.000</td>
 							</tr>
 							</tbody>
@@ -118,96 +148,68 @@
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
-				</div><!-- /.col -->
-				</div><!-- /.row -->
-			</div><!-- /.container-fluid -->
 
-			<!--BARANG KE-2-->
-			<!-- Main content -->
-			<div class="invoice p-3 mb-3">
-					<!-- title row -->
 					<div class="row">
-						<div class="col-12">
-						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Mile Parizka Yahya
-						</h4>
+						<!-- accepted payments column -->
+						<div class="col-6">
+						<p class="lead">Payment Methods:</p>
+						<img src="{{asset('assets/admin/dist/img/credit/visa.png')}}" alt="Visa">
+						<img src="{{asset('assets/admin/dist/img/credit/mastercard.png')}}" alt="Mastercard">
+						<img src="{{asset('assets/admin/dist/img/credit/american-express.png')}}" alt="American Express">
+						<img src="{{asset('assets/admin/dist/img/credit/paypal2.png')}}" alt="Paypal">
+
+						<p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+							Kamu bisa melakukan transaksi dengan metode diatas. Jangan ragu ya, Kami situs terpercaya.
+							Jika ragu, hubungi IPB segera dan tanya aja PRINCE IPB abal abal ga? hehe. Silahkan bayar
+						</p>
 						</div>
 						<!-- /.col -->
-					</div>
-					
-					<!-- Table row -->
-					<div class="row">
-						<div class="col-12 table-responsive">
-						<table class="table table-striped">
-							<thead>
-							<tr>
-							<th>Alamat Pengiriman</th>
+						<div class="col-6">
+						<p class="lead">Amount Due 9/05/2018</p>
 
-							<th>Produk</th>
-							
-							<th>Product</th>
-
-							<th>Quality</th>
-							
-							<th>Description</th>
-							
-							<th>Subtotal</th>
-							</tr>
-							</thead>
-							<tbody>
+						<div class="table-responsive">
+							<table class="table">
 							<tr>
-							<td>
-							Dikirim ke :
-							<address>
-								<strong>Sultan Jonggi Abialdo</strong><br>
-								Jl. Abadi jadi sultan ya jong<br>
-								Kenangan, Jakarta Timur 30121<br>
-								Phone: (021) 359590<br>
-								Email: sultan.jonggi@apps.ipb.ac.id
-							</address>
-							</td>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Tumbler Keren Abis</td>
-							
-							<td>
-								<div class="quantity_selector">
-									<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-									<span id="quantity_value">1</span>
-									<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</div>
-							</td>
-														
-							<td>Dijamin keren abis ini produk gan</td>
-							
-							<td>Rp 250.000</td>
+								<th style="width:50%">Subtotal:</th>
+								<td>Rp 800.000</td>
 							</tr>
-							</tbody>
-						</table>
+							<tr>
+								<th>Tax (10%):</th>
+								<td>Rp 80.000</td>
+							</tr>
+							<tr>
+								<th>Shipping:</th>
+								<td>Rp 10.000</td>
+							</tr>
+							<tr>
+								<th>Total:</th>
+								<td>Rp 890.000</td>
+							</tr>
+							</table>
+						</div>
 						</div>
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
-				</div><!-- /.col -->
-				</div><!-- /.row -->
 
-</section>
-					
+					<!-- this row will not appear when printing -->
 					<div class="row no-print">
 						<div class="col-12">
-							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> 
-								Lakukan Checkout
+							<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
+							Payment
 							</button>
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
-								Pilih Produk Lainnya
+							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+							<i class="fa fa-download"></i> Generate PDF
 							</button>
 						</div>
 					</div>
+					</div>
+					<!-- /.invoice -->
+				</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container-fluid -->
+			</section>
 
 
 				</div>

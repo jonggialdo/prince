@@ -25,21 +25,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI A</a>
+							<a href="categories.html">TEKNOLOGI</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI B</a>
+							<a href="categories.html">PERTANIAN</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">KATEGORI C</a>
+							<a href="categories.html">UMUM</a>
 						</div>
 					</div>
 				</div>
@@ -54,7 +54,7 @@
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title new_arrivals_title">
-						<h2>New Innovations</h2>
+						<h2>The Product</h2>
 					</div>
 				</div>
 			</div>
