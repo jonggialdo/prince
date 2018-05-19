@@ -34,13 +34,6 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-
-      // $request = $request->create([
-      //   'id_user'              => $request->id_user,
-      //   'product_name'  => $request->product_name,
-      //   'description'       => $request->description,
-      //   'price'                 => $request->price,
-      //   'variant'              => $request->variant,
       //   'photo_product' => $request->photo_product,
       //   'stock'                 => $request->stock,
       //   'purchase'           => $request->purchase,
@@ -64,8 +57,8 @@ class ProductController extends Controller
             $file = $request->file('photo_product');
             $name = $file->getClientOriginalName();
             $product->photo_product = $name;
-            $file->move(public_path().'/images/', $name);                     
-      }   
+            $file->move(public_path().'/images/', $name);
+      }
       $product->stock = $request->stock;
       $product->purchase = $request->purchase;
       $product->viewer = $request->viewer;
@@ -108,9 +101,8 @@ class ProductController extends Controller
       return redirect('admin.view_product',['products'=>$product]);
     }
 
-    public function delete($id)
+    public function delete(Product $product)
     {
-      $product = Product::find($id);
       $product->delete();
       return redirect('admin.view_product');
     }

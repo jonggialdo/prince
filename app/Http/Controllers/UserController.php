@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Product;
 use Auth;
 use App\Role;
 
@@ -30,12 +31,13 @@ class UserController extends Controller
   public function show($id)
   {
     $user = User::find($id);
-    return view('admin.manage_user2',['user' => $user] );
+    return view('admin.single_user',['users' => $user] );
   }
 
   public function view()
   {
-    return view('admin.create_user');
+    $products = Product::all();
+    return view('categories',['products' => $products]);
   }
 
   public function create(Request $request)
