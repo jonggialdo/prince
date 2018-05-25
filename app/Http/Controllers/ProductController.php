@@ -28,8 +28,7 @@ class ProductController extends Controller
 
     public function view()
     {
-      $product = Product::find($id);
-      return view('admin.create_product',['products'=>$product]);
+      return view('admin.create_product');
     }
 
     public function create(Request $request)
