@@ -45,6 +45,7 @@ class ProductController extends Controller
       // ]);
 
       $product = new Product;
+      $p = Product::all();
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
       $product->description = $request->description;
@@ -59,7 +60,13 @@ class ProductController extends Controller
       }
       $product->stock = $request->stock;
       $product->save();
-      return view('admin.manage_product');
+      
+      $id_admin = 1;
+      $products = Product::latest()->paginate(2);
+      $number = $products->currentPage() * 2;
+      $number -=2;
+      //dd($users);
+      return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
 
     public function show($id)
