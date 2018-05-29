@@ -104,19 +104,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('photo_user') ? ' has-error' : '' }}">
-                            <label for="photo_user" class="col-md-4 control-label">photo_user</label>
-
-                            <div class="col-md-6">
-                                <input id="photo_user" type="text" class="form-control" name="photo_user" value="{{ old('photo_user') }}" required autofocus>
-
-                                @if ($errors->has('photo_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('photo_user') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>  
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
