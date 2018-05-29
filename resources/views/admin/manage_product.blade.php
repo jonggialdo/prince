@@ -24,7 +24,7 @@
       <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">User List</h3>
+                <h3 class="card-title">Product List</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -45,7 +45,6 @@
                     <th>Product Name</th>
                     <th>Description</th>
                     <th>Price</th>
-                    <th>Variant</th>
                     <th>Stock</th>
                     <th>Purchase</th>
                     <th>Viewer</th>
@@ -56,7 +55,6 @@
                     <th>{{$product->product_name}}</th>
                     <th>{{$product->description}}</th>
                     <th>{{$product->price}}</th>
-                    <th>{{$product->variant}}</th>
                     <th>{{$product->stock}}</th>
                     <th>{{$product->purchase}}</th>
                     <th>{{$product->viewer}}</th>
@@ -90,10 +88,7 @@
                                             <label>Price</label>
                                             <input type="text" name = "price" class="form-control" placeholder="{{ $product->price }}" value="{{ $product->price }}" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Variant</label>
-                                            <input type="text" name = "variant" class="form-control" placeholder="{{ $product->variant }}" value="{{ $product->variant }}" required>
-                                        </div>
+                                       
                                         <div class="form-group">
                                             <label>Stock</label>
                                             <input type="text" name = "stock" class="form-control" placeholder="{{ $product->stock }}" value="{{ $product->stock }}" required>

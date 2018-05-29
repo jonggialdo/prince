@@ -48,14 +48,6 @@
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
 
-<<<<<<< HEAD
-                    <div class="form-group">
-                        <label for="variant">Variant</label>
-                        <input type="text" class="form-control" name="variant" id="variant" placeholder="variant" required>
-                    </div>
-
-=======
->>>>>>> 2dc3c1d078124d16658afce7123616355c28e6ba
                     <!-- <div class="form-group">
                         <label for="photo_product">photo_product</label>
                         <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
