@@ -58,6 +58,7 @@
                         <label for="price">Price</label>
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
+
                     <!-- <div class="form-group">
                         <label for="photo_product">photo_product</label>
                         <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
