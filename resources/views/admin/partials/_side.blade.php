@@ -56,7 +56,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('create_product') }}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Add product</p>
                 </a>
