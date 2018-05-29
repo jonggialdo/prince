@@ -101,3 +101,10 @@ Route::patch('/viewproduct/{id}', 'ProductController@update');
 // Route::post('form','FormController@store');
 //
 // Route::get('viewform/{id}', 'FormController@view');
+
+//Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+
+Route::get('/verify/token/{token}', 'Auth\VerificationController@verify')->name('auth.verify');
+
+Route::get('/verify/resend', 'Auth\VerificationController@resend')->name('auth.verify.resend');
+	
