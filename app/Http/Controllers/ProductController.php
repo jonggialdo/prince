@@ -49,7 +49,6 @@ class ProductController extends Controller
       $product->product_name = $request->product_name;
       $product->description = $request->description;
       $product->price = $request->price;
-      $product->variant = $request->variant;
       // $product->photo_product = $request->photo_product;
       if ($request->hasFile('photo_product'))
       {
@@ -59,10 +58,8 @@ class ProductController extends Controller
             $file->move(public_path().'/images/', $name);
       }
       $product->stock = $request->stock;
-      $product->purchase = $request->purchase;
-      $product->viewer = $request->viewer;
       $product->save();
-      return redirect('admin.view_product',['products'=>$product]);
+      return view('admin.manage_product');
     }
 
     public function show($id)

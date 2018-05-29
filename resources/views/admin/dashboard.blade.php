@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  @include('admin.partials._side')
   @include('admin.partials._head')
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
