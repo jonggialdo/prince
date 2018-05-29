@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
           $table->string('product_name');
           $table->string('description');
           $table->integer('price');
-          $table->string('variant');
           $table->string('photo_product');
           $table->string('stock')->default('0');
           $table->integer('purchase');
