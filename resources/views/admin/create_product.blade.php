@@ -48,11 +48,6 @@
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="variant">variant</label>
-                        <input type="text" class="form-control" name="variant" id="variant" placeholder="variant" required>
-                    </div>
-
                     <!-- <div class="form-group">
                         <label for="photo_product">photo_product</label>
                         <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
@@ -70,15 +65,7 @@
                         <input type="text" class="form-control" name="stock" id="stock" placeholder="stock" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="purchase">purchase</label>
-                        <input type="text" class="form-control" name="purchase" id="purchase" placeholder="purchase" required>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="viewer">viewer</label>
-                        <input type="text" class="form-control" name="viewer" id="viewer" placeholder="viewer" required>
-                    </div>
 
                     <!-- <div class="form-group">
                         <label for="gender">Gender</label>
