@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
           $table->string('email')->unique();
           $table->string('password');
           $table->string('gender')->default('0');
-          $table->integer('no_telp')->default('0');
+          $table->string('no_telp')->default('0');
           $table->string('address')->default('0');
           $table->string('photo_user')->default('0');
           $table->rememberToken();
