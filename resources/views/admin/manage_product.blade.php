@@ -41,7 +41,7 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-                    <th>User_ID</th>
+                    <th>No</th>
                     <th>Product Name</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -51,7 +51,7 @@
                   </tr>
                   @foreach($products as $product)
                   <tr>
-                    <th>{{$product->id_user}}</th>
+                    <td>{{ $number+=1 }}</td>
                     <th>{{$product->product_name}}</th>
                     <th>{{$product->description}}</th>
                     <th>{{$product->price}}</th>

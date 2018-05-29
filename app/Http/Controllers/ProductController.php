@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function manage_product()
     {
       $id_admin = 1;
-      $products = Product::latest()->paginate(2);
+      $products = Product::latest()->paginate(10);
       $number = $products->currentPage() * 2;
       $number -=2;
       //dd($users);
@@ -61,7 +61,7 @@ class ProductController extends Controller
       $product->save();
 
       $id_admin = 1;
-      $products = Product::latest()->paginate(2);
+      $products = Product::latest()->paginate(10);
       $number = $products->currentPage() * 2;
       $number -=2;
       //dd($users);
@@ -100,7 +100,7 @@ class ProductController extends Controller
       $product->save();
 
       $id_admin = 1;
-      $products = Product::latest()->paginate(2);
+      $products = Product::latest()->paginate(10);
       $number = $products->currentPage() * 2;
       $number -=2;
       //dd($users);

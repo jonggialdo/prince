@@ -41,31 +41,30 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-                    <th>ID customer</th>
-                    <th>Order</th>
-                    <th>Qnt</th>
-                    <th>Price</th>
-                    <th>Total Price</th>
+                    <th>No</th>
+                    <th>Id_Order</th>
+                    <th>Nama Pembeli</th>
+                    <th>Time Order</th>
                     <th>Status</th>
-                    <th>Manage</th>
+                    <th>Total</th>
                   </tr>
                   <tr>
-                    <td>2</td>
-                    <td>linda@gmail.com</td>
+                    <td>1</td>
+                    <td>1</td>
                     <td>Linda</td>
-                    <td>Puri Sekarwangi, Babakan Lebak, Bogor</td>
-                    <td>082213781699</td>
-                    <td>Female</td>
+                    <td>13.00</td>
+                    <td>Belum Bayar</td>
+                    <td>Rp 100.000</td>
                     <td>
                       <div class="btn-group">
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fa fa-edit nav-icon"></i>
+                            <i class="fa fa-eye nav-icon"></i>
                           </button>
                           <div class="modal fade" id="modal-edit">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                      <h4 class="modal-title">Edit User's Profile</h4>
+                                      <h4 class="modal-title">Detail</h4>
                                     </div>
                                     <div class="modal-body">
                                     <form method="POST" role="form" action="#">
@@ -91,9 +90,7 @@
                               </div>
                               <!-- /.modal-dialog -->
                           </div>                         
-                          <button type="button" class="btn btn-danger">
-                            <i class="fa fa-trash nav-icon"></i>
-                          </button>
+                         
                       </div>
                     </td>
                   </tr>
