@@ -22,7 +22,7 @@ class ProductController extends Controller
     public function index()
     {
       //dd($product);
-      $product = Product::find($id);
+      $product = Product::all();
       return view('admin.manage_product',['products'=>$product]);
     }
 
@@ -94,8 +94,8 @@ class ProductController extends Controller
             $file = $request->file('photo_product');
             $name = $file->getClientOriginalName();
             $product->photo_product = $name;
-            $file->move(public_path().'/images/', $name);                     
-      }   
+            $file->move(public_path().'/images/', $name);
+      }
       $product->stock = $request->stock;
       $product->save();
 

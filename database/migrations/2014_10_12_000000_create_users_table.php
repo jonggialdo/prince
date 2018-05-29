@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
           $table->string('gender')->default('0');
           $table->string('no_telp')->default('0');
           $table->string('address')->default('0');
-          $table->string('photo_user')->default('0');
+          //$table->boolean('verified')->default(false);
           $table->rememberToken();
           $table->timestamps();
         });

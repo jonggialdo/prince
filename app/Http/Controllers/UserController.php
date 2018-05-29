@@ -8,7 +8,7 @@ use App\User;
 use App\Product;
 use Auth;
 use App\Role;
-
+use App\VerifyUser;
 
 class UserController extends Controller
 {
