@@ -35,21 +35,21 @@
 
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
-                        <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter name">
+                        <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter product's name">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description" value="" required autofocus id="description" placeholder="Enter email">
+                        <textarea class="form-control" name="description" value="" required autofocus id="description" placeholder="Enter description"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="price">price</label>
+                        <label for="price">Price</label>
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="variant">variant</label>
+                        <label for="variant">Variant</label>
                         <input type="text" class="form-control" name="variant" id="variant" placeholder="variant" required>
                     </div>
 
