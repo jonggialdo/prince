@@ -39,14 +39,15 @@
 			<div class="col">
 
 	<!-- Contentnya -->
+	<div class="callout callout-info">
+					<h1> Cart</h1>
+					</div>
 	@foreach($carts as $cart)
 	<section class="content">
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-12">
-					<div class="callout callout-info">
-					<h1> Cart</h1>
-					</div>
+					
 			<!--BARANG KE-1-->				
 			<!-- Main content -->
 			<div class="invoice p-3 mb-3">
