@@ -26,8 +26,20 @@
               <div class="col-md-8">
                 <form method="POST" class="/products" action="" enctype="multipart/form-data">
                     {{ csrf_field() }}
-
-
+<!--
+<div class="form-group">
+                  <label>Minimal</label>
+                  <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option selected="selected">Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select><span class="select2 select2-container select2-container--default select2-container--below select2-container--open" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="true" tabindex="0" aria-labelledby="select2-fsun-container" aria-owns="select2-fsun-results" aria-activedescendant="select2-fsun-result-q2mj-Alabama"><span class="select2-selection__rendered" id="select2-fsun-container" title="Alabama">Alabama</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                </div>
+                /!-->
                     <div class="form-group">
                         <label for="id_user">id_user</label>
                         <input type="text" class="form-control" name="id_user" id="id_user" placeholder="id_user" required>
@@ -47,6 +59,7 @@
                         <label for="price">Price</label>
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
+
                     <!-- <div class="form-group">
                         <label for="photo_product">photo_product</label>
                         <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
