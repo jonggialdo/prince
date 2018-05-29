@@ -39,6 +39,7 @@
 			<div class="col">
 
 	<!-- Contentnya -->
+	@foreach($carts as $cart)
 	<section class="content">
 			<div class="container-fluid">
 				<div class="row">
@@ -46,7 +47,6 @@
 					<div class="callout callout-info">
 					<h1> Cart</h1>
 					</div>
-
 			<!--BARANG KE-1-->				
 			<!-- Main content -->
 			<div class="invoice p-3 mb-3">
@@ -54,7 +54,7 @@
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Rio Al Rasyid
+							<small class="fa fa-share-square-o"></small> Produk karya : {{ $cart->user['name'] }}
 						</h4>
 						</div>
 						<!-- /.col -->
@@ -121,82 +121,9 @@
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
-
-			<!--BARANG KE-2-->
-			<!-- Main content -->
-			<div class="invoice p-3 mb-3">
-					<!-- title row -->
-					<div class="row">
-						<div class="col-12">
-						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Mile Parizka Yahya
-						</h4>
-						</div>
-						<!-- /.col -->
-					</div>
-					
-					<!-- Table row -->
-					<div class="row">
-						<div class="col-12 table-responsive">
-						<table class="table table-striped">
-							<thead>
-							<tr>
-							<th>Alamat Pengiriman</th>
-
-							<th>Produk</th>
-							
-							<th>Product</th>
-
-							<th>Quality</th>
-							
-							<th>Description</th>
-							
-							<th>Subtotal</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-							<td>
-							Dikirim ke :
-							<address>
-								<strong>Sultan Jonggi Abialdo</strong><br>
-								Jl. Abadi jadi sultan ya jong<br>
-								Kenangan, Jakarta Timur 30121<br>
-								Phone: (021) 359590<br>
-								Email: sultan.jonggi@apps.ipb.ac.id
-							</address>
-							</td>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Tumbler Keren Abis</td>
-							
-							<td>
-								<div class="quantity_selector">
-									<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-									<span id="quantity_value">1</span>
-									<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</div>
-							</td>
-														
-							<td>Dijamin keren abis ini produk gan</td>
-							
-							<td>Rp 250.000</td>
-							</tr>
-							</tbody>
-						</table>
-						</div>
-						<!-- /.col -->
-					</div>
-					<!-- /.row -->
-				</div><!-- /.col -->
-				</div><!-- /.row -->
-
-</section>
+			
+	</section>
+	@endforeach
 					
 					<div class="row no-print">
 						<div class="col-12">

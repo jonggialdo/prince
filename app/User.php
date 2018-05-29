@@ -40,4 +40,8 @@ class User extends Model  implements  \Illuminate\Contracts\Auth\Authenticatable
     protected $guarded = [
       'id', 'role_id',
     ];
+    public function cart(){
+        return $this->hasMany('App\Cart');
+    }
+    
 }

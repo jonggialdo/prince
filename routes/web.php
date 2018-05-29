@@ -50,7 +50,6 @@ Route::get('/create-product', 'SidebarController@create_product')->name('admin.c
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
-Route::get('/categories', 'UserController@view')->name('categories');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
 
@@ -96,6 +95,10 @@ Route::get('/viewuser/{id}/edit', 'UserController@edit');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
 Route::put('/viewproduct/{id}', 'ProductController@update');
+
+Route::post('/categories/{id}', 'CartController@add') -> name('add');
+Route::get('/categories/', 'CartController@view1') -> name('categories');
+Route::get('/cart/', 'CartController@view') -> name('cart');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');

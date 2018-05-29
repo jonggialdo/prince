@@ -1095,7 +1095,7 @@ section
 	border: solid 1px #e5e5e5;
 	margin-left: 29px;
 }
-.quantity_selector span
+.quantity_selector
 {
 	font-weight: 500;
 	color: #232530;
