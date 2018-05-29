@@ -41,7 +41,7 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Email</th>
                     <th>Name</th>
                     <th>Address</th>
@@ -73,19 +73,19 @@
                                     <form  action="/viewuser/{{$user->id}}" method="POST">
                                         <div class="form-group">
                                             <label>Email</label>
-                                            <input type="text" name = "email" class="form-control" placeholder="{{ $user->email }}" value="{{ $user->email }}" required>
+                                            <input type="text" name = "email" class="form-control" value="{{ $user->email }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" name = "name" class="form-control" placeholder="{{ $user->name }}" value="{{ $user->name }}" required>
+                                            <input type="text" name = "name" class="form-control" value="{{ $user->name }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea class="form-control" name = "address" placeholder="{{ $user->address }}" required>{{{ $user->address }}}</textarea>
+                                            <textarea class="form-control" name = "address" required>{{{ $user->address }}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Phone Number</label>
-                                            <input type="text" class="form-control" name = "no_telp"placeholder="{{ $user->no_telp }}" value="{{ $user->no_telp }}" required>
+                                            <input type="text" class="form-control" name = "no_telp" value="{{ $user->no_telp }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="gender">Gender</label>

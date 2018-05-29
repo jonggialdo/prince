@@ -93,9 +93,9 @@ Route::get('/dashboard', function () {
 Route::get('viewproduct/{id}', 'ProductController@show');
 
 Route::get('/viewuser/{id}/edit', 'UserController@edit');
-Route::patch('/viewuser/{id}', 'UserController@update');
+Route::put('/viewuser/{id}', 'UserController@update');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
-Route::patch('/viewproduct/{id}', 'ProductController@update');
+Route::put('/viewproduct/{id}', 'ProductController@update');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');

@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function manage_product()
     {
       $id_admin = 1;
-      $products = Product::latest()->paginate(2);
+      $products = Product::latest()->paginate(10);
       $number = $products->currentPage() * 2;
       $number -=2;
       //dd($users);
@@ -28,8 +28,7 @@ class ProductController extends Controller
 
     public function view()
     {
-      $product = Product::all();
-      return view('admin.create_product',['products'=>$product]);
+      return view('admin.create_product');
     }
 
     public function create(Request $request)
@@ -50,7 +49,6 @@ class ProductController extends Controller
       $product->product_name = $request->product_name;
       $product->description = $request->description;
       $product->price = $request->price;
-      $product->variant = $request->variant;
       // $product->photo_product = $request->photo_product;
       if ($request->hasFile('photo_product'))
       {
@@ -60,10 +58,14 @@ class ProductController extends Controller
             $file->move(public_path().'/images/', $name);
       }
       $product->stock = $request->stock;
-      $product->purchase = $request->purchase;
-      $product->viewer = $request->viewer;
       $product->save();
-      return redirect('admin.view_product',['products'=>$product]);
+
+      $id_admin = 1;
+      $products = Product::latest()->paginate(10);
+      $number = $products->currentPage() * 2;
+      $number -=2;
+      //dd($users);
+      return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
 
     public function show($id)
@@ -80,12 +82,12 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-      $product = Product::where('id', $id)->get();
+      $product = Product::where('id', $id)->first();
+     // dd($request);
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
       $product->description = $request->description;
       $product->price = $request->price;
-      $product->variant = $request->variant;
       // $product->photo_product = $request->photo_product;
       if ($request->hasFile('photo_product'))
       {
@@ -95,10 +97,14 @@ class ProductController extends Controller
             $file->move(public_path().'/images/', $name);
       }
       $product->stock = $request->stock;
-      $product->purchase = $request->purchase;
-      $product->viewer = $request->viewer;
-      $user->save();
-      return redirect('admin.view_product',['products'=>$product]);
+      $product->save();
+
+      $id_admin = 1;
+      $products = Product::latest()->paginate(10);
+      $number = $products->currentPage() * 2;
+      $number -=2;
+      //dd($users);
+      return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
 
     public function delete(Product $product)
