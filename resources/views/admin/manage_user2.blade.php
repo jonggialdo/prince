@@ -41,7 +41,7 @@
                 <table class="table table-hover">
                   <tbody>
                   <tr>
-                    <th>ID</th>
+                    <th>No</th>
                     <th>Email</th>
                     <th>Name</th>
                     <th>Address</th>

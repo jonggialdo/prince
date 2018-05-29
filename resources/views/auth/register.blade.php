@@ -66,8 +66,15 @@
                             <label for="gender" class="col-md-4 control-label">Gender</label>
 
                             <div class="col-md-6">
-                                <input id="gender" type="gender" class="form-control" name="gender" value="{{ old('gender') }}" required autofocus>
-
+                                <div class="form-check">
+                                  <input class="form-check-input" name="gender" type="radio" value="Female">
+                                  <label class="form-check-label">Female</label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" name="gender" type="radio" value="Male">
+                                  <label class="form-check-label">Male</label>
+                                </div>
+                                
                                 @if ($errors->has('gender'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('gender') }}</strong>
@@ -104,19 +111,6 @@
                             </div>
                         </div>
 
-                        <!-- <div class="form-group{{ $errors->has('photo_user') ? ' has-error' : '' }}">
-                            <label for="photo_user" class="col-md-4 control-label">photo_user</label>
-
-                            <div class="col-md-6">
-                                <input id="photo_user" type="file" class="form-control" name="photo_user" value="{{ old('photo_user') }}" required autofocus>
-
-                                @if ($errors->has('photo_user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('photo_user') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div> -->
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
