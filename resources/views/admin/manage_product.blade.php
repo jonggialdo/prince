@@ -82,17 +82,13 @@
                                             <label>Product name</label>
                                             <input type="text" name = "product_name" class="form-control" placeholder="{{ $product->product_name }}" value="{{ $product->product_name }}" required>
                                         </div>
-                                        <div class="form-group">
+                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input type="text" name = "product_name" class="form-control" placeholder="{{ $product->description }}" value="{{ $product->description }}" required>
+                                            <textarea class="form-control" name = "description" required>{{{ $product->description }}}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Price</label>
                                             <input type="text" name = "price" class="form-control" placeholder="{{ $product->price }}" value="{{ $product->price }}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Variant</label>
-                                            <input type="text" name = "variant" class="form-control" placeholder="{{ $product->variant }}" value="{{ $product->variant }}" required>
                                         </div>
                                         <div class="form-group">
                                             <label>Stock</label>
