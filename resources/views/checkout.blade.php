@@ -76,11 +76,8 @@
 						<div class="col-sm-4 invoice-col">
 						To :
 						<address>
-							<strong>Sultan Jonggi Abialdo</strong><br>
-							Jl. Abadi jadi sultan ya jong<br>
-							Kenangan, Jakarta Timur 30121<br>
-							Phone: (021) 359590<br>
-							Email: sultan.jonggi@apps.ipb.ac.id
+							<br>{{ \App\User::where('id','=',\Auth::user()->id)->first()->address }} <br>
+
 						</address>
 						</div>
 						<!-- /.col -->
@@ -110,38 +107,16 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-							<td>1</td>
-							<td>1</td>
-							<td>Call of Duty</td>
-							<td>455-981-221</td>
-							<td>El snort testosterone trophy driving gloves handsome</td>
-							<td>Rp 200.000</td>
-							</tr>
-							<tr>
-							<td>2</td>
-							<td>1</td>
-							<td>Need for Speed IV</td>
-							<td>247-925-726</td>
-							<td>Wes Anderson umami biodiesel</td>
-							<td>Rp 200.000</td>
-							</tr>
-							<tr>
-							<td>3</td>
-							<td>1</td>
-							<td>Monsters DVD</td>
-							<td>735-845-642</td>
-							<td>Terry Richardson helvetica tousled street art master</td>
-							<td>Rp 200.000</td>
-							</tr>
-							<tr>
-							<td>4</td>
-							<td>1</td>
-							<td>Grown Ups Blue Ray</td>
-							<td>422-568-642</td>
-							<td>Tousled lomo letterpress</td>
-							<td>Rp 200.000</td>
-							</tr>
+							@foreach($carts as $key => $cart)
+								<tr>
+								<td>{{ ++$key }}</td>
+								<td>{{ $cart->qnt }}</td>
+								<td>{{ $cart->product['product_name'] }}</td>
+								<td>455-981-221</td>
+								<td>{{ $cart->product['description']}}</td>
+								<td>{{ $cart->subtotal}}</td>
+								</tr>
+							@endforeach
 							</tbody>
 						</table>
 						</div>
@@ -170,8 +145,8 @@
 						<div class="table-responsive">
 							<table class="table">
 							<tr>
-								<th style="width:50%">Subtotal:</th>
-								<td>Rp 800.000</td>
+								<th style="width:50%">Total :</th>
+								<td>{{$total}}</td>
 							</tr>
 							<tr>
 								<th>Tax (10%):</th>

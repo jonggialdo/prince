@@ -82,6 +82,7 @@ Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
+Route::delete('/cart/{cart}/delete', 'CartController@delete')->name('delete.cart');
 Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
@@ -98,6 +99,7 @@ Route::put('/viewproduct/{id}', 'ProductController@update');
 
 Route::post('/categories/{id}', 'CartController@add') -> name('add');
 Route::get('/categories/', 'CartController@view1') -> name('categories');
+Route::get('/checkout/', 'CartController@view2') -> name('checkout');
 Route::get('/cart/', 'CartController@view') -> name('cart');
 //
 // Route::get('form','FormController@create');

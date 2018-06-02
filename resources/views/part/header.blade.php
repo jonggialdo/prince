@@ -37,9 +37,9 @@
                   @endif
 
               <li class="checkout">
-                <a href="#">
-                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                  <span id="checkout_items" class="checkout_items">2</span>
+                <a href="{{ route('cart') }}">
+                  <i class="fa fa-shopping-cart" aria-hidden="true" ></i>
+                  <span id="checkout_items" class="checkout_items"> {{ \App\Cart::where('id_user','=', \Auth::user()->id)->get()->count() }}</span>
                 </a>
               </li>
             </ul>

@@ -25,10 +25,37 @@ class CartController extends Controller
     }
     public function view1(){
       $products = Product::all();
+
       return view('categories',['products' => $products]);
     }
+    public function view2(){
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      return view('checkout',compact('carts','total'));
+    }
     public function view(){
-      $cart = Cart::all();
-      return view('cart',['carts' => $cart]);
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      echo $total;
+      return view('cart',compact('carts','total'));
+    }
+    public function delete(Cart $cart)
+    {
+      $cart->delete();
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      return view('cart',compact('carts','total'));
     }
 }
