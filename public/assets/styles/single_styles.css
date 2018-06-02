@@ -448,13 +448,12 @@ section
 /*********************************
 3.3 Account
 *********************************/
-
 .account
 {
 	display: inline-block;
 	position: relative;
 	min-width: 50px;
-	padding-left: 20px;
+	padding-left: 0px;
 	text-align: center;
 	vertical-align: middle;
 	background: #FFFFFF;
@@ -462,15 +461,18 @@ section
 .account > a
 {
 	display: block;
-	color: #b5aec4;
+	/* color: #b5aec4; */
 	font-weight: 400;
 	height: 50px;
 	line-height: 50px;
 	font-size: 13px;
+	background: #eceff6;
+	border-radius: 50%;
+
 }
 .account > a > i
 {
-	margin-left: 8px;
+	margin-left: 2px;
 }
 .account:hover .account_selection
 {
