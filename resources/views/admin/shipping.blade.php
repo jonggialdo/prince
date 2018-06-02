@@ -43,10 +43,11 @@
                   <tr>
                     <th>No</th>
                     <th>Id_Order</th>
-                    <th>Nama Pembeli</th>
+                    <th>Buyer</th>
                     <th>Time Order</th>
-                    <th>Status</th>
+                    <th>Status Delivery</th>
                     <th>Total</th>
+                    <th>Detail</th>
                   </tr>
                   <tr>
                     <td>1</td>
@@ -56,10 +57,9 @@
                     <td>Lunas</td>
                     <td>Rp 100.000</td>
                     <td>
-                      <div class="btn-group">
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
-                            <i class="fa fa-eye nav-icon"></i>
-                          </button>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
+                        <i class="fa fa-eye nav-icon"></i>
+                      </button>
                           <div class="modal fade" id="modal-edit">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -90,8 +90,6 @@
                               </div>
                               <!-- /.modal-dialog -->
                           </div>                         
-                         
-                      </div>
                     </td>
                   </tr>
                 </tbody>

@@ -5,11 +5,11 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class User extends Model  implements  \Illuminate\Contracts\Auth\Authenticatable
+class User extends Authenticatable
 {
     use AuthenticableTrait;
 
@@ -17,6 +17,7 @@ class User extends Model  implements  \Illuminate\Contracts\Auth\Authenticatable
     {
         return $this->hasOne('App\Role','id');
     }
+
     use Notifiable;
 
     /**
@@ -40,4 +41,24 @@ class User extends Model  implements  \Illuminate\Contracts\Auth\Authenticatable
     protected $guarded = [
       'id', 'role_id',
     ];
+
+    public function cart(){
+        return $this->hasMany('App\Cart');
+    }
+    
+
+    public function verificationToken()
+    {
+      return $this->hasOne(VerificationToken::class);
+    }
+
+    public function hasVerifiedEmail()
+    {
+      return $this->verified;
+    }
+
+    public static function byEmail($email)
+    {
+      return static::where('email', $email);
+    }
 }

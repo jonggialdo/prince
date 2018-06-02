@@ -39,14 +39,15 @@
 			<div class="col">
 
 	<!-- Contentnya -->
+	<div class="callout callout-info">
+					<h1> Cart</h1>
+					</div>
+	@foreach($carts as $cart)
 	<section class="content">
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-12">
-					<div class="callout callout-info">
-					<h1> Cart</h1>
-					</div>
-
+					
 			<!--BARANG KE-1-->				
 			<!-- Main content -->
 			<div class="invoice p-3 mb-3">
@@ -54,7 +55,7 @@
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Rio Al Rasyid
+							<small class="fa fa-share-square-o"></small> Produk karya : {{ $cart->user['name'] }}
 						</h4>
 						</div>
 						<!-- /.col -->
@@ -72,11 +73,40 @@
 							
 							<th>Product</th>
 
-							<th>Quality</th>
+							<th>Quantity</th>
 							
 							<th>Description</th>
 							
 							<th>Subtotal</th>
+							<th>
+							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $cart->id }}" value="{{ $cart->id }}">
+                            <i class="fa fa-trash nav-icon"></i>
+                          </button>
+							 <!-- .modal delete -->
+                          <div class="modal fade" id="modal-delete{{ $cart->id }}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Delete Product</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                    Are you sure want to delete this product?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <form method="POST" action="{{ route('delete.cart', $cart) }}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                      </form>
+                                    </div>
+                                    </form>
+                                  </div>
+                                  <!-- /.modal-content -->
+                              </div>
+                              <!-- /.modal-dialog -->
+                          </div>
+                          </th>
 							</tr>
 							</thead>
 							<tbody>
@@ -84,33 +114,26 @@
 							<td>
 							Dikirim ke :
 							<address>
-								<strong>Sultan Jonggi Abialdo</strong><br>
-								Jl. Abadi jadi sultan ya jong<br>
-								Kenangan, Jakarta Timur 30121<br>
-								Phone: (021) 359590<br>
-								Email: sultan.jonggi@apps.ipb.ac.id
+								<strong> {{ $cart->user['address'] }}</strong><br>
 							</address>
 							</td>
 							
 							<td>
 								<div class="single_product">
-									<li><img src="assets/images/single_1_thumb.jpg"></li>	
+									<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>	
 								</div>
 							</td>
 							
-							<td>Keset Kaki Ajaib</td>
+							<td>{{ $cart->product['name'] }}</td>
 							
 							<td>
-								<div class="quantity_selector">
-									<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-									<span id="quantity_value">1</span>
-									<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</div>
+								{{$cart ->qnt}}
 							</td>
 														
-							<td>Alas kaki anti basah dan air, dijamin keren sekali gan</td>
+							<td>{{$cart->product['description']}}</td>
 							
-							<td>Rp 200.000</td>
+							<td>Rp {{$cart->subtotal}}</td>
+							<td></td>
 							</tr>
 							</tbody>
 						</table>
@@ -121,92 +144,25 @@
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
-
-			<!--BARANG KE-2-->
-			<!-- Main content -->
-			<div class="invoice p-3 mb-3">
-					<!-- title row -->
-					<div class="row">
-						<div class="col-12">
-						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Mile Parizka Yahya
-						</h4>
-						</div>
-						<!-- /.col -->
-					</div>
-					
-					<!-- Table row -->
-					<div class="row">
-						<div class="col-12 table-responsive">
-						<table class="table table-striped">
-							<thead>
-							<tr>
-							<th>Alamat Pengiriman</th>
-
-							<th>Produk</th>
-							
-							<th>Product</th>
-
-							<th>Quality</th>
-							
-							<th>Description</th>
-							
-							<th>Subtotal</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-							<td>
-							Dikirim ke :
-							<address>
-								<strong>Sultan Jonggi Abialdo</strong><br>
-								Jl. Abadi jadi sultan ya jong<br>
-								Kenangan, Jakarta Timur 30121<br>
-								Phone: (021) 359590<br>
-								Email: sultan.jonggi@apps.ipb.ac.id
-							</address>
-							</td>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Tumbler Keren Abis</td>
-							
-							<td>
-								<div class="quantity_selector">
-									<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-									<span id="quantity_value">1</span>
-									<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-								</div>
-							</td>
-														
-							<td>Dijamin keren abis ini produk gan</td>
-							
-							<td>Rp 250.000</td>
-							</tr>
-							</tbody>
-						</table>
-						</div>
-						<!-- /.col -->
-					</div>
-					<!-- /.row -->
-				</div><!-- /.col -->
-				</div><!-- /.row -->
-
-</section>
+			
+	</section>
+	@endforeach
 					
 					<div class="row no-print">
 						<div class="col-12">
+							<a href =" {{ route('checkout') }}">
 							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> 
 								Lakukan Checkout
 							</button>
+							</a>
+							<a href =" {{ route('categories') }}">
 							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
 								Pilih Produk Lainnya
 							</button>
+							</a>
+							<td>Total :  {{ $total }}</td>
 						</div>
+
 					</div>
 
 

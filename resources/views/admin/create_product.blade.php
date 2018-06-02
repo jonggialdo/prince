@@ -28,10 +28,21 @@
                     {{ csrf_field() }}
 
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="id_user">id_user</label>
                         <input type="text" class="form-control" name="id_user" id="id_user" placeholder="id_user" required>
-                    </div>
+                    </div> -->
+
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label"> Nama User </label>
+                        <div class="col-sm-8">
+                            <select class="form-control" name="id_user"  id="id_user" required>
+                              @foreach($users as $user)
+                              <option value="{{$user->id}}">{{$user->name}} </option>
+                              @endforeach
+                            </select>
+                        </div>
+                  </div>
 
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
@@ -47,6 +58,7 @@
                         <label for="price">Price</label>
                         <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
                     </div>
+
                     <!-- <div class="form-group">
                         <label for="photo_product">photo_product</label>
                         <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>

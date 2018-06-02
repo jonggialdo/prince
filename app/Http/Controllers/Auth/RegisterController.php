@@ -7,6 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use Illuminate\Contracts\Auth\Authenticatable;
+
+use Illuminate\Http\Request;
+use Auth;
+
+
 class RegisterController extends Controller
 {
     /*
@@ -27,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+     //protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -67,25 +73,41 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         return User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'gender' => $data['gender'],
             'no_telp' => $data['no_telp'],
             'address' => $data['address'],
-            // 'photo_user' => $data['photo_user']->file('photo_user')->store('photo_user'),
+            'verified' => false
           ]);
       }
 
-        // $order = $order->create([
-        //   'name' => $request->name,
-        //   'email' => $request->email,
-        //   'password' => bcrypt($request->password),
-        //   'gender' => $request->gender,
-        //   'no_telp' => $request->no_telp,
-        //   'address' => $request->address,
-        //   'photo_user' => $request->file('photo_user')->store('users/order/'),
-        // ]);
+      protected function registered(Request $request, $user)
+      {
+          $this->guard()->logout();
+          return redirect('/login')->withInfo('Please verify your email');
+      }
+
+
+    // public function verifyUser($token)
+    // {
+    //     $verifyUser = VerifyUser::where('token', $token)->first();
+    //     if(isset($verifyUser) ){
+    //         $user = $verifyUser->user;
+    //         if(!$user->verified) {
+    //             $verifyUser->user->verified = 1;
+    //             $verifyUser->user->save();
+    //             $status = "Your e-mail is verified. You can now login.";
+    //         }else{
+    //             $status = "Your e-mail is already verified. You can now login.";
+    //         }
+    //     }else{
+    //         return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
+    //     }
+    //
+    //     return redirect('/login')->with('status', $status);
+    // }
 
 }

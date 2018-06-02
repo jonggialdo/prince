@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use Auth;
+use App\User;
 
 class ProductController extends Controller
 {
@@ -22,28 +23,22 @@ class ProductController extends Controller
     public function index()
     {
       //dd($product);
-      $product = Product::find($id);
+      $product = Product::all();
       return view('admin.manage_product',['products'=>$product]);
     }
 
     public function view()
     {
-      return view('admin.create_product');
+      $user = User::where('role_id','2')->get();
+      return view('admin.create_product',['users'=>$user]);
     }
 
     public function create(Request $request)
     {
-      //   'photo_product' => $request->photo_product,
-      //   'stock'                 => $request->stock,
-      //   'purchase'           => $request->purchase,
-      //   'viewer'               => $request->viewer,
-      // ]);
-      //
-      // $photo_product = $request->file('photo_product')->store('photo_product');
-      // $request->product()->update([
-      //   'photo_product' => $photo_product
-      // ]);
-
+      $where = $request->id_user;
+      dd($where);
+      $cek = DB::table('users')->where('id',$where)->get();
+      dd($cek);
       $product = new Product;
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
@@ -94,8 +89,8 @@ class ProductController extends Controller
             $file = $request->file('photo_product');
             $name = $file->getClientOriginalName();
             $product->photo_product = $name;
-            $file->move(public_path().'/images/', $name);                     
-      }   
+            $file->move(public_path().'/images/', $name);
+      }
       $product->stock = $request->stock;
       $product->save();
 
