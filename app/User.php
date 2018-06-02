@@ -42,6 +42,11 @@ class User extends Authenticatable
       'id', 'role_id',
     ];
 
+    public function cart(){
+        return $this->hasMany('App\Cart');
+    }
+    
+
     public function verificationToken()
     {
       return $this->hasOne(VerificationToken::class);

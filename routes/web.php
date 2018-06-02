@@ -50,7 +50,6 @@ Route::get('/create-product', 'SidebarController@create_product')->name('admin.c
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
-Route::get('/categories', 'UserController@view')->name('categories');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
 
@@ -83,6 +82,7 @@ Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
+Route::delete('/cart/{cart}/delete', 'CartController@delete')->name('delete.cart');
 Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
@@ -96,6 +96,11 @@ Route::get('/viewuser/{id}/edit', 'UserController@edit');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
 Route::put('/viewproduct/{id}', 'ProductController@update');
+
+Route::post('/categories/{id}', 'CartController@add') -> name('add');
+Route::get('/categories/', 'CartController@view1') -> name('categories');
+Route::get('/checkout/', 'CartController@view2') -> name('checkout');
+Route::get('/cart/', 'CartController@view') -> name('cart');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');

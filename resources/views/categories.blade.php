@@ -14,6 +14,12 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/categories_responsive.css')}}">
+
+<link rel="stylesheet" href="{{asset('assets/plugins/themify-icons/themify-icons.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_responsive.css')}}">
+
+
 </head>
 
 <body>
@@ -164,7 +170,7 @@
 									<div class="product-item men">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="images/{{$product->photo_product}}" style= "max-weight:100px; max-height:140px" alt="">
+												<img src="/images/{{$product->photo_product}}" alt="">
 											</div>
 											<div class="favorite favorite_left"></div>
 											<div class="product_info">
@@ -172,7 +178,34 @@
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
-										<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
+										<!-- .modal delete -->
+			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
+			                            <div class="modal-dialog">
+			                                <div class="modal-content">
+			                                    <div class="modal-header">
+			                                      <h4 class="modal-title">Select Quantity's</h4>
+			                                    </div>
+			                                    <div class="modal-body">
+			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
+			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+														<span>Quantity:</span>
+														<input type="number" name = "qnt" id="qnt"class="form-control" required>
+													
+													</div>
+			                                    </div>
+			                                    <div class="modal-footer">
+			    			                        {{ csrf_field() }}
+			                                        {{ method_field('POST') }}
+			                                        <button type="submit" class="red_button add_to_cart_button">Add to cart</a></button>
+			                                      </form>
+			                                    </div>
+			                                    </form>
+			                                  </div>
+			                                  <!-- /.modal-content -->
+			                              </div>
+			                              <!-- /.modal-dialog -->
+			                          </div>
 									</div>
 									@endforeach
 								
@@ -195,6 +228,7 @@
 <script src="{{asset('assets/plugins/easing/easing.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/js/categories_custom.js')}}"></script>
+<script src="{{asset('assets/js/single_custom.js')}}"></script>
 </body>
 
 </html>
