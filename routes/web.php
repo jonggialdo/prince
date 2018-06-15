@@ -37,6 +37,14 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+Route::get('/notifikasi', function () {
+    return view('notifikasi');
+});
+
+Route::get('/notifikasi_penjual', function () {
+    return view('notifikasi_penjual');
+});
+
 Route::get('/register', ['as' => 'register'])->name('register');
 Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
