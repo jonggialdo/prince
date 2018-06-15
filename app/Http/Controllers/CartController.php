@@ -15,7 +15,7 @@ class CartController extends Controller
     {
       $product = Product::find($id);
       $cart = New Cart;
-      $cart->id_user = $product->id_user;
+      $cart->id_user = Auth::user()->id;
       $cart->id_product = $id;
       $cart->qnt = $request->qnt;
       $cart->subtotal = $product->price * $request->qnt;
