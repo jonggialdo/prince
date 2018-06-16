@@ -83,6 +83,7 @@
 						<!-- /.col -->
 						<div class="col-sm-4 invoice-col">
 						<b>Payment Due:</b> {{ \Carbon\Carbon::now() }}<br>
+						<b>Transaction Number :</b> {{ 001 }}<br>
 						</div>
 						<!-- /.col -->
 					</div>
@@ -110,7 +111,7 @@
 								<td>{{ $cart->product['product_name'] }}</td>
 								<td>455-981-221</td>
 								<td>{{ $cart->product['description']}}</td>
-								<td>{{ $cart->subtotal}}</td>
+								<td>Rp {{ $cart->subtotal}}</td>
 								</tr>
 							@endforeach
 							</tbody>
@@ -141,20 +142,18 @@
 						<div class="table-responsive">
 							<table class="table">
 							<tr>
-								<th style="width:50%">Total :</th>
-								<td>{{$total}}</td>
-							</tr>
-							<tr>
 								<th>Tax (10%):</th>
-								<td>Rp 80.000</td>
+								@php($tax = 10*$total/100)
+								<td>Rp {{$tax}}</td>
 							</tr>
 							<tr>
 								<th>Shipping:</th>
-								<td>Rp 10.000</td>
+								<td>Rp 10000</td>
 							</tr>
 							<tr>
 								<th>Total:</th>
-								<td>Rp 890.000</td>
+								@php($total = $total+$tax+10000)
+								<td>RP {{ $total}}</td>
 							</tr>
 							</table>
 						</div>
@@ -167,6 +166,7 @@
 					<div class="row no-print">
 						<div class="col-12">
 							<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+							<a href =" {{ route('notifikasi') }}">
 							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
 							Payment
 							</button>

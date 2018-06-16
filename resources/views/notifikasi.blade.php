@@ -49,12 +49,14 @@
 
 			<!--BARANG KE-1-->				
 			<!-- Main content -->
+			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id')->distinct()->get())
+			@foreach($trans as $trans_id)
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : Rio Al Rasyid
+							Transaksi  {{ $trans_id->transaction_id }}
 							<div class="pull-right"> 
                             Status : BELUM DIBAYAR
                             </div>
@@ -63,63 +65,20 @@
 						</div>
 						<!-- /.col -->
 					</div>
-					
-									<!-- Table row -->
-                                    <div class="row">
+					<!-- Table row -->
+                    <div class="row">
 						<div class="col-12 table-responsive">
 						<table class="table table-striped">
                             <!-- bagian atas tabel-->
                             <thead>
 							<tr>
-							<th>Product</th>
-							
-							<th>Product Name</th>
-
-                            <th></th>
-                            
-							</tr>
-							</thead>
-                            
-                            <!-- bagian isi tabel-->
-                            <tbody>
-							<tr>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="/assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Keset Kaki Ajaib</td>
-														
-                            <td>
-                                <div class="pull-right">
-                                
-                                <h5 class="pull-right">
-                                    
-                                        Rp 200.000
-                                    
-                                </h5>
-                                <br>    
-                                    <button type="button" class="btn btn-success" ><i class="fa fa-check"></i> 
-								    Konfirmasi Pembayaran
-							        </button>    
-                                </div>
-                            </td>
-                            
-                            
-							</tr>
-                            </tbody>
-                            
-                            <!-- bagian bawah tabel-->
-                            <thead>
-							<tr>
                             <th colspan="3">
                                 <div class="pull-right">
-                                <h3>Total Rp</h3>
+                                	<a href="{{ route('notifikasi_penjual', ['id' => $trans_id->transaction_id]) }}">
                                     <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
 								    Tampilkan Rincian
-							        </button>    
+							        </button>
+							        </a>    
                                     
                                 </div>
                             </th>
@@ -131,90 +90,15 @@
 						<!-- /.col -->
                     </div>
     
-                    <!-- BARANG KE-2 -->
-                    
-                    <h4>
-						<small class="fa fa-share-square-o"></small> Produk karya : Mile Parizka Yahya
-						<div class="pull-right"> 
-                        Status : BELUM DIBAYAR
-                        </div>
-                    </h4>
-
-					<!-- Table row -->
-					<div class="row">
-						<div class="col-12 table-responsive">
-						<table class="table table-striped">
-                            <!-- bagian atas tabel-->
-                            <thead>
-							<tr>
-							<th>Product</th>
-							
-							<th>Product Name</th>
-
-                            <th></th>
-                            
-							</tr>
-							</thead>
-                            
-                            <!-- bagian isi tabel-->
-                            <tbody>
-							<tr>
-							
-							<td>
-								<div class="single_product">
-									<li><img src="/assets/images/single_1_thumb.jpg"></li>	
-								</div>
-							</td>
-							
-							<td>Keset Kaki Ajaib</td>
-														
-                            <td>
-                                <div class="pull-right">
-                                
-                                <h5 class="pull-right">
-                                    
-                                        Rp 200.000
-                                    
-                                </h5>
-                                <br>    
-                                    <button type="button" class="btn btn-success" ><i class="fa fa-check"></i> 
-								    Konfirmasi Pembayaran
-							        </button>    
-                                </div>
-                            </td>
-                            
-							</tr>
-                            </tbody>
-                            
-                            <!-- bagian bawah tabel-->
-                            <thead>
-							<tr>
-                            <th colspan="3">
-                                <div class="pull-right">
-                                <h3>Total Rp</h3>
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
-								    Tampilkan Rincian
-							        </button>    
-                                    
-                                </div>
-                            </th>
-							</tr>
-                            </thead>
-                            
-                        </table>
-						</div>
-						<!-- /.col -->
                     </div>
 
-
-
+				@endforeach
 					<!-- /.row -->
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
 
-
-</section>
+	</section>
 					
 
 
