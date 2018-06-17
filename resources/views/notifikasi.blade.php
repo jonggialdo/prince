@@ -44,143 +44,62 @@
 				<div class="row">
 				<div class="col-12">
 					<div class="callout callout-info">
-					<h1> Checkout</h1>
+					<h1> Notifikasi</h1>
 					</div>
 
-
-					<!-- Main content -->
-					<div class="invoice p-3 mb-3">
+			<!--BARANG KE-1-->				
+			<!-- Main content -->
+			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id')->distinct()->get())
+			@foreach($trans as $trans_id)
+			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<i class="fa fa-info"></i> Resi Pembelian
-							<small class="float-right">Date: 9/05/2018</small>
-						</h4>
+							Transaksi  {{ $trans_id->transaction_id }}
+							<div class="pull-right"> 
+                            Status : BELUM DIBAYAR
+                            </div>
+                        </h4>
+                            
 						</div>
 						<!-- /.col -->
 					</div>
-					<!-- info row -->
-					<div class="row invoice-info">
-						<div class="col-sm-4 invoice-col">
-						From :
-						<address>
-							<strong>Direktorat Kemahasiswaan IPB Dramaga</strong><br>
-							Jl. Dramaga Raya harus bahagia<br>
-							Bogor, Jawa Barat 30128<br>
-							Phone: (0321) 359590<br>
-							Email: ditmawa@apps.ipb.ac.id
-						</address>
-						</div>
-						<!-- /.col -->
-						<div class="col-sm-4 invoice-col">
-						To :
-						<address>
-							<br>{{ \App\User::where('id','=',\Auth::user()->id)->first()->address }} <br>
-
-						</address>
-						</div>
-						<!-- /.col -->
-						<div class="col-sm-4 invoice-col">
-						<b>Payment Due:</b> {{ \Carbon\Carbon::now() }}<br>
-						<b>Transaction Number :</b> {{ 001 }}<br>
-						</div>
-						<!-- /.col -->
-					</div>
-					<!-- /.row -->
-
 					<!-- Table row -->
-					<div class="row">
+                    <div class="row">
 						<div class="col-12 table-responsive">
 						<table class="table table-striped">
-							<thead>
+                            <!-- bagian atas tabel-->
+                            <thead>
 							<tr>
-							<th>No.</th>
-							<th>Qty</th>
-							<th>Product</th>
-							<th>Serial #</th>
-							<th>Description</th>
-							<th>Subtotal</th>
+                            <th colspan="3">
+                                <div class="pull-right">
+                                	<a href="{{ route('notifikasi_penjual', ['id' => $trans_id->transaction_id]) }}">
+                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
+								    Tampilkan Rincian
+							        </button>
+							        </a>    
+                                    
+                                </div>
+                            </th>
 							</tr>
-							</thead>
-							<tbody>
-							@foreach($carts as $key => $cart)
-								<tr>
-								<td>{{ ++$key }}</td>
-								<td>{{ $cart->qnt }}</td>
-								<td>{{ $cart->product['product_name'] }}</td>
-								<td>455-981-221</td>
-								<td>{{ $cart->product['description']}}</td>
-								<td>Rp {{ $cart->subtotal}}</td>
-								</tr>
-							@endforeach
-							</tbody>
-						</table>
+                            </thead>
+                            
+                        </table>
 						</div>
 						<!-- /.col -->
-					</div>
+                    </div>
+    
+                    </div>
+
+				@endforeach
 					<!-- /.row -->
-
-					<div class="row">
-						<!-- accepted payments column -->
-						<div class="col-6">
-						<p class="lead">Payment Methods:</p>
-						<img src="{{asset('assets/admin/dist/img/credit/visa.png')}}" alt="Visa">
-						<img src="{{asset('assets/admin/dist/img/credit/mastercard.png')}}" alt="Mastercard">
-						<img src="{{asset('assets/admin/dist/img/credit/american-express.png')}}" alt="American Express">
-						<img src="{{asset('assets/admin/dist/img/credit/paypal2.png')}}" alt="Paypal">
-
-						<p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-							Kamu bisa melakukan transaksi dengan metode diatas. Jangan ragu ya, Kami situs terpercaya.
-							Jika ragu, hubungi IPB segera dan tanya aja PRINCE IPB abal abal ga? hehe. Silahkan bayar
-						</p>
-						</div>
-						<!-- /.col -->
-						<div class="col-6">
-						<p class="lead">Amount Due 9/05/2018</p>
-
-						<div class="table-responsive">
-							<table class="table">
-							<tr>
-								<th>Tax (10%):</th>
-								@php($tax = 10*$total/100)
-								<td>Rp {{$tax}}</td>
-							</tr>
-							<tr>
-								<th>Shipping:</th>
-								<td>Rp 10000</td>
-							</tr>
-							<tr>
-								<th>Total:</th>
-								@php($total = $total+$tax+10000)
-								<td>RP {{ $total}}</td>
-							</tr>
-							</table>
-						</div>
-						</div>
-						<!-- /.col -->
-					</div>
-					<!-- /.row -->
-
-					<!-- this row will not appear when printing -->
-					<div class="row no-print">
-						<div class="col-12">
-							<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-							<a href =" {{ route('notifikasi') }}">
-							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
-							Payment
-							</button>
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-							<i class="fa fa-download"></i> Generate PDF
-							</button>
-						</div>
-					</div>
-					</div>
-					<!-- /.invoice -->
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
-			</section>
+
+	</section>
+					
 
 
 				</div>

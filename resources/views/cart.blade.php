@@ -69,9 +69,9 @@
 							<tr>
 							<th>Alamat Pengiriman</th>
 
-							<th>Produk</th>
+							<th>Preview</th>
 							
-							<th>Product</th>
+							<th>Product name</th>
 
 							<th>Quantity</th>
 							
