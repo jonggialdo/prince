@@ -15,7 +15,7 @@ class CartController extends Controller
     {
       $product = Product::find($id);
       $cart = New Cart;
-      $cart->id_user = $product->id_user;
+      $cart->id_user = Auth::user()->id;
       $cart->id_product = $id;
       $cart->qnt = $request->qnt;
       $cart->subtotal = $product->price * $request->qnt;
@@ -23,12 +23,65 @@ class CartController extends Controller
       $products = Product::all();
       return view('categories',['products' => $products]);
     }
+    public function details($id)
+    {
+      $carts = Cart::where('transaction_id','=',$id)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      return view('notifikasi_penjual',['carts' => $carts,'total' => $total]);
+    }
     public function view1(){
       $products = Product::all();
+
       return view('categories',['products' => $products]);
     }
+    public function viewCheckout(){
+      $products = Product::all();
+
+      return view('categories',['products' => $products]);
+    }
+    public function notifikasi_view(){
+      return view('notifikasi');
+    }
+    public function submit(){
+      $id = Auth::user()->id;
+      $mx = Cart::max('transaction_id');
+      $mx = $mx + 1;
+      Cart::where('id_user','=',$id)->where('checkout_status','=',0)->update(['transaction_id' => $mx]);
+      Cart::where('id_user','=',$id)->where('checkout_status','=',0)->update(['checkout_status' => 1]);
+      $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',1)->orderBy('transaction_id','asc')->get();
+      return view('notifikasi',compact('carts'));
+    }
+    public function view2(){
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',0)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      return view('checkout',compact('carts','total'));
+    }
     public function view(){
-      $cart = Cart::all();
-      return view('cart',['carts' => $cart]);
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',0)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      echo $total;
+      return view('cart',compact('carts','total'));
+    }
+    public function delete(Cart $cart)
+    {
+      $cart->delete();
+      $id = Auth::user()->id;
+      $carts = Cart::where('id_user','=',$id)->get();
+      $total = 0;
+      foreach($carts as $cart){
+        $total = $total + $cart->subtotal;
+      }
+      return view('cart',compact('carts','total'));
     }
 }

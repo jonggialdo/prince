@@ -37,6 +37,14 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+Route::get('/notifikasi', function () {
+    return view('notifikasi');
+});
+
+Route::get('/notifikasi_penjual', function () {
+    return view('notifikasi_penjual');
+});
+
 Route::get('/register', ['as' => 'register'])->name('register');
 Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
@@ -82,6 +90,7 @@ Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
+Route::delete('/cart/{cart}/delete', 'CartController@delete')->name('delete.cart');
 Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
@@ -98,6 +107,10 @@ Route::put('/viewproduct/{id}', 'ProductController@update');
 
 Route::post('/categories/{id}', 'CartController@add') -> name('add');
 Route::get('/categories/', 'CartController@view1') -> name('categories');
+Route::get('/checkout/', 'CartController@view2') -> name('checkout');
+Route::get('/notifikasiSubmit/', 'CartController@submit') -> name('notifikasi');
+Route::get('/notifikasi/', 'CartController@notifikasi_view') -> name('notifikasi_view');
+Route::get('/notifikasi/{id}', 'CartController@details') -> name('notifikasi_penjual');
 Route::get('/cart/', 'CartController@view') -> name('cart');
 //
 // Route::get('form','FormController@create');
