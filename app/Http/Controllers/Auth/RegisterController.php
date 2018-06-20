@@ -61,7 +61,6 @@ class RegisterController extends Controller
             'no_telp' => 'required',
             'address' => 'required',
             'gender' => 'required',
-            // 'photo_user' => 'required',
         ]);
     }
 

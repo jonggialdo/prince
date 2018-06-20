@@ -39,13 +39,13 @@
                 </a>
                 @if (!Auth::check())
                   <ul class="account_selection">
-                    <li><a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                    <li><a href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                    <li><a href="{{ route('login') }}">SignIn</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
                   </ul>
                   @else
                   <ul class="account_selection">
-                    <li><a href="{{ route('profile') }}"><i class="fa fa-user-circle" aria-hidden="true"></i>Profile</a></li>
-                    <li><a href="{{ URL::route('account-sign-out') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    <li><a href="{{ route('profile') }}">Profile</a></li>
+                    <li><a href="{{ URL::route('account-sign-out') }}">Logout</a></li>
                   </ul>
                   @endif
 

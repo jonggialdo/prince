@@ -18,11 +18,11 @@
   
     
 </head>
+@include('part.header')
 
-<body>
+<body style="padding-top:150px">
 
-    <!-- @include('part.header') -->
-
+   
     @yield('content')
     
     <!-- Scripts -->
