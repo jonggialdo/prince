@@ -68,11 +68,11 @@
                             <div class="col-md-6">
                                 <div class="form-check">
                                   <input class="form-check-input" name="gender" type="radio" value="Female">
-                                  <label class="form-check-label">Female</label>
+                                  <label class="form-check-label"> Female</label>
                                 </div>
                                 <div class="form-check">
                                   <input class="form-check-input" name="gender" type="radio" value="Male">
-                                  <label class="form-check-label">Male</label>
+                                  <label class="form-check-label"> Male</label>
                                 </div>
                                 
                                 @if ($errors->has('gender'))
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('no_telp') ? ' has-error' : '' }}">
-                            <label for="no_telp" class="col-md-4 control-label">no_telp</label>
+                            <label for="no_telp" class="col-md-4 control-label">Phone</label>
 
                             <div class="col-md-6">
                                 <input id="no_telp" type="no_telp" class="form-control" name="no_telp" value="{{ old('no_telp') }}" required autofocus>

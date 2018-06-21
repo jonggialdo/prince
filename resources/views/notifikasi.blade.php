@@ -58,7 +58,11 @@
 						<h4>
 							Transaksi  {{ $trans_id->transaction_id }}
 							<div class="pull-right"> 
+							@if ($trans_id->status_payment == "0")
                             Status : BELUM DIBAYAR
+							@else
+							Status : LUNAS
+							@endif
                             </div>
                         </h4>
                             
