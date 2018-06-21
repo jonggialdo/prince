@@ -25,8 +25,8 @@ class ProductController extends Controller
       //dd($product);
       $id_user = Product::select('id_user');
       $product = Product::all();
-      $user = User::where('id', $id_user)->get();
-      return view('admin.manage_product',['products'=>$product], ['users'=>$user]);
+      $users = User::where('id', $id_user)->get();
+      return view('admin.manage_product',['products'=>$product], ['users'=>$users]);
     }
 
     public function view()

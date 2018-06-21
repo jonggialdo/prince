@@ -50,7 +50,6 @@
                     <th>Viewer</th>
                   </tr>
                   @foreach($products as $product)
-                  @foreach($users as $user)
                   <tr>
                     <td>{{ $number+=1 }}</td>
                     <th>{{$product->product_name}}</th>
@@ -101,10 +100,15 @@
                                             <label>Viewer</label>
                                             <input type="text" name = "viewer" class="form-control" placeholder="{{ $product->viewer }}" value="{{ $product->viewer }}" required>
                                         </div>
+
+
                                         <div class="form-group">
+                                          @if($product->user()->id == $product->user_id)
                                             <label>Nama User</label>
-                                            <input type="text" name = "viewer" class="form-control" placeholder="{{ $product->viewer }}" value="{{ $product->viewer }}" required>
+                                            <input type="text" name = "nama" class="form-control" placeholder="{{ $product->user()->name }}" value="{{ $product->user()>name }}" required>
+                                            @endif
                                         </div>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
@@ -148,7 +152,6 @@
                       </div>
                     </td>
                   </tr>
-                  @endforeach
                   @endforeach
                 </tbody>
               </table>

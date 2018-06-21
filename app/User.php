@@ -18,6 +18,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Role','id');
     }
 
+    public function product()
+    {
+      return $this->belongsToMany('App\Product');
+    }
+
     use Notifiable;
 
     /**
@@ -45,7 +50,7 @@ class User extends Authenticatable
     public function cart(){
         return $this->hasMany('App\Cart');
     }
-    
+
 
     public function verificationToken()
     {
