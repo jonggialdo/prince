@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Product;
 use Auth;
 
 class HomeController extends Controller
@@ -26,9 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $products = Product::all();
         if (is_null($user))  return view('auth.login');
         if ($user->role_id == 3){
-            return view('index',compact('user'));
+            return view('index',compact('user','products'));
         }
         if ($user->role_id == 1){
             return view('admin.index',compact('user'));
