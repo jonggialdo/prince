@@ -12,32 +12,13 @@ use App\VerifyUser;
 
 class UserController extends Controller
 {
-  public function manage_user(){
+  public function index(){
     $id_admin = 1;
     $users = User::latest()->paginate(2);
     $number = $users->currentPage() * 2;
     $number -=2;
     //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
-  }
-
-  public function index()
-  {
-    $user = User::all();
-    dd($user);
-    return view('admin.manage_user2', ['users'=>$user]);
-  }
-
-  public function show($id)
-  {
-    $user = User::find($id);
-    return view('admin.single_user',['users' => $user] );
-  }
-
-  public function view()
-  {
-    $products = Product::all();
-    return view('categories',['products' => $products]);
   }
 
   public function create(Request $request)
@@ -53,12 +34,6 @@ class UserController extends Controller
     $user->save();
 
     return redirect()->route('admin.manage_user')->withSuccess('New user is created');
-  }
-
-  public function edit($id)
-  {
-    $user = User::find($id);
-    return redirect()->route('admin.manage_user');
   }
 
   public function update(Request $request, $id)

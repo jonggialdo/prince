@@ -47,7 +47,7 @@
 	                            <input type="text" name = "address" value="{{$user->address}}" >
 	                        </div>
                     </div>
-                    <button type="submit" name="submit" class="red_button d-flex flex-row align-items-center justify-content-center"><a href="#">Save</a></button></div> 
+                    <button type="submit" name="submit" class="btn btn-success d-flex flex-row align-items-center justify-content-center"><a href="#">Save</a></button></div> 
                     {{ csrf_field() }}
 				</div>
 				<input type="hidden" name="_method" value="PUT">
