@@ -74,6 +74,55 @@
 				<div class="col">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
+<<<<<<< HEAD
+						<div class="product-grid">
+
+									@foreach($products as $product)
+									<!-- Product semua -->
+
+									<div class="product-item men">
+										<div class="product discount product_filter">
+											<div class="product_image">
+												<img src="/images/{{$product->photo_product}}" alt="">
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<div class="product_price"> Rp {{$product->price}}</div>
+											</div>
+										</div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
+									  <!-- .modal delete -->
+			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
+			                            <div class="modal-dialog">
+			                                <div class="modal-content">
+			                                    <div class="modal-header">
+			                                      <h4 class="modal-title">Select Quantity's</h4>
+			                                    </div>
+			                                    <div class="modal-body">
+			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
+			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+														<span>Quantity:</span>
+														<input type="number" name = "qnt" id="qnt"class="form-control" required>
+													
+													</div>
+			                                    </div>
+			                                    <div class="modal-footer">
+			    			                        {{ csrf_field() }}
+			                                        {{ method_field('POST') }}
+			                                        <button type="submit" class="red_button add_to_cart_button">Add to cart</a></button>
+			                                      </form>
+			                                    </div>
+			                                    </form>
+			                                  </div>
+			                                  <!-- /.modal-content -->
+			                              </div>
+			                              <!-- /.modal-dialog -->
+			                          </div>
+									</div>
+									@endforeach
+								
+=======
 						<!-- Product 1 -->
 
 						<div class="product-item men">
@@ -105,9 +154,9 @@
 									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
 									<div class="product_price">$180.00</div>
 								</div>
+>>>>>>> 42ef39dead95f446e0ff324b4a2b3e456f523cf3
 							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

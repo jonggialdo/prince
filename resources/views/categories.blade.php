@@ -184,7 +184,9 @@
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										
-
+										</div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
+									 
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
 			                            <div class="modal-dialog">

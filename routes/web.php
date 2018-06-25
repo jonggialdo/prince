@@ -83,8 +83,7 @@ Route::get('/profile', array(
 ));
 
 // Route::resource('admin', 'UserController');
-Route::get('/viewuser', 'UserController@index');
-Route::get('/create', 'UserController@view');
+Route::get('/manage-user', 'UserController@index')->name('admin.manage_user');
 Route::post('/create','UserController@create')->name('create_user');
 Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
@@ -99,9 +98,6 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('viewproduct/{id}', 'ProductController@show');
-
-Route::get('/viewuser/{id}/edit', 'UserController@edit');
-Route::put('/viewuser/{id}', 'UserController@update');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
 Route::put('/viewproduct/{id}', 'ProductController@update');
 
@@ -119,8 +115,3 @@ Route::get('/cart/', 'CartController@view') -> name('cart');
 // Route::get('viewform/{id}', 'FormController@view');
 
 //Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
-Route::get('/verify/token/{token}', 'Auth\VerificationController@verify')->name('auth.verify');
-
-Route::get('/verify/resend', 'Auth\VerificationController@resend')->name('auth.verify.resend');
-	

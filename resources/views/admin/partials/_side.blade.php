@@ -92,15 +92,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-sticky-note-o"></i>
-              <p>
-                Review
-              </p>
-            </a>
-
-          </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

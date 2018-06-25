@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
   <!-- Date Picker -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/datepicker/datepicker3.css') }}">
+  <!-- select2 -->
+  <link rel="stylesheet" href="{{ asset('assets/admin/plugins/select2/select2.min.css') }}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/daterangepicker/daterangepicker-bs3.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->

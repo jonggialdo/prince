@@ -46,26 +46,117 @@
 					<div class="callout callout-info">
 					<h1> Notifikasi</h1>
 					</div>
+			@if (Auth::user()->role_id == 2)
+			@foreach($carts as $cart)
+			<section class="content">
+					<div class="container-fluid">
+						<div class="row">
+						<div class="col-12">
 
-			<!--BARANG KE-1-->				
+					<!--BARANG KE-1-->
+					<!-- Main content -->
+					<div class="invoice p-3 mb-3">
+							<!-- title row -->
+							<div class="row">
+								<div class="col-12">
+								</div>
+								<!-- /.col -->
+							</div>
+
+							<!-- Table row -->
+							<div class="row">
+								<div class="col-12 table-responsive">
+								<table class="table table-striped">
+									<thead>
+									<tr>
+									<th>Alamat Pengiriman</th>
+
+									<th>Preview</th>
+
+									<th>Product name</th>
+
+									<th>Quantity</th>
+
+									<th>Description</th>
+
+									<th>Subtotal</th>
+
+									<th>Nama Penjual</th>
+									<th>Status pembelian</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+									<td>
+									Dikirim ke :
+									<address>
+										<strong> {{ $cart->user['address'] }}</strong><br>
+									</address>
+									</td>
+
+									<td>
+										<div class="single_product">
+											<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>
+										</div>
+									</td>
+
+									<td>{{ $cart->product['product_name'] }}</td>
+									<td>{{$cart->product['description']}}</td>
+
+									<td>{{$cart->qnt}}</td>
+
+									<td>Rp {{$cart->subtotal}}</td>
+									<td> {{ $cart->user['name'] }}</td>
+
+									@if ($cart->transaction_status == 0)
+												<td> BELUM BAYAR </td>
+									@endif
+									@if ($cart->transaction_status == 1)
+											 <td> BAYAR </td>
+									@endif
+									@if ($cart->transaction_status == 2)
+											<td> SEDANG DIKIRIM </td>
+									@endif
+									@if ($cart->transaction_status == 3)
+											<td> SELESAI </td>
+									@endif
+									</tr>
+									</tbody>
+								</table>
+								</div>
+								<!-- /.col -->
+							</div>
+							<!-- /.row -->
+						</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.container-fluid -->
+
+			</section>
+			@endforeach
+			@else
+			<!--BARANG KE-1-->
 			<!-- Main content -->
-			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id')->distinct()->get())
+			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id','date_insert')->distinct()->get())
 			@foreach($trans as $trans_id)
+			@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
+			@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
+			@if ($totalDuration < 60)
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
 						<div class="col-12">
 						<h4>
 							Transaksi  {{ $trans_id->transaction_id }}
-							<div class="pull-right"> 
+							<div class="pull-right">
 							@if ($trans_id->status_payment == "0")
                             Status : BELUM DIBAYAR
 							@else
-							Status : LUNAS
+							Status : {{ $trans_id->date_insert }}
+							Status : {{ Carbon\Carbon::now() }}
 							@endif
                             </div>
                         </h4>
-                            
+
 						</div>
 						<!-- /.col -->
 					</div>
@@ -79,39 +170,40 @@
                             <th colspan="3">
                                 <div class="pull-right">
                                 	<a href="{{ route('notifikasi_penjual', ['id' => $trans_id->transaction_id]) }}">
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
+                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
 								    Tampilkan Rincian
 							        </button>
-							        </a>    
-                                    
+							        </a>
+
                                 </div>
                             </th>
 							</tr>
                             </thead>
-                            
+
                         </table>
 						</div>
 						<!-- /.col -->
                     </div>
-    
-                    </div>
 
+                    </div>
+                @endif
 				@endforeach
+				@endif
 					<!-- /.row -->
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
 
 	</section>
-					
+
 
 
 				</div>
 			</div>
 		</div>
 
-		
-		
+
+
 
 @include('part.footer');
 

@@ -23,8 +23,10 @@ class ProductController extends Controller
     public function index()
     {
       //dd($product);
+      $id_user = Product::select('id_user');
       $product = Product::all();
-      return view('admin.manage_product',['products'=>$product]);
+      $users = User::where('id', $id_user)->get();
+      return view('admin.manage_product',['products'=>$product], ['users'=>$users]);
     }
 
     public function view()
@@ -35,10 +37,8 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
-      $where = $request->id_user;
-      dd($where);
-      $cek = DB::table('users')->where('id',$where)->get();
-      dd($cek);
+      // $where = $request->id_user;
+
       $product = new Product;
       $product->id_user = $request->id_user;
       $product->product_name = $request->product_name;
