@@ -43,7 +43,7 @@ class UserController extends Controller
   public function create(Request $request)
   {
     $user = new User;
-  //  $user->role_id = $request->role_id;
+    $user->role_id = 2;
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = bcrypt($request->password);

@@ -18,6 +18,7 @@ class CartController extends Controller
       $cart->id_user = Auth::user()->id;
       $cart->id_product = $id;
       $cart->qnt = $request->qnt;
+      $cart->id_seller = $product->id_user;
       $cart->subtotal = $product->price * $request->qnt;
       $cart->save();
       $products = Product::all();
@@ -43,6 +44,11 @@ class CartController extends Controller
       return view('categories',['products' => $products]);
     }
     public function notifikasi_view(){
+      $id = Auth::user()->id;
+      if (Auth::user()->role_id == 2){
+        $carts = Cart::where('id_seller','=',$id)->where('checkout_status','=',1)->get();
+        return view('notifikasi',compact('carts'));
+      }
       return view('notifikasi');
     }
     public function submit(){
