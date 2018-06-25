@@ -108,16 +108,16 @@
 									<td>Rp {{$cart->subtotal}}</td>
 									<td> {{ $cart->user['name'] }}</td>
 
-									@if ($cart->transaction_status == 1)
+									@if ($cart->transaction_status == 0)
 												<td> BELUM BAYAR </td>
 									@endif
-									@if ($cart->transaction_status == 2)
+									@if ($cart->transaction_status == 1)
 											 <td> BAYAR </td>
 									@endif
-									@if ($cart->transaction_status == 3)
+									@if ($cart->transaction_status == 2)
 											<td> SEDANG DIKIRIM </td>
 									@endif
-									@if ($cart->transaction_status == 4)
+									@if ($cart->transaction_status == 3)
 											<td> SELESAI </td>
 									@endif
 									</tr>
