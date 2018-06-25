@@ -18,6 +18,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Role','id');
     }
 
+    public function product()
+    {
+      return $this->belongsToMany('App\Product');
+    }
+
     use Notifiable;
 
     /**
@@ -45,20 +50,5 @@ class User extends Authenticatable
     public function cart(){
         return $this->hasMany('App\Cart');
     }
-    
 
-    public function verificationToken()
-    {
-      return $this->hasOne(VerificationToken::class);
-    }
-
-    public function hasVerifiedEmail()
-    {
-      return $this->verified;
-    }
-
-    public static function byEmail($email)
-    {
-      return static::where('email', $email);
-    }
 }
