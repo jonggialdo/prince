@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
+
 class ResetPasswordController extends Controller
 {
     /*
@@ -19,7 +22,6 @@ class ResetPasswordController extends Controller
     */
 
     use ResetsPasswords;
-
 
     /**
      * Where to redirect users after resetting their password.
@@ -38,14 +40,10 @@ class ResetPasswordController extends Controller
         $this->middleware('guest');
     }
 
-    protected function sendResetResponse($response)
-    {
-      if(!$this->guard()->user()->hasVerifiedEmail()) {
-          $this->guard()->logout();
-          return redirect('/login')->withInfo('Password changed successfully. Please verify your email');
-      }
-      return redirect($this->redirectPath())
-                        ->with('status', trans($response));
-    }
-
+    /**
+     * Get the response for a successful password reset.
+     *
+     * @param  string  $response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
 }

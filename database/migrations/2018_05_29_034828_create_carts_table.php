@@ -20,6 +20,11 @@ class CreateCartsTable extends Migration
             $table->integer('qnt');
             $table->integer('subtotal');
             $table->integer('transaction_id');
+<<<<<<< HEAD
+            $table->string('date_insert')->default('1');
+=======
+            $table->boolean('checkout_status')->default(false);
+>>>>>>> 2e35d2db26f0b982d73d6a42b195a33470b245ac
             $table->timestamps();
         });
     }

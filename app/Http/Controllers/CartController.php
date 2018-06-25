@@ -49,7 +49,9 @@ class CartController extends Controller
       $id = Auth::user()->id;
       $mx = Cart::max('transaction_id');
       $mx = $mx + 1;
+      $now = \Carbon\Carbon::now();
       Cart::where('id_user','=',$id)->where('checkout_status','=',0)->update(['transaction_id' => $mx]);
+      Cart::where('id_user','=',$id)->where('checkout_status','=',0)->update(['date_insert' => $now]);
       Cart::where('id_user','=',$id)->where('checkout_status','=',0)->update(['checkout_status' => 1]);
       $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',1)->orderBy('transaction_id','asc')->get();
       return view('notifikasi',compact('carts'));

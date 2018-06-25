@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
           $table->integer('price');
           $table->string('photo_product');
           $table->string('stock')->default('0');
-          $table->integer('purchase');
-          $table->integer('viewer');
+          $table->integer('purchase')->default('0');
+          $table->integer('viewer')->default('0');
           $table->timestamps();
         });
     }

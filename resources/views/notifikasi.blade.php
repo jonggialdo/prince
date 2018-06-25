@@ -49,8 +49,11 @@
 
 			<!--BARANG KE-1-->				
 			<!-- Main content -->
-			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id')->distinct()->get())
+			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id','date_insert')->distinct()->get())
 			@foreach($trans as $trans_id)
+			@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
+			@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
+			@if ($totalDuration < 60)
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
@@ -61,7 +64,8 @@
 							@if ($trans_id->status_payment == "0")
                             Status : BELUM DIBAYAR
 							@else
-							Status : LUNAS
+							Status : {{ $trans_id->date_insert }}
+							Status : {{ Carbon\Carbon::now() }}
 							@endif
                             </div>
                         </h4>
@@ -95,7 +99,7 @@
                     </div>
     
                     </div>
-
+                @endif
 				@endforeach
 					<!-- /.row -->
 				</div><!-- /.col -->
