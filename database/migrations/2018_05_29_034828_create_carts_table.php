@@ -24,7 +24,6 @@ class CreateCartsTable extends Migration
             $table->integer('id_seller')->default(0);
             $table->string('date_insert')->default('1');
             $table->integer('transaction_status')->default(0);
->>>>>>> 658f06835cc89f5e9da55d6ae859481e53418a72
             $table->timestamps();
         });
     }
