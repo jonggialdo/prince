@@ -48,6 +48,7 @@
                     <th>Stock</th>
                     <th>Purchase</th>
                     <th>Viewer</th>
+                    <th>Nama User</th>
                   </tr>
                   @foreach($products as $product)
                   <tr>
@@ -58,6 +59,7 @@
                     <th>{{$product->stock}}</th>
                     <th>{{$product->purchase}}</th>
                     <th>{{$product->viewer}}</th>
+                    <th>{{$product->user['name']}}</th>
                     <td>
                       <div class="btn-group">
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{ $product->id }}" value="{{ $product->id }}">
@@ -103,10 +105,9 @@
 
 
                                         <div class="form-group">
-                                          @if($product->user()->id == $product->user_id)
                                             <label>Nama User</label>
-                                            <input type="text" name = "nama" class="form-control" placeholder="{{ $product->user()->name }}" value="{{ $product->user()>name }}" required>
-                                            @endif
+                                            <input type="text" name = "nama" class="form-control" placeholder="{{ $product->user['name'] }}" value="{{ $product->user['name'] }}" required>
+
                                         </div>
 
                                     </div>

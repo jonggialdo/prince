@@ -36,12 +36,22 @@
                               <option value="{{$user->id}}">{{$user->name}} </option>
                               @endforeach
                             </select>
-                       
-                  </div>
+                    </div>
                   
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
                         <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter product's name">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label">Category</label>
+                            <select class="form-control select2" data-placeholder="Select category"
+                                style="width: 100%;" name="category" id="category" required>
+                                <option value="" disabled selected hidden>Select category</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Pertanian">Pertanian</option>
+                                <option value="Teknonogi">Teknologi</option>
+                            </select>
                     </div>
 
                     <div class="form-group">
@@ -71,28 +81,14 @@
                         <input type="number" class="form-control" name="stock" id="stock" min="1" value="1" required>
                     </div>
 
-
-
-                    <!-- <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <div class="form-check">
-                            <input class="form-check-input" name="gender" type="radio" value="Female">
-                            <label class="form-check-label">Female</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" name="gender" type="radio" value="Male">
-                            <label class="form-check-label">Male</label>
-                        </div>
-
                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <textarea class="form-control" rows="3" name="address"
-                        placeholder="Enter address..." required autofocus></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="no_telp">Phone Number</label>
-                        <input type="text" align="middle" class="form-control" name="no_telp" value="" required autofocus id="name" placeholder="Enter phone number">
-                    </div> -->
+                      <label class="control-label">Category</label>
+                            <select class="form-control select2" data-placeholder="Select a State"
+                                style="width: 100%;" name="id_user" id="id_user" required>
+                                <option value="" disabled selected hidden>Select Category</option>
+                                
+                            </select>
+
 
                 <!-- <div class="card-footer"> -->
                   <button type="submit" name="submit" value="Create" class="btn btn-success pull-right">

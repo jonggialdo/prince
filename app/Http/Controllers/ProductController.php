@@ -2,32 +2,33 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use Auth;
 use App\User;
+use App\Cart;
 
 class ProductController extends Controller
 {
     public function manage_product()
     {
       $id_admin = 1;
-      $products = Product::latest()->paginate(10);
+
+      $users = DB::table('users')->pluck('id')->all();
+
+      $products = Product::latest()->where('id_user','=',$users)->paginate(10);
       $number = $products->currentPage() * 2;
       $number -=2;
-      //dd($users);
+
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
-    public function index()
-    {
-      //dd($product);
-      $id_user = Product::select('id_user');
-      $product = Product::all();
-      $users = User::where('id', $id_user)->get();
-      return view('admin.manage_product',['products'=>$product], ['users'=>$users]);
-    }
+    // public function index()
+    // {
+    //   $id = Auth::user()->id;
+    //   $products = Product::where('id_user','=',$id)->get();
+    //   return view('admin.manage_product',compact('products'));
+    // }
 
     public function view()
     {
@@ -53,6 +54,7 @@ class ProductController extends Controller
             $file->move(public_path().'/images/', $name);
       }
       $product->stock = $request->stock;
+      $product->category = $request->category;
       $product->save();
 
       $id_admin = 1;
