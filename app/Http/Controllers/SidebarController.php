@@ -15,11 +15,12 @@ class SidebarController extends Controller
     }
 
     public function create_product(){
-        return view('admin.create_product');
+        $user = User::where('role_id','2')->get();
+        return view('admin.create_product',['users'=>$user]);
     }
 
     public function manage_product(){
-        $product = Product::find(3);
+        $product = Product::All();
         return view('admin.manage_product',['product' => $product]);
     }
     public function payment(){
