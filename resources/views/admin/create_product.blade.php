@@ -64,11 +64,6 @@
                         <input type="number" class="form-control" name="price" id="price" min="0" required>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="photo_product">photo_product</label>
-                        <input type="text" class="form-control" name="photo_product" id="photo_product" placeholder="variant" required>
-                    </div> -->
-
                     <div class="form-group">
                         <label for="photo_product" class="col-md-4 control-label">Photo Product</label>
                         <div class="col-md-6">
