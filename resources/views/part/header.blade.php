@@ -20,8 +20,8 @@
             <ul class="navbar_user">
               <li>
               <div id="sb-search" class="sb-search">
-                <form action="{{ url('search' )}}">
-                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+                <form action="{{ route('searchFP') }}">
+                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" value="" name="searchFP" id="searchFP">
                     <input class="sb-search-submit" type="submit" value="">
                     <span class="sb-icon-search"></span>
                 </form>

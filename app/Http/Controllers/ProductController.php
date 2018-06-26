@@ -92,14 +92,7 @@ class ProductController extends Controller
       return redirect('manage-product');
     }
 
-    public function search(Request $request)
-    {
-      $searchdata =  $request->search;
+  
 
-      $datas = DB::table('products')
-      ->where('product_name', 'like', '%' . $searchdata . '%')
-      ->get(  );
 
-      return view('search', compact('searchdata','datas'));
-    }
 }

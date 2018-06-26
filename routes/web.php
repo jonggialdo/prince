@@ -107,7 +107,8 @@ Route::get('/notifikasi/', 'CartController@notifikasi_view') -> name('notifikasi
 Route::get('/notifikasi/{id}', 'CartController@details') -> name('notifikasi_penjual');
 Route::get('/cart/', 'CartController@view') -> name('cart');
 
-Route::get('/search', 'ProductController@search');
+Route::get('/search', 'SearchController@searchFP')->name('searchFP');
+Route::get('/searchproduct', 'SearchController@searchProductAdmin')->name('searchProductAdmin');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');
