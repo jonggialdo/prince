@@ -30,7 +30,7 @@
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}">
                   <i class="fa fa-bell" aria-hidden="true"></i>
-                  <span id="checkout_items" class="checkout_items">2</span>
+                  <span id="checkout_items" class="checkout_items">0</span>
                 </a>
               </li>
                 <li class="checkout">

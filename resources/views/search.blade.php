@@ -19,6 +19,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_responsive.css')}}">
 
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/main_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
+
 
 </head>
 
@@ -50,68 +53,13 @@
 						<div class="sidebar_title">
 							<h5>Product Category</h5>
 						</div>
-						<ul class="sidebar_categories">
-							<li><a href="#">Teknologi</a></li>
-							<li><a href="#">Pertanian</a></li>
-							<li><a href="#">Umum</a></li>
-
-							<!-- <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li> -->
-
+						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">TEKNOLOGI</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">PERTANIAN</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">UMUM</li>
 						</ul>
 					</div>
-
-				<!-- Price Range Filtering
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Filter by Price</h5>
-						</div>
-						<p>
-							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-						</p>
-						<div id="slider-range"></div>
-						<div class="filter_button"><span>filter</span></div>
-					</div>
-				 -->
-
-				<!-- Sizes
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Sizes</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>S</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>M</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>L</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
-						</ul>
-					</div>
-				-->
-
-				<!-- Color
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Color</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Black</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Pink</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-						</ul>
-						<div class="show_more">
-							<span><span>+</span>Show More</span>
-						</div>
-					</div>
-				-->
-
 				</div>
 
 				<!-- Main Content -->
@@ -168,22 +116,25 @@
 								<div class="product-grid">
 
 									@foreach($datas as $data)
-									<!-- search-->
+									<!-- Product semua -->
 
-									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; height:250px; width: 250px; margin-right:5px; ">
+									<div class="product-item men" style="position: absolute;left: 0px;top: 0px;  width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$data->photo_product}}" alt style="height:250px; width: 250px;">
+												<img src="/images/{{$data->photo_product}}" alt="">
 											</div>
-										</div>
-										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}"><a href="#">add to cart</a></div>
-
+										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$data->price}}</div>
 											</div>
-
+										</div>
+									<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}" style="width: 218px;">
+										<a href="#">add to cart</a></div>
+										
+										
+												
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $data->id }}">
 			                            <div class="modal-dialog">
@@ -192,7 +143,7 @@
 			                                      <h4 class="modal-title">Select Quantity's</h4>
 			                                    </div>
 			                                    <div class="modal-body">
-			                                    <form method="POST" action="{{ route('add', ['id 	' => $data->id]) }}">
+			                                    <form method="POST" action="{{ route('add', ['id' => $data->id]) }}">
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 
@@ -235,6 +186,7 @@
 <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/js/categories_custom.js')}}"></script>
 <script src="{{asset('assets/js/single_custom.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
 </body>
 
 </html>

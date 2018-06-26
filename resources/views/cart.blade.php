@@ -55,7 +55,7 @@
 					<div class="row">
 						<div class="col-12">
 						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : {{ $cart->user['name'] }}
+							<small class="fa fa-share-square-o"></small> Produk karya : {{ $cart->buyer['name'] }}
 						</h4>
 						</div>
 						<!-- /.col -->
@@ -114,7 +114,7 @@
 							<td>
 							Dikirim ke :
 							<address>
-								<strong> {{ $cart->user['address'] }}</strong><br>
+								<strong> {{ $cart->buyer['address'] }}</strong><br>
 							</address>
 							</td>
 							

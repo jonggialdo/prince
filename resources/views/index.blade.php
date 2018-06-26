@@ -23,21 +23,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_1.jpg)">
+					<div class="banner_item align-items-center" style="background-image:url(assets/images/hand_KIRI.jpg)">
 						<div class="banner_category">
 							<a href="categories.html">TEKNOLOGI</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_2.jpg)">
+					<div class="banner_item align-items-center" style="background-image:url(assets/images/hand_tengah.jpg)">
 						<div class="banner_category">
 							<a href="categories.html">PERTANIAN</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="banner_item align-items-center" style="background-image:url(assets/images/banner_3.jpg)">
+					<div class="banner_item align-items-center" style="background-image:url(assets/images/hand_kanan.jpg)">
 						<div class="banner_category">
 							<a href="categories.html">UMUM</a>
 						</div>
@@ -63,9 +63,9 @@
 					<div class="new_arrivals_sorting">
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">KATEGORI A</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">KATEGORI B</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">KATEGORI C</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">TEKNOLOGI</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">PERTANIAN</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">UMUM</li>
 						</ul>
 					</div>
 				</div>
@@ -74,7 +74,7 @@
 				<div class="col">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-						<div class="product-grid">
+						<div class="product-grid" style="position: relative; height: 760px;">
 
 									@foreach($products as $product)
 									<!-- Product semua -->
@@ -86,8 +86,8 @@
 											</div>
 											<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
-												<div class="product_price"> Rp {{$product->price}}</div>
+												<h4 class="product_name"><a href="single.html">{{$product->product_name}}</a></h4>
+												<h5 style="font-size:21px" class="product_price"> Rp {{$product->price}}</h5>
 											</div>
 										</div>
 										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
@@ -120,44 +120,6 @@
 			                          </div>
 									</div>
 									@endforeach
-<<<<<<< HEAD
-
-=======
-						<!-- Product 1 -->
-
-						<div class="product-item men">
-							<div class="product discount product_filter">
-								<div class="product_image">
-									<img src="assets/images/product_1.png" alt="">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-									<div class="product_price">$520.00<span>$590.00</span></div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div>
-
-
-
-						<!-- Product 10 -->
-
-						<div class="product-item men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="assets/images/product_10.png" alt="">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-									<div class="product_price">$180.00</div>
-								</div>
-=======
-
->>>>>>> 1133b8f026ed902ce850509877f39ef444b7b691
->>>>>>> 3b691fd8cf526402f7431b401eaf912db8a1409f
 							</div>
 
 					</div>
