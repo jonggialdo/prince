@@ -23,7 +23,7 @@ class ProductController extends Controller
 
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
-    
+
     public function view()
     {
       $user = User::where('role_id','2')->get();
@@ -102,5 +102,16 @@ class ProductController extends Controller
     {
       $product->delete();
       return redirect('admin.view_product');
+    }
+
+    public function search(Request $request)
+    {
+      $searchdata =  $request->search;
+
+      $datas = DB::table('products')
+      ->where('product_name', 'like', '%' . $searchdata . '%')
+      ->get(  );
+
+      return view('search', compact('searchdata','datas'));
     }
 }

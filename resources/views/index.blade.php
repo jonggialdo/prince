@@ -104,7 +104,7 @@
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity:</span>
 														<input type="number" name = "qnt" id="qnt"class="form-control" required>
-													
+
 													</div>
 			                                    </div>
 			                                    <div class="modal-footer">
@@ -121,7 +121,7 @@
 			                          </div>
 									</div>
 									@endforeach
-								
+
 =======
 						<!-- Product 1 -->
 
@@ -140,7 +140,7 @@
 							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 						</div>
 
-						
+
 
 						<!-- Product 10 -->
 
@@ -156,7 +156,7 @@
 								</div>
 >>>>>>> 42ef39dead95f446e0ff324b4a2b3e456f523cf3
 							</div>
-						
+
 					</div>
 				</div>
 			</div>
