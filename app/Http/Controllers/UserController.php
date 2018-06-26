@@ -14,7 +14,7 @@ class UserController extends Controller
 {
   public function index(){
     $id_admin = 1;
-    $users = User::latest()->paginate(2);
+    $users = User::where('role_id','=',2)->latest()->paginate(2);
     $number = $users->currentPage() * 2;
     $number -=2;
     //dd($users);
@@ -32,7 +32,6 @@ class UserController extends Controller
     $user->no_telp = $request->no_telp;
     $user->address = $request->address;
     $user->save();
-
     return redirect()->route('admin.manage_user')->withSuccess('New user is created');
   }
 
@@ -50,7 +49,7 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
     $id_admin = 1;
-    $users = User::All()->where('role_id', '!=', $id_admin);
+    $users = User::where('role_id', '!=', $id_admin)->paginate(2);
     $number = 0;
     return view('admin.manage_user2',compact('users','number') )->withSuccess('User has been edited.');
   }
