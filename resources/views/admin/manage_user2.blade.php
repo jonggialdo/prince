@@ -49,7 +49,7 @@
                        <th>Manage</th>
                       </tr>
                       @foreach($users as $user)
-                      @if($user->role_id == 3)
+                      @if($user->role_id == 2)
                       <tr>
                        <td>{{ $number+=1 }}</td>
                        <td>{{ $user->email }}</td>
