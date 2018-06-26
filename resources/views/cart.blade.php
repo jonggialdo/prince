@@ -124,7 +124,7 @@
 								</div>
 							</td>
 							
-							<td>{{ $cart->product['name'] }}</td>
+							<td>{{ $cart->product['product_name'] }}</td>
 							
 							<td>
 								{{$cart ->qnt}}
