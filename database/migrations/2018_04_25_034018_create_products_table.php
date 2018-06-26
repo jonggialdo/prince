@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
           $table->string('stock')->default('0');
           $table->integer('purchase')->default('0');
           $table->integer('viewer')->default('0');
+          $table->string('category')->default();
           $table->timestamps();
         });
     }

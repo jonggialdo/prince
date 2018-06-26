@@ -58,6 +58,21 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+<<<<<<< HEAD
+=======
+
+                                @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+
+>>>>>>> 890438944f0ae308443ca9cdfc98f090e181dc64
                             </div>
                         </div>
                     </form>
@@ -66,4 +81,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 890438944f0ae308443ca9cdfc98f090e181dc64
 @endsection
