@@ -51,6 +51,7 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
+							<li class="active"><a href="#">Semua</a></li>
 							<li><a href="#">Teknologi</a></li>
 							<li><a href="#">Pertanian</a></li>
 							<li><a href="#">Umum</a></li>
