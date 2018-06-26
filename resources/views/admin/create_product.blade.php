@@ -36,12 +36,22 @@
                               <option value="{{$user->id}}">{{$user->name}} </option>
                               @endforeach
                             </select>
-                       
-                  </div>
+                    </div>
                   
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
                         <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter product's name">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="control-label">Category</label>
+                            <select class="form-control select2" data-placeholder="Select category"
+                                style="width: 100%;" name="category" id="category" required>
+                                <option value="" disabled selected hidden>Select category</option>
+                                <option value="Umum">Umum</option>
+                                <option value="Pertanian">Pertanian</option>
+                                <option value="Teknonogi">Teknologi</option>
+                            </select>
                     </div>
 
                     <div class="form-group">
