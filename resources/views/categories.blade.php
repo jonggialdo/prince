@@ -53,49 +53,11 @@
 						<div class="sidebar_title">
 							<h5>Product Category</h5>
 						</div>
-<<<<<<< HEAD
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">TEKNOLOGI</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">PERTANIAN</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">UMUM</li>
-=======
-						<ul class="sidebar_categories">
-							<li class="active"><a href="#">Semua</a></li>
-							<li><a href="#">Teknologi</a></li>
-							<li><a href="#">Pertanian</a></li>
-							<li><a href="#">Umum</a></li>
-
-							<!-- <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li> -->
-
-						</ul>
-					</div>
-
-				<!-- Price Range Filtering
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Filter by Price</h5>
-						</div>
-						<p>
-							<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-						</p>
-						<div id="slider-range"></div>
-						<div class="filter_button"><span>filter</span></div>
-					</div>
-				 -->
-
-				<!-- Sizes
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Sizes</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>S</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>M</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>L</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
->>>>>>> ee92bddc9e8ae25606b81b81ed7385989042834d
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*" style="width: 183px;">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women" style="width: 183px;">TEKNOLOGI</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories" style="width: 183px;">PERTANIAN</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men" style="width: 183px;">UMUM</li>
 						</ul>
 					</div>
 				</div>
