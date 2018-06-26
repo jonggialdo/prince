@@ -41,8 +41,8 @@
 
 				<div class="breadcrumbs d-flex flex-row align-items-center">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li class="active"><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
+						<li><a href="{{ route('home')}}">Home</a></li>
+						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Shop</a></li>
 					</ul>
 				</div>
 
@@ -53,6 +53,13 @@
 						<div class="sidebar_title">
 							<h5>Product Category</h5>
 						</div>
+<<<<<<< HEAD
+						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">TEKNOLOGI</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">PERTANIAN</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">UMUM</li>
+=======
 						<ul class="sidebar_categories">
 							<li class="active"><a href="#">Semua</a></li>
 							<li><a href="#">Teknologi</a></li>
@@ -88,34 +95,9 @@
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>L</span></li>
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
+>>>>>>> ee92bddc9e8ae25606b81b81ed7385989042834d
 						</ul>
 					</div>
-				-->
-
-				<!-- Color
-					<div class="sidebar_section">
-						<div class="sidebar_title">
-							<h5>Color</h5>
-						</div>
-						<ul class="checkboxes">
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Black</span></li>
-							<li class="active"><i class="fa fa-square" aria-hidden="true"></i><span>Pink</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>White</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Blue</span></li>
-							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>Orange</span></li>
-						</ul>
-						<div class="show_more">
-							<span><span>+</span>Show More</span>
-						</div>
-					</div>
-				-->
-
 				</div>
 
 				<!-- Main Content -->
@@ -174,7 +156,7 @@
 									@foreach($products as $product)
 									<!-- Product semua -->
 
-									<div class="product-item men" style="position: absolute;left: 0px;top: 0px;">
+									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
 												<img src="/images/{{$product->photo_product}}" alt="">
@@ -242,6 +224,7 @@
 <script src="{{asset('assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/js/categories_custom.js')}}"></script>
 <script src="{{asset('assets/js/single_custom.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
 </body>
 
 </html>
