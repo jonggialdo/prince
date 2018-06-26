@@ -167,35 +167,32 @@
 
 								<div class="product-grid">
 
-									@foreach($products as $product)
-									<!-- Product semua -->
+									@foreach($datas as $data)
+									<!-- search-->
 
-									<div class="product-item men" style="position: absolute;left: 0px;top: 0px;">
+									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; height:250px; width: 250px; margin-right:5px; ">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
-											</div>
-										
-										<div class="favorite favorite_left"></div>
-											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
-												<div class="product_price"> Rp {{$product->price}}</div>
+												<img src="/images/{{$data->photo_product}}" alt style="height:250px; width: 250px;">
 											</div>
 										</div>
-									<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
-										<a href="#">add to cart</a></div>
-										
-										
-												
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}"><a href="#">add to cart</a></div>
+
+										<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
+												<div class="product_price"> Rp {{$data->price}}</div>
+											</div>
+
 										<!-- .modal delete -->
-			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
+			                          <div class="modal fade" id="modal-cart{{ $data->id }}">
 			                            <div class="modal-dialog">
 			                                <div class="modal-content">
 			                                    <div class="modal-header">
 			                                      <h4 class="modal-title">Select Quantity's</h4>
 			                                    </div>
 			                                    <div class="modal-body">
-			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
+			                                    <form method="POST" action="{{ route('add', ['id 	' => $data->id]) }}">
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 

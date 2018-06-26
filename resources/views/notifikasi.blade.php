@@ -48,6 +48,7 @@
 					</div>
 			@if (Auth::user()->role_id == 2)
 			@foreach($carts as $cart)
+			@if ($cart->transaction_status > 0)
 			<section class="content">
 					<div class="container-fluid">
 						<div class="row">
@@ -106,7 +107,7 @@
 									<td>{{$cart->qnt}}</td>
 
 									<td>Rp {{$cart->subtotal}}</td>
-									<td> {{ $cart->user['name'] }}</td>
+									<td> {{ $cart->seller['name'] }}</td>
 
 									@if ($cart->transaction_status == 0)
 												<td> BELUM BAYAR </td>
@@ -132,6 +133,7 @@
 					</div><!-- /.container-fluid -->
 
 			</section>
+			@endif
 			@endforeach
 			@else
 			<!--BARANG KE-1-->

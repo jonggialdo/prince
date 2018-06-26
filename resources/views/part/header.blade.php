@@ -18,7 +18,14 @@
 
             </ul>
             <ul class="navbar_user">
-              <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+              <li>
+              <div id="sb-search" class="sb-search">
+                <form action="{{ url('search' )}}">
+                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+                    <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"></span>
+                </form>
+              </div></li>
               @if (Auth::check())
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}">
@@ -61,4 +68,3 @@
   </div>
 
 </header>
-

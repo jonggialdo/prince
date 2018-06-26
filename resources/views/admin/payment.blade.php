@@ -47,15 +47,15 @@
                     <th>Time Order</th>
                     <th>Status payment</th>
                     <th>Total</th>
-                    <th>Detail</th>
                   </tr>
+                  @foreach($carts as $cart)
                   <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>Linda</td>
-                    <td>13.00</td>
-                    <td>Belum Bayar</td>
-                    <td>Rp 100.000</td>
+                    <td>{{ $number+=1}}</td>
+                    <td>{{ $cart->id }}</td>
+                    <td>{{ $cart->buyer['name'] }}</td>
+                    <td>{{ $cart->date_insert }} </td>
+                    <td>{{ $cart->transaction_status }}</td>
+                    <td>Rp. {{$cart->subtotal }}</td>
                     <td>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit">
                         <i class="fa fa-eye nav-icon"></i>
@@ -93,6 +93,7 @@
                          
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
               </div>
