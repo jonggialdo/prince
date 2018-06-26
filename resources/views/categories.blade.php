@@ -19,6 +19,9 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/single_responsive.css')}}">
 
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/main_styles.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
+
 
 </head>
 
