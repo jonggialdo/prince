@@ -5,6 +5,7 @@
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         @include('admin.partials._nav')
+        @include('admin.partials._side')
       <div class="content-wrapper">
         @include('admin.partials._alert')
         @yield('content')

@@ -27,23 +27,18 @@
                 <form method="POST" class="/products" action="" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-
-                    <!-- <div class="form-group">
-                        <label for="id_user">id_user</label>
-                        <input type="text" class="form-control" name="id_user" id="id_user" placeholder="id_user" required>
-                    </div> -->
-
                     <div class="form-group">
-                      <label class="col-sm-2 control-label"> Nama User </label>
-                        <div class="col-sm-8">
-                            <select class="form-control" name="id_user"  id="id_user" required>
+                      <label class="control-label">Seller</label>
+                            <select class="form-control select2" data-placeholder="Select a State"
+                                style="width: 100%;" name="id_user" id="id_user" required>
+                                <option value="" disabled selected hidden>Select seller</option>
                               @foreach($users as $user)
                               <option value="{{$user->id}}">{{$user->name}} </option>
                               @endforeach
                             </select>
-                        </div>
+                       
                   </div>
-
+                  
                     <div class="form-group">
                         <label for="product_name">Product Name</label>
                         <input type="text" align="middle" class="form-control" name="product_name" value="" required autofocus id="product_name" placeholder="Enter product's name">
@@ -56,7 +51,7 @@
 
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="text" class="form-control" name="price" id="price" placeholder="price" required>
+                        <input type="number" class="form-control" name="price" id="price" min="0" required>
                     </div>
 
                     <!-- <div class="form-group">
@@ -65,15 +60,15 @@
                     </div> -->
 
                     <div class="form-group">
-                        <label for="photo_product" class="col-md-4 control-label">photo_product</label>
+                        <label for="photo_product" class="col-md-4 control-label">Photo Product</label>
                         <div class="col-md-6">
                             <input id="photo_product" type="file" class="form-control" name="photo_product"  required autofocus>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="stock">stock</label>
-                        <input type="text" class="form-control" name="stock" id="stock" placeholder="stock" required>
+                        <label for="stock">Stock</label>
+                        <input type="number" class="form-control" name="stock" id="stock" min="1" value="1" required>
                     </div>
 
 
