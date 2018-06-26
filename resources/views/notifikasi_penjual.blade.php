@@ -142,17 +142,12 @@
 						<div class="table-responsive">
 							<table class="table">
 							<tr>
-								<th>Tax (10%):</th>
-								@php($tax = 10*$total/100)
-								<td>Rp {{$tax}}</td>
-							</tr>
-							<tr>
 								<th>Shipping:</th>
 								<td>Rp 10000</td>
 							</tr>
 							<tr>
 								<th>Total:</th>
-								@php($total = $total+$tax+10000)
+								@php($total = $total+10000)
 								<td>RP {{ $total}}</td>
 							</tr>
 							</table>

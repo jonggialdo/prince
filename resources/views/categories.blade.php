@@ -185,8 +185,7 @@
 										</div>
 									<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
 										<a href="#">add to cart</a></div>
-										
-										
+														
 												
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $product->id }}">

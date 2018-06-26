@@ -34,7 +34,14 @@ class CartController extends Controller
       }
       return view('notifikasi_penjual',['carts' => $carts,'total' => $total]);
     }
-
+    public function updateStatus($id)
+    {
+      Cart::where('transaction_id','=',$id)->update(['transaction_status'=> 1]);
+      $trans = Cart::select('transaction_id','date_insert','id_user','transaction_status')->distinct()->paginate(10);
+      $number = $trans->currentPage() * 2;
+      $number -=2;
+      return view('admin.payment',compact('trans','number'));
+    }
     public function view1()
     {
       $products = Product::all();
