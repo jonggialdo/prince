@@ -101,6 +101,6 @@ class ProductController extends Controller
     public function delete(Product $product)
     {
       $product->delete();
-      return redirect('admin.view_product');
+      return redirect('admin.manage_product');
     }
 }
