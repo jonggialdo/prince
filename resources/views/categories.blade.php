@@ -200,7 +200,7 @@
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 
-														<input type="number" name = "qnt" id="qnt"class="form-control" required>
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
 
 													</div>
 			                                    </div>
