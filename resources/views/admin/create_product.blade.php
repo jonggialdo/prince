@@ -81,13 +81,6 @@
                         <input type="number" class="form-control" name="stock" id="stock" min="1" value="1" required>
                     </div>
 
-                    <div class="form-group">
-                      <label class="control-label">Category</label>
-                            <select class="form-control select2" data-placeholder="Select a State"
-                                style="width: 100%;" name="id_user" id="id_user" required>
-                                <option value="" disabled selected hidden>Select Category</option>
-                                
-                            </select>
 
 
                 <!-- <div class="card-footer"> -->

@@ -18,4 +18,8 @@ class Product extends Model
     {
       return $this->belongsToMany('App\User');
     }
+     public function user()
+    {
+      return $this->belongsToMany('App\User');
+    }
 }
