@@ -23,13 +23,7 @@ class ProductController extends Controller
 
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
-    // public function index()
-    // {
-    //   $id = Auth::user()->id;
-    //   $products = Product::where('id_user','=',$id)->get();
-    //   return view('admin.manage_product',compact('products'));
-    // }
-
+    
     public function view()
     {
       $user = User::where('role_id','2')->get();

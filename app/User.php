@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     public function product()
     {
-      return $this->belongsToMany('App\Product');
+      return $this->hasMany('App\Product');
     }
 
     use Notifiable;

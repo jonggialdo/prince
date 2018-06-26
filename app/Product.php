@@ -14,12 +14,9 @@ class Product extends Model
         return $this->hasMany('App\Cart');
     }
 
-    public function product()
-    {
-      return $this->belongsToMany('App\User');
+
+    public function user(){
+      return $this->belongsTo('App\User', 'id');
     }
-     public function user()
-    {
-      return $this->belongsToMany('App\User');
-    }
+
 }

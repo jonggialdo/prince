@@ -48,6 +48,7 @@
 					</div>
 			@if (Auth::user()->role_id == 2)
 			@foreach($carts as $cart)
+			@if ($cart->transaction_status > 0)
 			<section class="content">
 					<div class="container-fluid">
 						<div class="row">
@@ -132,6 +133,7 @@
 					</div><!-- /.container-fluid -->
 
 			</section>
+			@endif
 			@endforeach
 			@else
 			<!--BARANG KE-1-->
