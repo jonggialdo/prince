@@ -75,6 +75,38 @@
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 <<<<<<< HEAD
+						<!-- Product 1 -->
+
+						<div class="product-item men">
+							<div class="product discount product_filter">
+								<div class="product_image">
+									<img src="assets/images/product_1.png" alt="">
+								</div>
+								<div class="favorite favorite_left"></div>
+								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
+									<div class="product_price">$520.00<span>$590.00</span></div>
+								</div>
+							</div>
+							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+						</div>
+
+						
+
+						<!-- Product 10 -->
+
+						<div class="product-item men">
+							<div class="product product_filter">
+								<div class="product_image">
+									<img src="assets/images/product_10.png" alt="">
+								</div>
+								<div class="favorite"></div>
+								<div class="product_info">
+									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
+									<div class="product_price">$180.00</div>
+								</div>
+=======
 						<div class="product-grid">
 
 									@foreach($products as $product)
@@ -83,7 +115,7 @@
 									<div class="product-item men">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
+												<img src="/images/{{$product->photo_product}}" style="max-width:256.85 px; max-height: 256.85px" alt="">
 											</div>
 											<div class="favorite favorite_left"></div>
 											<div class="product_info">
@@ -122,39 +154,7 @@
 									</div>
 									@endforeach
 								
-=======
-						<!-- Product 1 -->
-
-						<div class="product-item men">
-							<div class="product discount product_filter">
-								<div class="product_image">
-									<img src="assets/images/product_1.png" alt="">
-								</div>
-								<div class="favorite favorite_left"></div>
-								<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-									<div class="product_price">$520.00<span>$590.00</span></div>
-								</div>
-							</div>
-							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-						</div>
-
-						
-
-						<!-- Product 10 -->
-
-						<div class="product-item men">
-							<div class="product product_filter">
-								<div class="product_image">
-									<img src="assets/images/product_10.png" alt="">
-								</div>
-								<div class="favorite"></div>
-								<div class="product_info">
-									<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-									<div class="product_price">$180.00</div>
-								</div>
->>>>>>> 42ef39dead95f446e0ff324b4a2b3e456f523cf3
+>>>>>>> 1133b8f026ed902ce850509877f39ef444b7b691
 							</div>
 						
 					</div>

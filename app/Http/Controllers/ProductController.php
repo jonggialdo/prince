@@ -59,18 +59,6 @@ class ProductController extends Controller
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
 
-    public function show($id)
-    {
-      $product = Product::find($id);
-      return view('admin.single_product', ['products'=>$product]);
-    }
-
-    public function edit($id)
-    {
-      $product = Product::find($id);
-      return view('admin.edit_product', ['products'=>$product]);
-    }
-
     public function update(Request $request, $id)
     {
       $product = Product::where('id', $id)->first();
@@ -101,6 +89,6 @@ class ProductController extends Controller
     public function delete(Product $product)
     {
       $product->delete();
-      return redirect('admin.view_product');
+      return redirect('manage-product');
     }
 }
