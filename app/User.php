@@ -12,7 +12,6 @@ use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 class User extends Authenticatable
 {
     use AuthenticableTrait;
-    protected $table = 'users';
     
     public function role()
     {
@@ -21,7 +20,7 @@ class User extends Authenticatable
 
     public function product()
     {
-      return $this->hasMany('App\Product');
+      return $this->belongsToMany('App\Product');
     }
 
     use Notifiable;
@@ -51,6 +50,5 @@ class User extends Authenticatable
     public function cart(){
         return $this->hasMany('App\Cart');
     }
-    
 
 }

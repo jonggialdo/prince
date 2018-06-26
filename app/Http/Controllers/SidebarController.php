@@ -23,10 +23,10 @@ class SidebarController extends Controller
         return view('admin.manage_product',['product' => $product]);
     }
     public function payment(){
-        $carts = Cart::latest()->paginate(2);
-        $number = $carts->currentPage() * 2;
+        $trans = Cart::select('transaction_id','date_insert','id_user','transaction_status')->distinct()->paginate(10);
+        $number = $trans->currentPage() * 2;
         $number -=2;
-        return view('admin.payment',compact('carts','number'));
+        return view('admin.payment',compact('trans','number'));
     }
     public function shipping(){
         return view('admin.shipping');

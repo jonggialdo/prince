@@ -142,7 +142,7 @@
 			@foreach($trans as $trans_id)
 			@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
 			@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
-			@if ($totalDuration < 60)
+			@if ($totalDuration < 1000)
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">
