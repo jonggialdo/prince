@@ -1,12 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
         public function index() {
-			return view('categories');
+			$products = Product::latest()->paginate(8);
+      		$number = $products->currentPage() * 2;
+      		$number -=2;
+
+			return view('categories', compact('number','products'));
 		}
 }
