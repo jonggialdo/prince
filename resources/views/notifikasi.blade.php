@@ -107,7 +107,7 @@
 									<td>{{$cart->qnt}}</td>
 
 									<td>Rp {{$cart->subtotal}}</td>
-									<td> {{ $cart->user['name'] }}</td>
+									<td> {{ $cart->seller['name'] }}</td>
 
 									@if ($cart->transaction_status == 0)
 												<td> BELUM BAYAR </td>
