@@ -43,6 +43,7 @@
                   <tr>
                     <th>No</th>
                     <th>Product Name</th>
+                    <th>Category</th>
                     <th>Description</th>
                     <th>Price</th>
                     <th>Stock</th>
@@ -54,6 +55,7 @@
                   <tr>
                     <td>{{ $number+=1 }}</td>
                     <th>{{$product->product_name}}</th>
+                    <th>{{$product->category}}</th>
                     <th>{{$product->description}}</th>
                     <th>{{$product->price}}</th>
                     <th>{{$product->stock}}</th>
@@ -82,6 +84,17 @@
                                             <label>Product name</label>
                                             <input type="text" name = "product_name" class="form-control" placeholder="{{ $product->product_name }}" value="{{ $product->product_name }}" required>
                                         </div>
+                                        <div class="form-group">
+                                          <label class="control-label">Category</label>
+                                                <select class="form-control select2" data-placeholder="Select category"
+                                                    style="width: 100%;" name="category" id="category" required>
+                                                    <option value="{{ $product->category }}" disabled selected hidden>{{ $product->category }}</option>
+                                                    <option value="Umum">Umum</option>
+                                                    <option value="Pertanian">Pertanian</option>
+                                                    <option value="Teknonogi">Teknologi</option>
+                                                </select>
+                                        </div>
+
                                          <div class="form-group">
                                             <label>Description</label>
                                             <textarea class="form-control" name = "description" required>{{{ $product->description }}}</textarea>
