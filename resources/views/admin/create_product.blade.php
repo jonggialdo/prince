@@ -50,7 +50,7 @@
                                 <option value="" disabled selected hidden>Select category</option>
                                 <option value="Umum">Umum</option>
                                 <option value="Pertanian">Pertanian</option>
-                                <option value="Teknonogi">Teknologi</option>
+                                <option value="Teknologi">Teknologi</option>
                             </select>
                     </div>
 

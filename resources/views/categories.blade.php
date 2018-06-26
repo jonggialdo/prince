@@ -55,9 +55,9 @@
 						</div>
 						<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*" style="width: 183px;">all</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women" style="width: 183px;">TEKNOLOGI</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories" style="width: 183px;">PERTANIAN</li>
-							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men" style="width: 183px;">UMUM</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".teknologi" style="width: 183px;">TEKNOLOGI</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".pertanian" style="width: 183px;">PERTANIAN</li>
+							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".umum" style="width: 183px;">UMUM</li>
 						</ul>
 					</div>
 				</div>
@@ -117,8 +117,8 @@
 
 									@foreach($products as $product)
 									<!-- Product semua -->
-
-									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; width: 218px;">
+									@if($product->category == "Teknologi")
+									<div class="product-item teknologi" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
 												<img src="/images/{{$product->photo_product}}" alt="">
@@ -130,8 +130,58 @@
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
-									<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
-										<a href="#">add to cart</a></div>
+										
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
+											<a href="#">add to cart</a>
+										</div>
+												
+										<!-- .modal delete -->
+			                        <div class="modal fade" id="modal-cart{{ $product->id }}">
+			                            <div class="modal-dialog">
+			                                <div class="modal-content">
+			                                    <div class="modal-header">
+			                                      <h4 class="modal-title">Select Quantity's</h4>
+			                                    </div>
+			                                    <div class="modal-body">
+			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
+			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+														<span>Quantity: </span>
+
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
+
+													</div>
+			                                    </div>
+			                                    <div class="modal-footer">
+			    			                        {{ csrf_field() }}
+			                                        {{ method_field('POST') }}
+			                                        <button type="submit" class="red_button add_to_cart_button">Add to cart</a></button>
+			                                      </form>
+			                                    </div>
+			                                    </form>
+			                                  </div>
+			                                  <!-- /.modal-content -->
+			                              </div>
+			                              <!-- /.modal-dialog -->
+			                          </div>
+									</div>
+								
+									
+									@elseif($product->category == "Umum")
+									<div class="product-item umum" style="position: absolute;left: 0px;top: 0px; width: 218px;">
+										<div class="product discount product_filter">
+											<div class="product_image">
+												<img src="/images/{{$product->photo_product}}" alt="">
+											</div>
+										
+										<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<div class="product_price"> Rp {{$product->price}}</div>
+											</div>
+										</div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
+											<a href="#">add to cart</a>
+										</div>
 										
 										
 												
@@ -164,8 +214,57 @@
 			                              <!-- /.modal-dialog -->
 			                          </div>
 									</div>
-									@endforeach
+								
+									@elseif($product->category == "Pertanian")
+									<div class="product-item pertanian" style="position: absolute;left: 0px;top: 0px; width: 218px;">
+										<div class="product discount product_filter">
+											<div class="product_image">
+												<img src="/images/{{$product->photo_product}}" alt="">
+											</div>
+										
+										<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<div class="product_price"> Rp {{$product->price}}</div>
+											</div>
+										</div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
+											<a href="#">add to cart</a>
+										</div>
+										
+										
+												
+										<!-- .modal delete -->
+			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
+			                            <div class="modal-dialog">
+			                                <div class="modal-content">
+			                                    <div class="modal-header">
+			                                      <h4 class="modal-title">Select Quantity's</h4>
+			                                    </div>
+			                                    <div class="modal-body">
+			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
+			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+														<span>Quantity: </span>
 
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
+
+													</div>
+			                                    </div>
+			                                    <div class="modal-footer">
+			    			                        {{ csrf_field() }}
+			                                        {{ method_field('POST') }}
+			                                        <button type="submit" class="red_button add_to_cart_button">Add to cart</a></button>
+			                                      </form>
+			                                    </div>
+			                                    </form>
+			                                  </div>
+			                                  <!-- /.modal-content -->
+			                              </div>
+			                              <!-- /.modal-dialog -->
+			                          </div>
+									</div>
+									@endif
+									@endforeach
 							</div>
 						</div>
 					</div>
