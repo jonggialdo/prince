@@ -52,7 +52,7 @@
                   <tr>
                     <td>{{ $number+=1}}</td>
                     <td>{{ $cart->id }}</td>
-                    <td>{{ $cart->user['name'] }}</td>
+                    <td>{{ $cart->buyer['name'] }}</td>
                     <td>{{ $cart->date_insert }} </td>
                     <td>{{ $cart->transaction_status }}</td>
                     <td>Rp. {{$cart->subtotal }}</td>
