@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CategoriesController extends Controller
 {
         public function index() {
-			$products = Product::latest()->where('id_user','=',$users)->paginate(10);
+			$products = Product::latest()->where('id_user','=',$users)->paginate(8);
       		$number = $products->currentPage() * 2;
       		$number -=2;
 
