@@ -171,20 +171,23 @@
 									@foreach($products as $product)
 									<!-- Product semua -->
 
-									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; height:250px; width: 250px; margin-right:5px; ">
+									<div class="product-item men" style="position: absolute;left: 0px;top: 0px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt style="height:250px; width: 250px;">
+												<img src="/images/{{$product->photo_product}}" alt="">
 											</div>
-										</div>
-										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
-
+										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
-
+										</div>
+									<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
+										<a href="#">add to cart</a></div>
+										
+										
+												
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
 			                            <div class="modal-dialog">
