@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5832d5aaa8469cd1e76df65d7871457df3345f9f
 @extends('layouts.app')
 
 @section('content')
@@ -59,6 +62,19 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+<<<<<<< HEAD
+=======
+                                @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+>>>>>>> 5832d5aaa8469cd1e76df65d7871457df3345f9f
                             </div>
                         </div>
                     </form>

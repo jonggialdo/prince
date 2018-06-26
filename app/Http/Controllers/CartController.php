@@ -24,6 +24,7 @@ class CartController extends Controller
       $products = Product::all();
       return view('categories',['products' => $products]);
     }
+
     public function details($id)
     {
       $carts = Cart::where('transaction_id','=',$id)->get();
@@ -33,17 +34,23 @@ class CartController extends Controller
       }
       return view('notifikasi_penjual',['carts' => $carts,'total' => $total]);
     }
-    public function view1(){
+
+    public function view1()
+    {
       $products = Product::all();
 
       return view('categories',['products' => $products]);
     }
-    public function viewCheckout(){
+
+    public function viewCheckout()
+    {
       $products = Product::all();
 
       return view('categories',['products' => $products]);
     }
-    public function notifikasi_view(){
+
+    public function notifikasi_view()
+    {
       $id = Auth::user()->id;
       if (Auth::user()->role_id == 2){
         $carts = Cart::where('id_seller','=',$id)->where('checkout_status','=',1)->get();
@@ -51,7 +58,9 @@ class CartController extends Controller
       }
       return view('notifikasi');
     }
-    public function submit(){
+
+    public function submit()
+    {
       $id = Auth::user()->id;
       $mx = Cart::max('transaction_id');
       $mx = $mx + 1;

@@ -29,7 +29,7 @@ class HomeController extends Controller
         $user = Auth::user();
         $products = Product::all();
         if (is_null($user))  return view('auth.login');
-        if ($user->role_id == 3){
+        if ($user->role_id == 3 or $user->role_id == 2){
             return view('index',compact('user','products'));
         }
         if ($user->role_id == 1){

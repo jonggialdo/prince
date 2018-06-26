@@ -45,8 +45,6 @@ Route::get('/notifikasi_penjual', function () {
     return view('notifikasi_penjual');
 });
 
-Route::get('/register', ['as' => 'register'])->name('register');
-Route::get('/login', ['as' => 'login'])->name('login');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

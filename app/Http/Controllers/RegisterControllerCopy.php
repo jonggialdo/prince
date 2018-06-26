@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\DB;
+use App\Product;
 
 use App\User;
 use App\Http\Controllers\Controller;
@@ -13,7 +17,7 @@ use Illuminate\Http\Request;
 use Auth;
 
 
-class RegisterController extends Controller
+class RegisterControllerCopy extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -70,18 +74,21 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function creates(array $data)
     {
-        dd($data);
-        return User::create([
+    	$id = 2;
+
+        User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'role_id' => 2,
             'gender' => $data['gender'],
             'no_telp' => $data['no_telp'],
             'address' => $data['address'],
             'verified' => false
           ]);
+        return redirect()->route('admin.manage_user')->withSuccess('New user is created');
       }
 
 }
