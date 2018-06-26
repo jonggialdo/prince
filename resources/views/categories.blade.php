@@ -51,16 +51,16 @@
 							<h5>Product Category</h5>
 						</div>
 						<ul class="sidebar_categories">
-							<li><a href="#">Men</a></li>
-							<li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">New Arrivals</a></li>
-							<li><a href="#">Collection</a></li>
-							<li><a href="#">Shop</a></li>
+							<li><a href="#">Teknologi</a></li>
+							<li><a href="#">Pertanian</a></li>
+							<li><a href="#">Umum</a></li>
+
+							<!-- <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li> -->
+
 						</ul>
 					</div>
 
-					<!-- Price Range Filtering -->
+				<!-- Price Range Filtering
 					<div class="sidebar_section">
 						<div class="sidebar_title">
 							<h5>Filter by Price</h5>
@@ -71,8 +71,9 @@
 						<div id="slider-range"></div>
 						<div class="filter_button"><span>filter</span></div>
 					</div>
-
-					<!-- Sizes -->
+				 -->
+				
+				<!-- Sizes
 					<div class="sidebar_section">
 						<div class="sidebar_title">
 							<h5>Sizes</h5>
@@ -84,9 +85,10 @@
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XL</span></li>
 							<li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
 						</ul>
-					</div>
+					</div> 
+				-->
 
-					<!-- Color -->
+				<!-- Color
 					<div class="sidebar_section">
 						<div class="sidebar_title">
 							<h5>Color</h5>
@@ -107,7 +109,8 @@
 						<div class="show_more">
 							<span><span>+</span>Show More</span>
 						</div>
-					</div>
+					</div> 
+				-->
 
 				</div>
 
@@ -167,19 +170,21 @@
 									@foreach($products as $product)
 									<!-- Product semua -->
 
-									<div class="product-item men">
+									<div class="product-item men" style="position: absolute;left: 0px;top: 0px; height:250px; width: 250px; margin-right:5px; ">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
+												<img src="/images/{{$product->photo_product}}" alt style="height:250px; width: 250px;">
 											</div>
-											<div class="favorite favorite_left"></div>
+										</div>
+										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
+										
+										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
-										</div>
-										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}"><a href="#">add to cart</a></div>
-									  <!-- .modal delete -->
+												
+										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
 			                            <div class="modal-dialog">
 			                                <div class="modal-content">
@@ -189,9 +194,10 @@
 			                                    <div class="modal-body">
 			                                    <form method="POST" action="{{ route('add', ['id' => $product->id]) }}">
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-														<span>Quantity:</span>
+														<span>Quantity: </span>
+														
 														<input type="number" name = "qnt" id="qnt"class="form-control" required>
-													
+														
 													</div>
 			                                    </div>
 			                                    <div class="modal-footer">

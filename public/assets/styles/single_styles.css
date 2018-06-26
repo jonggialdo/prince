@@ -1116,8 +1116,8 @@ section
 }
 .add_to_cart_button
 {
-	width: 160px;
-	margin-left: 19px;
+	width: 250px;
+	margin-left: 0px;
 	font-size: 12px !important;
 }
 .product_favorite
@@ -1399,6 +1399,7 @@ section
 }
 .benefit_row
 {
+	padding-top: 100px;
 	padding-left: 15px;
 	padding-right: 15px;
 }
