@@ -21,7 +21,7 @@
               <li>
               <div id="sb-search" class="sb-search">
                 <form action="{{ route('searchFP') }}">
-                    <input class="form_input input_name input_ph" placeholder="Search..." type="search" value="" name="searchFP" id="searchFP">
+                    <input class="form_input input_name input_ph" placeholder="Search..." type="search" value="" name="searchFP" id="searchFP" style="width: 238.979166px;">
                     <!-- <input class="sb-search-submit" type="submit" value="">
                     <span class="sb-icon-search"></span> -->
                 </form>

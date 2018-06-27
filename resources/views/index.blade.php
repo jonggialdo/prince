@@ -267,7 +267,7 @@
 								<div class="timer_unit">Sec</div>
 							</li>
 						</ul>
-						<div class="red_button deal_ofthe_week_button"><a href="{{ route('categories') }}">shop now</a></div>
+						<div class="red_button deal_ofthe_week_button" style="width: 100px;"><a href="{{ route('categories') }}">shop now</a></div>
 					</div>
 				</div>
 			</div>
