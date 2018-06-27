@@ -91,8 +91,9 @@ class ProductController extends Controller
       $product->delete();
       return redirect('manage-product');
     }
+    // 
+    // public function
 
-  
 
 
 }
