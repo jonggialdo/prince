@@ -36,4 +36,8 @@ class HomeController extends Controller
             return view('admin.index',compact('user'));
         }
     }
+    public function index1(){
+        $products = Product::all();
+        return view('/',compact('products'));   
+    }
 }

@@ -24,6 +24,12 @@ class CartController extends Controller
       $products = Product::all();
       return view('categories',['products' => $products]);
     }
+    public function kirim_barang($id)
+    {
+      Cart::where('id_seller','=',Auth::user()->id)->update(['transaction_status'=>2]);
+      $carts = Cart::where('id_seller','=',$id)->where('checkout_status','=',1)->get();
+      return view('notifikasi',compact('carts'));
+    }
 
     public function details($id)
     {
@@ -37,6 +43,12 @@ class CartController extends Controller
     public function updateStatus($id)
     {
       Cart::where('transaction_id','=',$id)->update(['transaction_status'=> 1]);
+      $transaction = Cart::where('transaction_id','=',$id)->get();
+      foreach($transaction as $tr){
+        $item = Product::find($tr->id_product);
+        $item->update(['purchase'=>$item->purchase+ $tr->qnt]);
+        $item->update(['stock'=>$item->stock-$tr->qnt]);
+      }
       $trans = Cart::select('transaction_id','date_insert','id_user','transaction_status')->distinct()->paginate(10);
       $number = $trans->currentPage() * 2;
       $number -=2;
@@ -64,6 +76,10 @@ class CartController extends Controller
         return view('notifikasi',compact('carts'));
       }
       return view('notifikasi');
+    }
+    public function notifikasi_pembeli()
+    {
+      return view('notifikasi_pembeli');
     }
 
     public function submit()
@@ -96,6 +112,10 @@ class CartController extends Controller
       }
       echo $total;
       return view('cart',compact('carts','total'));
+    }
+    public function selesai($status){
+      dd($status);
+        return view('notifikasi_pembeli');
     }
     public function delete(Cart $cart)
     {

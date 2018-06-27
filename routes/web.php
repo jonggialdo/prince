@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', array(
-		'as' => 'home',
-		'uses' => 'HomeController@index'
-));
+Route::get('/', function(){
+		$products = \App\Product::all();
+		return view('index',compact('products'));
+});
 Route::get('/profile', array(
 		'as' => 'profile',
 		'uses' => 'ProfileController@index'
@@ -22,7 +22,9 @@ Route::put('/profile', 'ProfileController@update');
 Route::get('/single', function () {
     return view('single');
 });
-
+Route::get('/home', function () {
+    return view('index');
+});
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -57,6 +59,7 @@ Route::get('/create-product', 'SidebarController@create_product')->name('admin.c
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
+Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
 
@@ -105,7 +108,10 @@ Route::get('/categories/', 'CartController@view1') -> name('categories');
 Route::get('/checkout/', 'CartController@view2') -> name('checkout');
 Route::get('/notifikasiSubmit/', 'CartController@submit') -> name('notifikasi');
 Route::get('/notifikasi/', 'CartController@notifikasi_view') -> name('notifikasi_view');
+Route::get('/notifikasi_pembeli/', 'CartController@notifikasi_pembeli') -> name('notifikasi_pembeli');
+Route::get('/notifikasi_pembeli/{status}', 'CartController@selesai') -> name('selesai');
 Route::get('/notifikasi/{id}', 'CartController@details') -> name('notifikasi_penjual');
+Route::get('/notifikasi/{id}/kirim', 'CartController@kirim_barang') -> name('kirim_barang');
 Route::get('/cart/', 'CartController@view') -> name('cart');
 
 Route::get('/search', 'ProductController@search');

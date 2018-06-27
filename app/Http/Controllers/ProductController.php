@@ -98,7 +98,7 @@ class ProductController extends Controller
 
       $datas = DB::table('products')
       ->where('product_name', 'like', '%' . $searchdata . '%')
-      ->get(  );
+      ->get();
 
       return view('search', compact('searchdata','datas'));
     }
