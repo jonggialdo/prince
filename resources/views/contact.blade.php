@@ -102,7 +102,7 @@
 							<textarea id="input_message" class="input_ph input_message" name="message"  placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea>
 						</div>
 						<div>
-							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">send message</button>
+							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit" style="width: 130px;">send message</button>
 						</div>
 					</form>
 				</div>
