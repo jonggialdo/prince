@@ -262,7 +262,7 @@ section
 .header
 {
 	position: fixed;
-	top: 0;
+	top: -50px !important;
 	left: 0;
 	width: 100%;
 	background: #FFFFFF;
@@ -826,7 +826,7 @@ section
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	margin-top: 75px !important;
+	margin-top: 78px !important;
 }
 .main_slider_content
 {

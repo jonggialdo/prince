@@ -72,7 +72,8 @@
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity:</span>
 						<form method="POST" action="{{ route('add', $product) }}">
-							<div class="input-group"></div>
+							<div class="input-group">
+							@if( $product->stock != 0 )
 							<input type="number" name = "qnt" id="qnt" class="form-control"
 							 value="1" min="1" max="{{$product->stock }}" style="width: 76px;" required>
 							{{ csrf_field() }}
@@ -80,7 +81,10 @@
 			                <button type="submit" class="input-group-btn red_button add_to_cart_button" style="width: 104px;">
 								Add to cart
 							</button>
-</div>
+							@else
+								SOLD OUT
+							@endif
+							</div>
 			            </form>
 					</div>
 					<span><p style="margin-top:20px">Stock: {{ $product->stock }} left</p></span>
