@@ -78,7 +78,9 @@
 											<small class="fa fa-share-square-o"></small> Produk karya : {{ $nama->name }}
 										</h4>
 										<h4>
-											@php($statuss = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->select('transaction_status')->distinct()->get())
+											@php($statuss = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)
+											->where('id_seller','=',$id_seller->id_seller)
+											->select('transaction_status')->distinct()->get())
 											@foreach($statuss as $status)
 												@if ($status->transaction_status == 0)
 												<td> BELUM BAYAR </td>
@@ -87,20 +89,17 @@
 														<td> LUNAS </td>
 												@endif
 												@if ($status->transaction_status == 2)
-														<td> SEDANG DIKIRIM </td>
+														<td> SEDANG DIKIRIM {{$status->transaction_status}}</td>
+														<form  action="{{ route('selesai') }}" method="POST">
+														<button type="submit" class="btn btn-primary">Save</button>
+                                    				    {{ csrf_field() }}
+														<input type="hidden" name="transaction_id" value="{{$status->transaction_id}}">
+														<input type="hidden" name="id_seller" value="{{$status->id_seller}}">
+														</form>
 												@endif
 												@if ($status->transaction_status == 3)
 														<td> SELESAI </td>
 												@endif
-												@if ($status->transaction_status == 2)
-												
-				                                	<a href="/notifikasi_pembeli/{{$status}}">
-				                                    <buttton type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
-												    Selesai
-											        </buttton>
-											        </a>
-											        
-				                                @endif
 											@endforeach
 										</h4>
 										<h4>

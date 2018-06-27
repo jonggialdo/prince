@@ -130,9 +130,12 @@ class CartController extends Controller
       echo $total;
       return view('cart',compact('carts','total'));
     }
-    public function selesai($status){
-      dd($status);
-        return view('notifikasi_pembeli');
+    public function selesai(Request $request){
+     
+      dd($request);
+       $transaction_id = $request->transaction_id;
+       $cart = Cart::where('id', $id)->first();
+        return view('notifikasi_pembeli',compact('transaction_id','cart'));
     }
     public function delete(Cart $cart)
     {
