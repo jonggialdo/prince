@@ -59,4 +59,14 @@ class UserController extends Controller
     $user->delete();
     return redirect()->route('admin.manage_user')->withSuccess('User has been deleted.');
   }
+
+  public function displayProduct()
+  {
+    $id = Auth::user()->id;
+    if (Auth::user()->role_id == 2){
+      $products =Product::where('id_user','=',$id)->get();
+      return view('productuser',compact('products'));
+    }
+    return view('index');
+  }
 }
