@@ -56,8 +56,7 @@ class CartController extends Controller
       return view('categories',['products' => $products]);
     }
 
-    public function notifikasi_view()
-    {
+    public function notifikasi_view(){
       $id = Auth::user()->id;
       if (Auth::user()->role_id == 2){
         $carts = Cart::where('id_seller','=',$id)->where('checkout_status','=',1)->get();
@@ -78,6 +77,7 @@ class CartController extends Controller
       $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',1)->orderBy('transaction_id','asc')->get();
       return view('notifikasi',compact('carts'));
     }
+
     public function view2(){
       $id = Auth::user()->id;
       $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',0)->get();
@@ -87,6 +87,7 @@ class CartController extends Controller
       }
       return view('checkout',compact('carts','total'));
     }
+
     public function view(){
       $id = Auth::user()->id;
       $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',0)->get();
@@ -97,6 +98,7 @@ class CartController extends Controller
       echo $total;
       return view('cart',compact('carts','total'));
     }
+
     public function delete(Cart $cart)
     {
       $cart->delete();

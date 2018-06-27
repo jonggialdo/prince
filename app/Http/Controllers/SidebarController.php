@@ -29,6 +29,14 @@ class SidebarController extends Controller
         return view('admin.payment',compact('trans','number'));
     }
     public function shipping(){
-        return view('admin.shipping');
+      $shipped = 2;
+
+      $trans = Cart::select('transaction_id','date_insert','id_user','transaction_status')
+      ->where('transaction_status','=', $shipped)
+      ->distinct()->paginate(10);
+      $number = $trans->currentPage() * 2;
+      $number -=2;
+
+      return view('admin.shipping',compact('trans','number'));
     }
 }

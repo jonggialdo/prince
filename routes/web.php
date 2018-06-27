@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::get('/profile', array(
 		'as' => 'profile',
 		'uses' => 'ProfileController@index'
@@ -110,10 +112,3 @@ Route::get('/search', 'SearchController@searchFP')->name('searchFP');
 
 Route::get('/productuser','UserController@displayProduct')->name('productuser');
 Route::put('/productuser/{id}','UserController@updateProduct')->name('updateproduct');
-//
-// Route::get('form','FormController@create');
-// Route::post('form','FormController@store');
-//
-// Route::get('viewform/{id}', 'FormController@view');
-
-//Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
