@@ -57,6 +57,7 @@ Route::get('/create-product', 'SidebarController@create_product')->name('admin.c
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
+Route::get('/completed', 'SidebarController@completed')->name('admin.completed');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
 
