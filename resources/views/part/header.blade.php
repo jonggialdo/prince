@@ -41,7 +41,7 @@
                   </a>
                 </li>
               @endif
-              <li class = "account" style="padding-left: 0px;">
+              <li class = "account" style="padding-left: 0px; width: 100px;">
                 <a href="#" style="margin-left: 5px; margin-right:15px; ">
                   <i class="fa fa-user" aria-hidden="true" style="margin-left: 0px;"></i>
                 </a>
@@ -52,6 +52,9 @@
                   </ul>
                   @else
                   <ul class="account_selection">
+                  @if (Auth::user()->role_id == 2)
+                    <li><a href="{{ route('productuser') }}">MyProduct</a></li>
+                  @endif
                     <li><a href="{{ route('profile') }}">Profile</a></li>
                     <li><a href="{{ URL::route('account-sign-out') }}">Logout</a></li>
                   </ul>
