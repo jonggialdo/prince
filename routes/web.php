@@ -84,7 +84,6 @@ Route::get('/profile', array(
 // admin
 Route::get('/manage-user', 'UserController@index')->name('admin.manage_user');
 Route::post('/create','UserController@create')->name('create_user');
-Route::get('/viewuser/{id}', 'UserController@show');
 Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
@@ -110,6 +109,7 @@ Route::get('/cart/', 'CartController@view') -> name('cart');
 Route::get('/search', 'SearchController@searchFP')->name('searchFP');
 
 Route::get('/productuser','UserController@displayProduct')->name('productuser');
+Route::put('/productuser/{id}','UserController@updateProduct')->name('updateproduct');
 //
 // Route::get('form','FormController@create');
 // Route::post('form','FormController@store');
