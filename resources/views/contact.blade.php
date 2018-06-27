@@ -33,7 +33,7 @@
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
+				<div class="breadcrumbs d-flex flex-row align-items-center" style="margin-top: 0px;">
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
@@ -102,7 +102,7 @@
 							<textarea id="input_message" class="input_ph input_message" name="message"  placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea>
 						</div>
 						<div>
-							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">send message</button>
+							<button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit" style="width: 130px;">send message</button>
 						</div>
 					</form>
 				</div>

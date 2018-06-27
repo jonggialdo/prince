@@ -14,13 +14,30 @@ class CartController extends Controller
     public function add(Request $request,$id)
     {
       $product = Product::find($id);
-      $cart = New Cart;
-      $cart->id_user = Auth::user()->id;
-      $cart->id_product = $id;
-      $cart->qnt = $request->qnt;
-      $cart->id_seller = $product->id_user;
-      $cart->subtotal = $product->price * $request->qnt;
-      $cart->save();
+      $max_carts = Cart::where('transaction_status','=',0)
+      ->where('id_product','=', $id)->get();
+      // jika produk blm ada di cart
+      if ($max_carts->isEmpty()){
+        $cart = New Cart;
+        $cart->id_user = Auth::user()->id;
+        $cart->id_product = $id;
+        $cart->qnt = $request->qnt;
+        $cart->id_seller = $product->id_user;
+        $cart->subtotal = $product->price * $request->qnt;
+        $cart->save();
+      }
+      else{
+        $total=0;
+        foreach($max_carts as $max_cart){
+          $total = $total+$max_cart->qnt;
+        }
+        if($product->stock-$total>= $request->qnt){
+          foreach($max_carts as $max_cart){
+            Cart::where('id','=',$max_cart->id)->update(['qnt'=>$max_cart->qnt + $request->qnt]);
+          }
+        }
+      }
+      
       $products = Product::all();
       return view('categories',['products' => $products]);
     }

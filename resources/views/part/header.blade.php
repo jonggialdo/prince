@@ -1,16 +1,16 @@
 <header class="header trans_300">
   <!-- Top Navigation -->
-
+  
   <!-- Main Navigation -->
 
-  <div class="main_nav_container">
+  <div class="main_nav_container" style="top:50px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-right">
           <div class="logo_container">
             <a href="/">Prince<span> IPB</span></a>
           </div>
-          <nav class="navbar">
+          <nav class="navbar" style="margin-bottom: 0px; border-bottom-width: 0px; border-right-width: 0px; border-left-width: 0px; border-top-width: 0px; padding-top: 8px; padding-bottom: 0px;">
             <ul class="navbar_menu">
               <li><a href="/">home</a></li>
               <li><a href="{{ route('categories') }}">shop</a></li>
@@ -18,6 +18,7 @@
 
             </ul>
             <ul class="navbar_user">
+            @if (Auth::check())
               <li>
                 <div id="sb-search" class="sb-search">
                   <form action="{{ url('search')}}">
@@ -29,8 +30,14 @@
                   </form>
                 </div>
               </li>
-              @if (Auth::check())
               @if (Auth::user()->role_id == 2)
+              <div id="sb-search" class="sb-search">
+                <form action="{{ route('searchFP') }}">
+                    <input class="form_input input_name input_ph" placeholder="Search..." type="search" value="" name="searchFP" id="searchFP" style="width: 238.979166px;">
+                    <!-- <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"></span> -->
+                </form>
+              </div></li>
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
@@ -58,9 +65,9 @@
                 </li>
               @endif
               @endif
-              <li class = "account">
+              <li class = "account" style="padding-left: 0px;">
                 <a href="#" style="margin-left: 5px; margin-right:15px; ">
-                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <i class="fa fa-user" aria-hidden="true" style="margin-left: 0px;"></i>
                 </a>
                 @if (!Auth::check())
                   <ul class="account_selection">
@@ -73,7 +80,6 @@
                     <li><a href="{{ URL::route('account-sign-out') }}">Logout</a></li>
                   </ul>
                   @endif
-
               </li>
             </ul>
             <div class="hamburger_container">

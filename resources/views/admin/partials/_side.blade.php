@@ -98,6 +98,12 @@
                   <p>Shipping</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.completed') }}" class="nav-link">
+                  <i class="fa fa-archive nav-icon"></i>
+                  <p>Completed order</p>
+                </a>
+              </li>
             </ul>
           </li>
 

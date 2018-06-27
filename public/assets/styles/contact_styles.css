@@ -883,7 +883,7 @@ section
 }
 .product_details_title p
 {
-	color: #;
+	color: #FFFFFF;
 }
 
 /*********************************
@@ -1112,8 +1112,8 @@ textarea:hover
 }
 .input_name
 {
-	margin-bottom: 19px;
-	margin-top: 31px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 .input_review
 {
