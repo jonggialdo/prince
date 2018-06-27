@@ -126,7 +126,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="{{ route('single',$product') }}">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single',$product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
@@ -175,7 +175,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single',$product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
@@ -224,7 +224,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single',$product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
