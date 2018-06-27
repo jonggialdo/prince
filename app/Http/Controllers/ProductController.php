@@ -91,13 +91,15 @@ class ProductController extends Controller
       $product->delete();
       return redirect('manage-product');
     }
-    //
-    // public function
 
-
-    public function view_item(Product $product)
+    public function search(Request $request)
     {
-      $product->update(['viewer'=> $product->viewer+1]);
-      return view('single', compact('product'));
+      $searchdata =  $request->search;
+
+      $datas = DB::table('products')
+      ->where('product_name', 'like', '%' . $searchdata . '%')
+      ->get(  );
+
+      return view('search', compact('searchdata','datas'));
     }
 }
