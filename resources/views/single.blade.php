@@ -71,21 +71,21 @@
 					</div>
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 					@if( $product->stock != 0 )
-						<span>Quantity:</span>
+						<h4>Quantity :</h4>
 						<form method="POST" action="{{ route('add', $product) }}">
 							<div class="input-group">
 							
 							<input type="number" name = "qnt" id="qnt" class="form-control"
-							 value="1" min="1" max="{{$product->stock }}" style="width: 76px;" required>
+							 value="1" min="1" max="{{$product->stock }}" style="width: 140px; margin-left: 15px;" required>
 							{{ csrf_field() }}
 			                {{ method_field('POST') }}
-			                <button type="submit" class="input-group-btn red_button add_to_cart_button" style="width: 104px;">
+			                <button type="submit" class="input-group-btn red_button add_to_cart_button" style="width: 160px; margin-left: 5px;">
 								Add to cart
 							</button>
 							</div>
 			            </form>
 					</div>
-					<span><p style="margin-top:20px">Stock: {{ $product->stock }} left</p></span>
+					<span><h4 style="margin-top:20px">Stock : {{ $product->stock }} left</h4></span>
 					@else
 						<h6>SOLD OUT</h6>
 					@endif
