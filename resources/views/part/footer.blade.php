@@ -1,6 +1,5 @@
 	<!-- Benefit -->
-
-	<div class="benefit">
+	<div class="benefit" style="margin-top: 75px;">
 		<div class="container">
 			<div class="row benefit_row">
 				<div class="col-lg-3 benefit_col">

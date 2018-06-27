@@ -31,7 +31,7 @@
 
 				<!-- Breadcrumbs -->
 
-				<div class="breadcrumbs d-flex flex-row align-items-center">
+				<div class="breadcrumbs d-flex flex-row align-items-center" style="margin-top:-15px;">
 					<ul>
 						<li><a href="{{ route('home') }}">Home</a></li>
 						<li><a href="{{ route('categories') }}"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ $product->category }}</a></li>
@@ -70,10 +70,11 @@
 						<div class="product_price">Rp {{ $product->price }}</div>
 					</div>
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+					@if( $product->stock != 0 )
 						<span>Quantity:</span>
 						<form method="POST" action="{{ route('add', $product) }}">
 							<div class="input-group">
-							@if( $product->stock != 0 )
+							
 							<input type="number" name = "qnt" id="qnt" class="form-control"
 							 value="1" min="1" max="{{$product->stock }}" style="width: 76px;" required>
 							{{ csrf_field() }}
@@ -81,13 +82,14 @@
 			                <button type="submit" class="input-group-btn red_button add_to_cart_button" style="width: 104px;">
 								Add to cart
 							</button>
-							@else
-								SOLD OUT
-							@endif
 							</div>
 			            </form>
 					</div>
 					<span><p style="margin-top:20px">Stock: {{ $product->stock }} left</p></span>
+					@else
+						<h6>SOLD OUT</h6>
+					@endif
+							
 				</div>
 			</div>
 		</div>
@@ -96,11 +98,10 @@
 
 	<!-- Tabs -->
 
-	<div class="tabs_section_container">
-
+	<div class="tabs_section_container" style="padding-bottom: 25px;">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col" style="height: 120px;" >
 					<div class="tabs_container">
 						<ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
 							<li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
@@ -118,11 +119,11 @@
 					<div id="tab_1" class="tab_container active">
 						<div class="row">
 							<div class="col-lg-5 desc_col">
-								<div class="tab_title">
+								<div class="tab_title" style="margin-bottom: 0px;">
 									<h4>Description</h4>
 								</div>
-								<div class="tab_text_block">
-									<p>{{ $product->description }}</p>
+								<div class="tab_text_block" style="width: 1140px;">
+									<h4>{{ $product->description }}</h4>
 								</div>
 							</div>
 						</div>
@@ -133,12 +134,12 @@
 					<div id="tab_2" class="tab_container">
 						<div class="row">
 							<div class="col additional_info_col">
-								<div class="tab_title additional_info_title">
+								<div class="tab_title additional_info_title" style="margin-bottom: 0px;">
 									<h4>Additional Information</h4>
 								</div>
-								<p>Stock :<span>{{ $product->stock }}</span></p>
-								<p>Viewer :<span>{{ $product->viewer }}</span></p>
-								<p>Sold :<span>{{ $product->purchase }}</span></p>
+								<h4 style="margin-bottom: 0px;">Stock : <span>{{ $product->stock }}</span></h4>
+								<h4 style="margin-bottom: 0px;">Viewer : <span>{{ $product->viewer }}</span></h4>
+								<h4 style="margin-bottom: 0px;">Sold : <span>{{ $product->purchase }}</span></h4>
 							</div>
 						</div>
 					</div>
@@ -151,7 +152,7 @@
 							<!-- User Reviews -->
 
 							<div class="col-lg-6 reviews_col">
-								<div class="tab_title reviews_title">
+								<div class="tab_title reviews_title" style="margin-bottom: 25px;">
 									<h4>Reviews (2)</h4>
 								</div>
 

@@ -104,6 +104,7 @@
 							</tr>
 							</thead>
 							<tbody>
+							@if(\Auth::user()->role_id !=2)
 							@foreach($carts as $key => $cart)
 								<tr>
 								<td>{{ ++$key }}</td>
@@ -114,6 +115,22 @@
 								<td>Rp {{ $cart->subtotal}}</td>
 								</tr>
 							@endforeach
+							@else
+							@php($total = 0)
+							@foreach($carts as $key => $cart)
+								@if ($cart->id_seller == \Auth::user()->id)
+								<tr>
+								@php($total = $total + $cart->subtotal)
+								<td>{{ ++$key }}</td>
+								<td>{{ $cart->qnt }}</td>
+								<td>{{ $cart->product['product_name'] }}</td>
+								<td>455-981-221</td>
+								<td>{{ $cart->product['description']}}</td>
+								<td>Rp {{ $cart->subtotal}}</td>
+								</tr>
+								@endif
+							@endforeach
+							@endif
 							</tbody>
 						</table>
 						</div>
@@ -163,9 +180,12 @@
 							<a href =" {{ route('notifikasi_view') }}">
 							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Kembali
 							</button>
+							</a>
+							<a href = "{{route('kirim_barang',$cart->transaction_id)}}"> 
 							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-							<i class="fa fa-download"></i> Generate PDF
+							<i class="fa fa-download">Kirim barang</i> 
 							</button>
+							</a>
 						</div>
 					</div>
 					</div>

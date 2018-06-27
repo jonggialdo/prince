@@ -18,6 +18,7 @@
 
             </ul>
             <ul class="navbar_user">
+            @if (Auth::check())
               <li>
               <div id="sb-search" class="sb-search">
                 <form action="{{ route('searchFP') }}">
@@ -26,7 +27,7 @@
                     <span class="sb-icon-search"></span> -->
                 </form>
               </div></li>
-              @if (Auth::check())
+              
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
@@ -40,7 +41,7 @@
                   </a>
                 </li>
               @endif
-              <li class = "account" style="padding-left: 0px;">
+              <li class = "account" style="padding-left: 0px; width:100px;">
                 <a href="#" style="margin-left: 5px; margin-right:15px; ">
                   <i class="fa fa-user" aria-hidden="true" style="margin-left: 0px;"></i>
                 </a>
@@ -51,10 +52,13 @@
                   </ul>
                   @else
                   <ul class="account_selection">
+                  @if (Auth::user()->role_id == 2)
+                    <li><a href="{{ route('productuser') }}">MyProduct</a></li>
+                  @endif
                     <li><a href="{{ route('profile') }}">Profile</a></li>
                     <li><a href="{{ URL::route('account-sign-out') }}">Logout</a></li>
                   </ul>
-                  @endif
+                @endif
               </li>
             </ul>
             <div class="hamburger_container">
