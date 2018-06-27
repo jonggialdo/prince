@@ -18,6 +18,7 @@
 
             </ul>
             <ul class="navbar_user">
+            @if (Auth::check())
               <li>
               <div id="sb-search" class="sb-search">
                 <form action="{{ route('searchFP') }}">
@@ -26,7 +27,7 @@
                     <span class="sb-icon-search"></span> -->
                 </form>
               </div></li>
-              @if (Auth::check())
+              
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
