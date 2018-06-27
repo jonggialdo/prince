@@ -64,9 +64,23 @@ class UserController extends Controller
   {
     $id = Auth::user()->id;
     if (Auth::user()->role_id == 2){
-      $products =Product::where('id_user','=',$id)->get();
-      return view('productuser',compact('products'));
+      $products =Product::where('id_user','=',$id)->latest()->paginate(2);
+      $number = $products->currentPage() * 2;
+      return view('productuser',compact('products','number'));
     }
     return view('index');
+  }
+
+  public function updateProduct(Request $request, $id)
+  {
+    $product = Product::where('id', $id)->first();
+    $product->stock = $request->stock;
+    $product->save();
+
+    $id = Auth::user()->id;
+    $products = Product::where('id_user','=',$id)->paginate(2);
+    $number = 0;
+
+    return view('productuser', compact('products','number'))->withSuccess('Stock has been updated  ');
   }
 }

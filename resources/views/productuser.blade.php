@@ -53,7 +53,7 @@
                   </tr>
                   @foreach($products as $product)
                   <tr>
-                    <th><a href="{{ route('single/$product->id')}}">{{$product->product_name}}</a></th>
+                    <th><a href="{{ url('/single/' . $product->id)}}">{{$product->product_name}}</a></th>
                     <th>{{$product->category}}</th>
                     <th>{{$product->description}}</th>
                     <th>{{$product->price}}</th>
@@ -74,7 +74,7 @@
                                       <h4 class="modal-title">Edit Product</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form  action="/viewproduct/{{$product->id}}" method="POST">
+                                    <form  action="/productuser/{{$product->id}}" method="POST">
 
                                         <div class="form-group">
                                             <label>Stock</label>
