@@ -52,6 +52,7 @@ Route::get('/', array(
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
+Route::get('/payment/{id}', 'CartController@updateStatus')->name('updateStatus');
 Route::get('/create-product', 'SidebarController@create_product')->name('admin.create_product');
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');

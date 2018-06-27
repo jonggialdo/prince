@@ -21,27 +21,27 @@
               <li>
               <div id="sb-search" class="sb-search">
                 <form action="{{ route('searchFP') }}">
-                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" value="" name="searchFP" id="searchFP">
-                    <input class="sb-search-submit" type="submit" value="">
-                    <span class="sb-icon-search"></span>
+                    <input class="form_input input_name input_ph" placeholder="Search..." type="search" value="" name="searchFP" id="searchFP">
+                    <!-- <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"></span> -->
                 </form>
               </div></li>
               @if (Auth::check())
               <li class="checkout">
-                <a href="{{ route('notifikasi_view') }}">
+                <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
                   <span id="checkout_items" class="checkout_items">0</span>
                 </a>
               </li>
                 <li class="checkout">
-                  <a href="{{ route('cart') }}">
+                  <a href="{{ route('cart') }}" style="margin-left: 5px;">
                     <i class="fa fa-shopping-cart" aria-hidden="true" ></i>
                     <span id="checkout_items" class="checkout_items"> {{ \App\Cart::where('id_user','=', \Auth::user()->id)->where('checkout_status','=',0)->get()->count() }}</span>
                   </a>
                 </li>
               @endif
               <li class = "account">
-                <a href="#">
+                <a href="#" style="margin-left: 5px; margin-right:15px; ">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
                 @if (!Auth::check())
