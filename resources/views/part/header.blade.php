@@ -76,6 +76,9 @@
                   </ul>
                   @else
                   <ul class="account_selection">
+                  @if (Auth::user()->role_id == 2)
+                    <li><a href="{{ route('productuser') }}">Profile</a></li>
+                  @endif
                     <li><a href="{{ route('profile') }}">Profile</a></li>
                     <li><a href="{{ URL::route('account-sign-out') }}">Logout</a></li>
                   </ul>
