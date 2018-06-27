@@ -74,7 +74,7 @@
                                     <div class="modal-header">
                                       <h4 class="modal-title">Detail</h4>
                                     </div>
-                                    <div class="modal-body">
+                                    < div class="modal-body">
                                     <form method="POST" role="form" action="#">
                                         {{ csrf_field() }}
                                         {{ method_field('PATCH')}}
@@ -204,8 +204,8 @@
                                   <!-- /.modal-content -->
                               </div>
                               <!-- /.modal-dialog -->
-                          </div>                         
-                         
+                          </div>
+
                     </td>
                   </tr>
                   @endforeach

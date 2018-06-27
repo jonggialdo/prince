@@ -42,99 +42,102 @@
 	<div class="callout callout-info">
 					<h1> Cart</h1>
 					</div>
-	@foreach($carts as $cart)
+
 	<section class="content">
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-12">
-					
-			<!--BARANG KE-1-->				
+
+			<!--BARANG KE-1-->
 			<!-- Main content -->
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
-					<div class="row">
-						<div class="col-12">
-						<h4>
-							<small class="fa fa-share-square-o"></small> Produk karya : {{ $cart->buyer['name'] }}
-						</h4>
-						</div>
-						<!-- /.col -->
-					</div>
-					
+
+
 					<!-- Table row -->
 					<div class="row">
 						<div class="col-12 table-responsive">
 						<table class="table table-striped">
 							<thead>
+
 							<tr>
 							<th>Alamat Pengiriman</th>
 
 							<th>Preview</th>
-							
+
 							<th>Product name</th>
 
 							<th>Quantity</th>
-							
+
 							<th>Description</th>
-							
+
 							<th>Subtotal</th>
-							<th>
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $cart->id }}" value="{{ $cart->id }}">
-                            <i class="fa fa-trash nav-icon"></i>
-                          </button>
-							 <!-- .modal delete -->
-                          <div class="modal fade" id="modal-delete{{ $cart->id }}">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Delete Product</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                    Are you sure want to delete this product?
-                                    </div>
-                                    <div class="modal-footer">
-                                      <form method="POST" action="{{ route('delete.cart', $cart) }}">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
-                                        <button type="submit" class="btn btn-danger">Yes</button>
-                                      </form>
-                                    </div>
-                                    </form>
-                                  </div>
-                                  <!-- /.modal-content -->
-                              </div>
-                              <!-- /.modal-dialog -->
-                          </div>
-                          </th>
+
+							<th>Produk Karya</th>
+
 							</tr>
 							</thead>
+
+
 							<tbody>
+									@foreach($carts as $cart)
 							<tr>
+
 							<td>
 							Dikirim ke :
 							<address>
 								<strong> {{ $cart->buyer['address'] }}</strong><br>
 							</address>
 							</td>
-							
+
 							<td>
 								<div class="single_product">
-									<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>	
+									<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>
 								</div>
 							</td>
-							
+
 							<td>{{ $cart->product['product_name'] }}</td>
-							
+
 							<td>
 								{{$cart ->qnt}}
 							</td>
-														
+
 							<td>{{$cart->product['description']}}</td>
-							
+
 							<td>Rp {{$cart->subtotal}}</td>
-							<td></td>
+							<td>{{ $cart->User['name']}}</td>
+							<td>
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $cart->id }}" value="{{ $cart->id }}">
+															<i class="fa fa-trash nav-icon"></i>
+														</button>
+								 <!-- .modal delete -->
+														<div class="modal fade" id="modal-delete{{ $cart->id }}">
+															<div class="modal-dialog">
+																	<div class="modal-content">
+																			<div class="modal-header">
+																				<h4 class="modal-title">Delete Product</h4>
+																			</div>
+																			<div class="modal-body">
+																			Are you sure want to delete this product?
+																			</div>
+																			<div class="modal-footer">
+																				<form method="POST" action="{{ route('delete.cart', $cart) }}">
+																					{{ csrf_field() }}
+																					{{ method_field('DELETE') }}
+																					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
+																					<button type="submit" class="btn btn-danger">Yes</button>
+																				</form>
+																			</div>
+																			</form>
+																		</div>
+																		<!-- /.modal-content -->
+																</div>
+																<!-- /.modal-dialog -->
+														</div>
+							</td>
+
 							</tr>
+							@endforeach
 							</tbody>
 						</table>
 						</div>
@@ -144,19 +147,19 @@
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
-			
+
 	</section>
-	@endforeach
-					
+
+
 					<div class="row no-print">
 						<div class="col-12">
 							<a href =" {{ route('checkout') }}">
-							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> 
+							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
 								Lakukan Checkout
 							</button>
 							</a>
 							<a href =" {{ route('categories') }}">
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
+							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
 								Pilih Produk Lainnya
 							</button>
 							</a>
@@ -170,8 +173,8 @@
 			</div>
 		</div>
 
-		
-		
+
+
 
 @include('part.footer');
 

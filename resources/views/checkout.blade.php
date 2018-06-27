@@ -187,8 +187,8 @@
 			</div>
 		</div>
 
-		
-		
+
+
 
 @include('part.footer');
 

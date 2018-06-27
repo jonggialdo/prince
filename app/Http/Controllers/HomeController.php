@@ -44,7 +44,7 @@ class HomeController extends Controller
         if ($user->role_id == 1){
 
             $count_user = DB::table('users')->where('role_id','=','3')->get();
-            $count_transaction = DB::table('carts')->where('checkout_status','=','1')->get();
+            $count_transaction = DB::table('carts')->where('transaction_id','=','3')->get();
             $count_seller = DB::table('users')->where('role_id','=','2')->get();
 
             foreach($count_user as $user){
