@@ -47,8 +47,8 @@
 			<div class="container-fluid">
 				<div class="row">
 				<div class="col-12">
-					
-			<!--BARANG KE-1-->				
+
+			<!--BARANG KE-1-->
 			<!-- Main content -->
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
@@ -60,7 +60,7 @@
 						</div>
 						<!-- /.col -->
 					</div>
-					
+
 					<!-- Table row -->
 					<div class="row">
 						<div class="col-12 table-responsive">
@@ -70,13 +70,13 @@
 							<th>Alamat Pengiriman</th>
 
 							<th>Preview</th>
-							
+
 							<th>Product name</th>
 
 							<th>Quantity</th>
-							
+
 							<th>Description</th>
-							
+
 							<th>Subtotal</th>
 							<th>
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete{{ $cart->id }}" value="{{ $cart->id }}">
@@ -117,21 +117,21 @@
 								<strong> {{ $cart->buyer['address'] }}</strong><br>
 							</address>
 							</td>
-							
+
 							<td>
 								<div class="single_product">
-									<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>	
+									<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>
 								</div>
 							</td>
-							
+
 							<td>{{ $cart->product['product_name'] }}</td>
-							
+
 							<td>
 								{{$cart ->qnt}}
 							</td>
-														
+
 							<td>{{$cart->product['description']}}</td>
-							
+
 							<td>Rp {{$cart->subtotal}}</td>
 							<td></td>
 							</tr>
@@ -144,19 +144,19 @@
 				</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div><!-- /.container-fluid -->
-			
+
 	</section>
 	@endforeach
-					
+
 					<div class="row no-print">
 						<div class="col-12">
 							<a href =" {{ route('checkout') }}">
-							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> 
+							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
 								Lakukan Checkout
 							</button>
 							</a>
 							<a href =" {{ route('categories') }}">
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i> 
+							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
 								Pilih Produk Lainnya
 							</button>
 							</a>
@@ -170,8 +170,8 @@
 			</div>
 		</div>
 
-		
-		
+
+
 
 @include('part.footer');
 
