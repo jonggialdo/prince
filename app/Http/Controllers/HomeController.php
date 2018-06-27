@@ -66,4 +66,8 @@ class HomeController extends Controller
             return view('admin.index',compact('user','sum_user','sum_transaction','sum_product','sum_seller'));
         }
     }
+    public function index1(){
+        $products = Product::all();
+        return view('/',compact('products'));   
+    }
 }
