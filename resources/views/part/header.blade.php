@@ -17,7 +17,15 @@
               <li><a href="{{ route('contact') }}">contact</a></li>
 
             </ul>
-            <ul class="navbar_user"> 
+            <ul class="navbar_user">
+              <li>
+              <div id="sb-search" class="sb-search">
+                <form action="{{ route('searchFP') }}">
+                    <input class="form_input input_name input_ph" placeholder="Search..." type="search" value="" name="searchFP" id="searchFP">
+                    <!-- <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"></span> -->
+                </form>
+              </div></li>
               @if (Auth::check())
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
