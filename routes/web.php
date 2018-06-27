@@ -81,7 +81,7 @@ Route::get('/profile', array(
 		'uses' => 'ProfileController@index'
 ));
 
-// Route::resource('admin', 'UserController');
+// admin
 Route::get('/manage-user', 'UserController@index')->name('admin.manage_user');
 Route::post('/create','UserController@create')->name('create_user');
 Route::get('/viewuser/{id}', 'UserController@show');
@@ -92,14 +92,13 @@ Route::delete('/cart/{cart}/delete', 'CartController@delete')->name('delete.cart
 Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
-Route::get('/dashboard', function () {
-    return view('tes');
-});
-
+//product
 Route::get('viewproduct/{id}', 'ProductController@show');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
 Route::put('/viewproduct/{id}', 'ProductController@update');
+Route::get('/single/{product}', 'ProductController@view_item')->name('single');
 
+//order
 Route::post('/categories/{id}', 'CartController@add') -> name('add');
 Route::get('/categories/', 'CartController@view1') -> name('categories');
 Route::get('/checkout/', 'CartController@view2') -> name('checkout');

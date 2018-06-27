@@ -102,4 +102,10 @@ class ProductController extends Controller
 
       return view('search', compact('searchdata','datas'));
     }
+
+    public function view_item(Product $product)
+    {
+      $product->update(['viewer'=> $product->viewer+1]);
+      return view('single', compact('product'));
+    }
 }
