@@ -126,7 +126,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single', $product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
@@ -147,7 +147,7 @@
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 
-														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" max="{{$product->stock }} required>
 
 													</div>
 			                                    </div>
@@ -175,7 +175,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single', $product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
@@ -197,7 +197,7 @@
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 
-														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" max="{{$product->stock }} required>
 
 													</div>
 			                                    </div>
@@ -224,7 +224,7 @@
 										
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$product->product_name}}</a></h6>
+												<h6 class="product_name"><a href="{{ route('single', $product) }}">{{$product->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
@@ -232,9 +232,7 @@
 											<a href="#">add to cart</a>
 										</div>
 										
-										
-												
-										<!-- .modal delete -->
+										<!-- .modal add to cart -->
 			                          <div class="modal fade" id="modal-cart{{ $product->id }}">
 			                            <div class="modal-dialog">
 			                                <div class="modal-content">
@@ -246,7 +244,7 @@
 			                                    	<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 														<span>Quantity: </span>
 
-														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" required>
+														<input type="number" name = "qnt" id="qnt" class="form-control" value="1" min="1" max="{{$product->stock }} required>
 
 													</div>
 			                                    </div>

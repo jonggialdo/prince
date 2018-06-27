@@ -94,6 +94,20 @@ class ProductController extends Controller
     // 
     // public function
 
+  
+    public function search(Request $request){
+      $searchdata = $request->search;
 
+      $datas = DB::table('products')
+      ->where('product_name', 'like', '%'. $searchdata . '%')
+      ->get();
 
+      return view('search', compact('searchdata','datas'));
+    }
+
+    public function view_item(Product $product)
+    {
+      $product->update(['viewer'=> $product->viewer+1]);
+      return view('single', compact('product'));
+    }
 }
