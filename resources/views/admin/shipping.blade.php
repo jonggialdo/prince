@@ -45,7 +45,7 @@
                     <th>Id_Order</th>
                     <th>Buyer</th>
                     <th>Time Order</th>
-                    <th>Status payment</th>
+                    <th>Status</th>
                     <th>Total</th>
                   </tr>
 
@@ -62,7 +62,13 @@
                     <td>{{ $tr->transaction_id }}</td>
                     <td>{{ $n->name }}</td>
                     <td>{{ $tr->date_insert }} </td>
-                    <td>{{ $tr->transaction_status }}</td>
+                    <td>
+                      @if($tr->transaction_status == 1)
+                        BELUM DIKIRIM
+                      @else
+                        SEDANG DIKIRIM
+                      @endif
+                    </td>
                     <td>Rp. {{$total }}</td>
                     <td>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{$tr->transaction_id}}">
@@ -74,11 +80,8 @@
                                     <div class="modal-header">
                                       <h4 class="modal-title">Detail</h4>
                                     </div>
-                                    < div class="modal-body">
-                                    <form method="POST" role="form" action="#">
-                                        {{ csrf_field() }}
-                                        {{ method_field('PATCH')}}
-                                    </div>
+                                    <div class="modal-body">
+                                    
                                     <!-- Main content -->
           <div class="invoice p-3 mb-3">
           <!-- title row -->
@@ -188,18 +191,18 @@
           </div>
           <!-- /.row -->
           <!-- /.invoice -->
+          </div>
                                     <div class="modal-footer">
-                                <div class="pull-right">
-                                  <a href="{{ route('updateStatus', ['id' => $tr->transaction_id]) }}">
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
-                                      Lunas
-                                        </button>
-                                        </a>
-
-                                </div>
+                                      <div class="pull-right">
+                                      @foreach($carts as $cart)
+                                      @if($cart->transaction_status == 1)
+                                        BELUM DIKIRIM
+                                      @else
+                                        SEDANG DIKIRIM
+                                      @endif
+                                      @endforeach
+                                      </div>
                                     </div>
-
-                                    </form>
                                   </div>
                                   <!-- /.modal-content -->
                               </div>

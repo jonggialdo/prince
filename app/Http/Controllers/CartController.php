@@ -72,20 +72,6 @@ class CartController extends Controller
       $number -=2;
       return view('admin.payment',compact('trans','number'));
     }
-    public function view1()
-    {
-      $products = Product::all();
-
-      return view('categories',['products' => $products]);
-    }
-
-    public function viewCheckout()
-    {
-      $products = Product::all();
-
-      return view('categories',['products' => $products]);
-    }
-
     public function notifikasi_view(){
       $id = Auth::user()->id;
       if (Auth::user()->role_id == 2){
@@ -112,7 +98,7 @@ class CartController extends Controller
       return view('notifikasi',compact('carts'));
     }
 
-    public function view2(){
+    public function viewCheckout(){
       $id = Auth::user()->id;
       $carts = Cart::where('id_user','=',$id)->where('checkout_status','=',0)->get();
       $total = 0;

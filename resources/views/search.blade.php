@@ -87,26 +87,34 @@
 										</li>
 										<li>
 											<span>Show</span>
-											<span class="num_sorting_text">6</span>
+											<span class="num_sorting_text">8</span>
 											<i class="fa fa-angle-down"></i>
 											<ul class="sorting_num">
-												<li class="num_sorting_btn"><span>6</span></li>
-												<li class="num_sorting_btn"><span>12</span></li>
-												<li class="num_sorting_btn"><span>24</span></li>
+												<li class="num_sorting_btn"><span>8</span></li>
 											</ul>
 										</li>
 									</ul>
 									<div class="pages d-flex flex-row align-items-center">
+										@if( $datas->currentPage() > 1)
+										<div id="next_page" class="page_next" style="margin-right:31px">
+											<a href="{{ $datas->previousPageUrl() }}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+										</div>
+										@endif
 										<div class="page_current">
-											<span>1</span>
+											<span>{{ $datas->currentPage() }}</span>
 											<ul class="page_selection">
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
+												<li><a href="{{ $datas->url(1) }}">1</a></li>
+												@if( $datas->total() > 8)
+												<li><a href="{{ $datas->url(2) }}">2</a></li>
+												@elseif( $datas->total() > 16 )
+												<li><a href="{{ $datas->url(3) }}">3</a></li>
+												@endif
 											</ul>
 										</div>
-										<div class="page_total"><span>of</span> 3</div>
-										<div id="next_page" class="page_next"><a href="#"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
+										<div class="page_total"><span>of</span> {{ $datas->lastPage() }}</div>
+										<div id="next_page" class="page_next">
+											<a href="{{ $datas->nextPageUrl() }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+										</div>
 									</div>
 
 								</div>

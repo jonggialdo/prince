@@ -17,7 +17,7 @@ class SearchController extends Controller
 
     $datas = DB::table('products')
     ->where('product_name', 'like', '%' . $searchdata . '%')
-    ->get( );
+    ->latest()->paginate(8);
 
     return view('search', compact('searchdata','datas'));
   }

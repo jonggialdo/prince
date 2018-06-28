@@ -170,18 +170,15 @@
                 </tbody>
               </table>
               </div>
-              {!! $products->render() !!}
               <!-- /.card-body -->
               <!-- ./card-footer -->
               <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">«</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">»</a></li>
-                </ul>
-              </div>
+                    <ul class="pagination pagination-sm m-0 float-right">
+                      <li class="page-item"><a class="page-link" href="{{ $products->previousPageUrl() }}">«</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $products->currentPage() }}">{{ $products->currentPage() }}</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $products->nextPageUrl() }}">»</a></li>
+                    </ul>
+                  </div>
               <!-- ./ card-footer -->
             </div>
             <!-- /.card -->

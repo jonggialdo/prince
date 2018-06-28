@@ -36,7 +36,7 @@ class HomeController extends Controller
         $sum_seller = 0;
 
         $user = Auth::user();
-        $products = Product::all();
+        $products = Product::latest()->simplePaginate(10);
         if (is_null($user))  return view('index', compact('products'));
         if ($user->role_id == 3 or $user->role_id == 2){
             return view('index',compact('user','products'));
@@ -67,7 +67,7 @@ class HomeController extends Controller
         }
     }
     public function index1(){
-        $products = Product::all();
+        $products = Product::latest()->simplePaginate(10);
         return view('/',compact('products'));   
     }
 }

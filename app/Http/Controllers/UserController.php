@@ -14,9 +14,9 @@ class UserController extends Controller
 {
   public function index(){
     $id_admin = 1;
-    $users = User::where('role_id','=',2)->latest()->paginate(2);
-    $number = $users->currentPage() * 2;
-    $number -=2;
+    $users = User::where('role_id','=',2)->latest()->paginate(5);
+    $number = $users->currentPage() * 5;
+    $number -=5;
     //dd($users);
     return view('admin.manage_user2', compact('number', 'id_admin', 'users'));
   }
@@ -49,8 +49,9 @@ class UserController extends Controller
     $user->address = $request->address;
     $user->save();
     $id_admin = 1;
-    $users = User::where('role_id', '!=', $id_admin)->paginate(2);
-    $number = 0;
+    $users = User::where('role_id', '!=', $id_admin)->paginate(5);
+    $number = $users->currentPage() * 5;
+    $number -=5;
     return view('admin.manage_user2',compact('users','number') )->withSuccess('User has been edited.');
   }
 
@@ -65,7 +66,8 @@ class UserController extends Controller
     $id = Auth::user()->id;
     if (Auth::user()->role_id == 2){
       $products =Product::where('id_user','=',$id)->latest()->paginate(2);
-      $number = $products->currentPage() * 2;
+      $number = $users->currentPage() * 2;
+      $number -=2;
       return view('productuser',compact('products','number'));
     }
     return view('index');
@@ -79,7 +81,8 @@ class UserController extends Controller
 
     $id = Auth::user()->id;
     $products = Product::where('id_user','=',$id)->paginate(2);
-    $number = 0;
+    $number = $users->currentPage() * 2;
+    $number -=2;
 
     return view('productuser', compact('products','number'))->withSuccess('Stock has been updated  ');
   }
