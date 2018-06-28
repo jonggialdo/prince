@@ -67,7 +67,7 @@ class CartController extends Controller
         $item->update(['purchase'=>$item->purchase+ $tr->qnt]);
         $item->update(['stock'=>$item->stock-$tr->qnt]);
       }
-      $trans = Cart::select('transaction_id','date_insert','id_user','transaction_status')->distinct()->paginate(10);
+      $trans = Cart::where('transaction_status','=',0)->select('transaction_id','date_insert','id_user','transaction_status')->distinct()->paginate(10);
       $number = $trans->currentPage() * 2;
       $number -=2;
       return view('admin.payment',compact('trans','number'));
