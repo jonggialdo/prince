@@ -52,10 +52,6 @@
 			@foreach($trans as $trans_id)
 				@php($id_sellers = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->select('id_seller')->distinct()->get())
 					@foreach($id_sellers as $id_seller)
-					@php($carts = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->get())
-					@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
-					@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
-					@if ($totalDuration < 1000000)
 					<!-- title row -->
 							<div class="row">
 								<div class="col-12">
@@ -67,6 +63,10 @@
 								</div>
 								<!-- /.col -->
 							</div>
+					@php($carts = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->get())
+					@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
+					@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
+					@if ($totalDuration < 1000000)
 					<!--BARANG KE-1-->				
 							<!-- Main content -->
 							<div class="invoice p-3 mb-3">
@@ -80,7 +80,7 @@
 										<h4>
 											@php($statuss = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)
 											->where('id_seller','=',$id_seller->id_seller)
-											->select('transaction_status')->distinct()->get())
+											->select('transaction_status','transaction_id','id_seller')->distinct()->get())
 											@foreach($statuss as $status)
 												@if ($status->transaction_status == 0)
 												<td> BELUM BAYAR </td>
@@ -89,13 +89,14 @@
 														<td> LUNAS </td>
 												@endif
 												@if ($status->transaction_status == 2)
-														<td> SEDANG DIKIRIM {{$status->transaction_status}}</td>
-														<form  action="{{ route('selesai') }}" method="POST">
-														<button type="submit" class="btn btn-primary">Save</button>
-                                    				    {{ csrf_field() }}
-														<input type="hidden" name="transaction_id" value="{{$status->transaction_id}}">
-														<input type="hidden" name="id_seller" value="{{$status->id_seller}}">
-														</form>
+														<td> SEDANG DIKIRIM {{$status->id_seller}}</td>
+														
+														<a href="/notifikasi_pembeli/{{$status->transaction_id}}/update/{{$status->id_seller}}">
+															<button type="submit" class="btn btn-primary">
+															Diterima
+															</button>
+														</a>
+														
 												@endif
 												@if ($status->transaction_status == 3)
 														<td> SELESAI </td>

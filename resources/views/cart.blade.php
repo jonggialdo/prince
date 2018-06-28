@@ -140,6 +140,24 @@
 							@endforeach
 							</tbody>
 						</table>
+						<div class="row no-print">
+						<div class="col-12">
+							@if(!($carts->isEmpty()) )
+							<a href =" {{ route('checkout') }}">
+							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
+								Lakukan Checkout
+							</button>
+							</a>
+							@endif
+							<a href =" {{ route('categories') }}">
+							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
+								Pilih Produk Lainnya
+							</button>
+							</a>
+							<td>Total :  {{ $total }}</td>
+						</div>
+
+					</div>
 						</div>
 						<!-- /.col -->
 					</div>
@@ -151,22 +169,7 @@
 	</section>
 
 
-					<div class="row no-print">
-						<div class="col-12">
-							<a href =" {{ route('checkout') }}">
-							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i>
-								Lakukan Checkout
-							</button>
-							</a>
-							<a href =" {{ route('categories') }}">
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
-								Pilih Produk Lainnya
-							</button>
-							</a>
-							<td>Total :  {{ $total }}</td>
-						</div>
-
-					</div>
+					
 
 
 				</div>

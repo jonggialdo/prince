@@ -14,7 +14,7 @@
 Route::get('/', function(){
 		$products = \App\Product::all();
 		return view('index',compact('products'));
-});
+})->name('/');
 
 Route::get('/profile', array(
 		'as' => 'profile',
@@ -50,12 +50,6 @@ Route::get('/notifikasi_penjual', function () {
 });
 
 Auth::routes();
-
-Route::get('/', array(
-		'as' => 'home',
-		'uses' => 'HomeController@index'
-));
-
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
@@ -116,7 +110,7 @@ Route::get('/checkout/', 'CartController@view2') -> name('checkout');
 Route::get('/notifikasiSubmit/', 'CartController@submit') -> name('notifikasi');
 Route::get('/notifikasi/', 'CartController@notifikasi_view') -> name('notifikasi_view');
 Route::get('/notifikasi_pembeli/', 'CartController@notifikasi_pembeli') -> name('notifikasi_pembeli');
-Route::get('/notifikasi_pembeli/update', 'CartController@selesai')->name('selesai');
+Route::get('/notifikasi_pembeli/{id1}/update/{id2}', 'CartController@selesai');
 Route::get('/notifikasi/{id}', 'CartController@details') -> name('notifikasi_penjual');
 Route::get('/notifikasi/{id}/kirim', 'CartController@kirim_barang') -> name('kirim_barang');
 Route::get('/cart/', 'CartController@view') -> name('cart');

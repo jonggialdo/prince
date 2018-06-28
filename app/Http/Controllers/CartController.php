@@ -15,7 +15,7 @@ class CartController extends Controller
     {
       $product = Product::find($id);
       $max_carts = Cart::where('transaction_status','=',0)
-      ->where('id_product','=', $id)->get();
+      ->where('id_product','=', $id)->where('checkout_status','=',0)->get();
       // jika produk blm ada di cart
       if ($max_carts->isEmpty()){
         $cart = New Cart;
@@ -34,12 +34,13 @@ class CartController extends Controller
         if($product->stock-$total>= $request->qnt){
           foreach($max_carts as $max_cart){
             Cart::where('id','=',$max_cart->id)->update(['qnt'=>$max_cart->qnt + $request->qnt]);
+            Cart::where('id','=',$max_cart->id)->update(['subtotal'=>$max_cart->subtotal + $request->qnt*$product->price]);
           }
         }
       }
 
       $products = Product::all();
-      return view('categories',['products' => $products]);
+      return redirect()->back()->with(['products' => $products]);
     }
     public function kirim_barang($id)
     {
@@ -131,12 +132,13 @@ class CartController extends Controller
       echo $total;
       return view('cart',compact('carts','total'));
     }
-    public function selesai(Request $request){
-     
-      dd($request);
-       $transaction_id = $request->transaction_id;
-       $cart = Cart::where('id', $id)->first();
-        return view('notifikasi_pembeli',compact('transaction_id','cart'));
+    public function selesai($transaction_id, $id_seller){
+        Cart::where('transaction_id','=',$transaction_id)
+        ->where('id_seller','=',$id_seller)
+        ->update(['transaction_status'=> 3]);
+       $id = Auth::user()->id;
+       $carts = Cart::where('id_user','=',$id)->get();
+        return view('notifikasi_pembeli',compact('carts'));
     }
     public function delete(Cart $cart)
     {
