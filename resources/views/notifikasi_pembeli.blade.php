@@ -57,7 +57,7 @@
 								<div class="col-12">
 								<h4>
 									Transaksi  {{ $trans_id->transaction_id }}
-		                            </div>
+		                            
 		                        </h4>
 
 								</div>
@@ -103,11 +103,10 @@
 												@endif
 											@endforeach
 										</h4>
-										<h4>
-										</h4>
-										</div>
-										<!-- /.col -->
+										
 									</div>
+										<!-- /.col -->
+							</div>
 					@foreach($carts as $cart)
 					<div class="invoice p-3 mb-3">
 							<section class="content">
@@ -120,45 +119,43 @@
 										<div class="col-12 table-responsive">
 										<table class="table table-striped">
 											<thead>
-											<tr>
-											<th>Alamat Pengiriman</th>
+												<tr>
+													<th>Alamat Pengiriman</th>
 
-											<th>Preview</th>
-											
-											<th>Product name</th>
+													<th>Preview</th>
+													
+													<th>Product name</th>
 
-											<th>Quantity</th>
-											
-											<th>Description</th>
-											
-											<th>Subtotal</th>
-											</tr>
+													<th>Quantity</th>
+													
+													<th>Description</th>
+													
+													<th>Subtotal</th>
+												</tr>
 											</thead>
 											<tbody>
-											<tr>
-											<td>
-											Dikirim ke :
-											<address>
-												<strong> {{ $cart->buyer['address'] }}</strong><br>
-											</address>
-											</td>
-											
-											<td>
-												<div class="single_product">
-													<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>	
-												</div>
-											</td>
-											
-											<td>{{ $cart->product['product_name'] }}</td>
-											
-											<td>
-												{{$cart ->qnt}}
-											</td>
-																		
-											<td>{{$cart->product['description']}}</td>
-											
-											<td>Rp {{$cart->subtotal}}</td>
-											</tr>
+												<tr>
+													<td>
+													Dikirim ke :
+													<address>
+														<strong> {{ $cart->buyer['address'] }}</strong><br>
+													</address>
+													</td>
+													
+													<td>
+														<div class="single_product">
+															<li><img src="/images/{{ $cart->product['photo_product'] }}" style="max-height:50px ; max-weight:50px" ></li>	
+														</div>
+													</td>
+													
+													<td>{{ $cart->product['product_name'] }}</td>
+													
+													<td>{{$cart ->qnt}}</td>
+																				
+													<td>{{$cart->product['description']}}</td>
+													
+													<td>Rp {{$cart->subtotal}}</td>
+												</tr>
 											</tbody>
 										</table>
 										</div>
@@ -167,22 +164,22 @@
 									<!-- /.row -->
 								</div><!-- /.col -->
 								</div><!-- /.row -->
-							</div><!-- /.container-fluid -->
-							
-					</section>
-						                    </div>
-
-						                    </div>
-						                    @endforeach
-						                @endif
-									@endforeach
-								@endforeach
+							</div><!-- /.container-fluid -->			
+							</section>
+					</div>
+					@endforeach
+					
+				@endif
+					
+					@endforeach
+				
+			@endforeach
 									<!-- /.row -->
 								</div><!-- /.col -->
 								</div><!-- /.row -->
 							</div><!-- /.container-fluid -->
 
-					</section>
+	</section>
 
 
 
