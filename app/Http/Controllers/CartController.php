@@ -15,7 +15,7 @@ class CartController extends Controller
     {
       $product = Product::find($id);
       $max_carts = Cart::where('transaction_status','=',0)
-      ->where('id_product','=', $id)->get();
+      ->where('id_product','=', $id)->where('checkout_status','=',0)->get();
       // jika produk blm ada di cart
       if ($max_carts->isEmpty()){
         $cart = New Cart;
@@ -34,12 +34,13 @@ class CartController extends Controller
         if($product->stock-$total>= $request->qnt){
           foreach($max_carts as $max_cart){
             Cart::where('id','=',$max_cart->id)->update(['qnt'=>$max_cart->qnt + $request->qnt]);
+            Cart::where('id','=',$max_cart->id)->update(['subtotal'=>$max_cart->subtotal + $request->qnt*$product->price]);
           }
         }
       }
 
       $products = Product::all();
-      return view('categories',['products' => $products]);
+      return redirect()->back()->with(['products' => $products]);
     }
     public function kirim_barang($id)
     {

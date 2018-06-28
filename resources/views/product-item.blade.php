@@ -5,6 +5,16 @@
 												<div class="product_price"> Rp {{$product->price}}</div>
 											</div>
 										</div>
+										@if (!Auth::check())
+										<div class="red_button add_to_cart_button" style="width: 218px; background: #100001;">
+											<a href="/login">Silahkan Login</a>
+										</div>
+										@else
+										@if (Auth::user()->role_id == 2)
+										<div class="red_button add_to_cart_button" style="width: 218px; background: #100001;">
+											<a href="/account/sign-out">Masuk sebagai user</a>
+										</div>
+										@else
 										@if( $product->stock != 0 )
 										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $product->id }}" style="width: 218px;">
 											<a href="#">add to cart</a>
@@ -13,6 +23,8 @@
 										<div class="red_button add_to_cart_button" style="width: 218px; background: #000000;">
 											<a href="#">SOLD OUT</a>
 										</div>
+										@endif
+										@endif
 										@endif	
 										<!-- .modal delete -->
 			                        <div class="modal fade" id="modal-cart{{ $product->id }}">

@@ -52,10 +52,6 @@
 			@foreach($trans as $trans_id)
 				@php($id_sellers = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->select('id_seller')->distinct()->get())
 					@foreach($id_sellers as $id_seller)
-					@php($carts = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->get())
-					@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
-					@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
-					@if ($totalDuration < 1000000)
 					<!-- title row -->
 							<div class="row">
 								<div class="col-12">
@@ -67,6 +63,10 @@
 								</div>
 								<!-- /.col -->
 							</div>
+					@php($carts = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->get())
+					@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
+					@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
+					@if ($totalDuration < 1000000)
 					<!--BARANG KE-1-->				
 							<!-- Main content -->
 							<div class="invoice p-3 mb-3">
@@ -94,7 +94,7 @@
 														<a href="/notifikasi_pembeli/{{$status->transaction_id}}/update/{{$status->id_seller}}">
 															<button type="submit" class="btn btn-primary">
 															Diterima
-</button>
+															</button>
 														</a>
 														
 												@endif

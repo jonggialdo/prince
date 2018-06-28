@@ -14,7 +14,7 @@
 Route::get('/', function(){
 		$products = \App\Product::all();
 		return view('index',compact('products'));
-});
+})->name('/');
 
 Route::get('/profile', array(
 		'as' => 'profile',
@@ -50,12 +50,6 @@ Route::get('/notifikasi_penjual', function () {
 });
 
 Auth::routes();
-
-Route::get('/', array(
-		'as' => 'home',
-		'uses' => 'HomeController@index'
-));
-
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');

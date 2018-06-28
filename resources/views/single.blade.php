@@ -70,7 +70,17 @@
 						<div class="product_price">Rp {{ $product->price }}</div>
 					</div>
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+					@if (!Auth::check())
+						<div class="red_button add_to_cart_button" style="width: 318px; background: #100001;">
+							<a href="/login">Silahkan Login untuk menambahkan barang</a>
+						</div>
+					@else
 					@if( $product->stock != 0 )
+						@if (Auth::user()->role_id == 2)
+						<div class="red_button add_to_cart_button" style="width: 318px; background: #100001;">
+							<a href="/account/sign-out">Masuk sebagai user</a>
+						</div>
+						@else
 						<h4>Quantity :</h4>
 						<form method="POST" action="{{ route('add', $product) }}">
 							<div class="input-group">
@@ -84,12 +94,13 @@
 							</button>
 							</div>
 			            </form>
+			            @endif
 					</div>
 					<span><h4 style="margin-top:20px">Stock : {{ $product->stock }} left</h4></span>
 					@else
 						<h6>SOLD OUT</h6>
 					@endif
-							
+					@endif	
 				</div>
 			</div>
 		</div>
