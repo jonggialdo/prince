@@ -68,10 +68,39 @@
 							<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".umum">UMUM</li>
 						</ul>
 					</div>
+					<!-- UNTUK RENDER PAGE -->
+					<div class="product_sorting_container product_sorting_container_top">
+						<div class="pages d-flex flex-row align-items-center">
+									@if( $products->currentPage() > 1)
+										<div id="next_page" class="page_next" style="margin-right:31px">
+											<a href="{{ $products->previousPageUrl() }}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+										</div>
+									@endif
+										<div class="page_current">
+											<span>{{ $products->currentPage() }}</span>
+											<ul class="page_selection">
+												<li><a href="{{ $products->url(1) }}">1</a></li>
+												@if( $products->total() > 8)
+												<li><a href="{{ $products->url(2) }}">2</a></li>
+												@elseif( $products->total() > 16 )
+												<li><a href="{{ $products->url(3) }}">3</a></li>
+												@endif
+											</ul>
+										</div>
+										<div class="page_total"><span>of</span> {{ $products->lastPage() }}</div>
+										<div id="next_page" class="page_next">
+											<a href="{{ $products->nextPageUrl() }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+										</div>
+						</div>
+					</div>
+					<!--  -->
 				</div>
-			</div>
+			</div>			
+			
+			
 			<div class="row">
 				<div class="col" style="height: 850px;">
+					
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 						<div class="product-grid" style="position: relative; height: 760px;">
@@ -112,6 +141,7 @@
 									</div>
 									@endif
 									@endforeach
+									
 							</div>
 
 					</div>

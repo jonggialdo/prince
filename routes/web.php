@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-		$products = \App\Product::all();
+		$products = \App\Product::latest()->paginate(10);
 		return view('index',compact('products'));
 })->name('/');
 
@@ -54,13 +54,10 @@ Auth::routes();
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
 Route::get('/payment/{id}', 'CartController@updateStatus')->name('updateStatus');
-Route::get('/create-product', 'SidebarController@create_product')->name('admin.create_product');
+Route::get('/create-product', 'ProductController@viewCreate')->name('admin.create_product');
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
-
-Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
-
 Route::get('/completed', 'SidebarController@completed')->name('admin.completed');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -94,10 +91,10 @@ Route::put('/viewuser/{id}', 'UserController@update');
 Route::delete('/user/{user}/delete', 'UserController@delete')->name('delete.user');
 Route::delete('/product/{product}/delete', 'ProductController@delete')->name('delete.product');
 Route::delete('/cart/{cart}/delete', 'CartController@delete')->name('delete.cart');
-Route::get('/create-product', 'ProductController@view')->name('create_product');
 Route::post('/create-product', 'ProductController@create');
 
 //product
+Route::get('/categories','ProductController@viewUser')->name('categories');
 Route::get('viewproduct/{id}', 'ProductController@show');
 Route::get('/viewproduct/{id}/edit', 'ProductController@edit');
 Route::put('/viewproduct/{id}', 'ProductController@update');
@@ -105,8 +102,7 @@ Route::get('/single/{product}', 'ProductController@view_item')->name('single');
 
 //order
 Route::post('/categories/{id}', 'CartController@add') -> name('add');
-Route::get('/categories/', 'CartController@view1') -> name('categories');
-Route::get('/checkout/', 'CartController@view2') -> name('checkout');
+Route::get('/checkout/', 'CartController@viewCheckout') -> name('checkout');
 Route::get('/notifikasiSubmit/', 'CartController@submit') -> name('notifikasi');
 Route::get('/notifikasi/', 'CartController@notifikasi_view') -> name('notifikasi_view');
 Route::get('/notifikasi_pembeli/', 'CartController@notifikasi_pembeli') -> name('notifikasi_pembeli');

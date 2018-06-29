@@ -64,7 +64,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('create_product') }}" class="nav-link">
+                <a href="{{ route('admin.create_product') }}" class="nav-link">
                   <i class="fa fa-plus nav-icon"></i>
                   <p>Add product</p>
                 </a>
@@ -100,7 +100,7 @@
               </li>
               <li class="nav-item">
                 <a href="{{ route('admin.completed') }}" class="nav-link">
-                  <i class="fa fa-archive nav-icon"></i>
+                  <i class="fa fa-check nav-icon"></i>
                   <p>Completed order</p>
                 </a>
               </li>

@@ -18,16 +18,23 @@ class ProductController extends Controller
       $users = DB::table('users')->pluck('id')->all();
 
       $products = Product::latest()->where('id_user','=',$users)->paginate(10);
-      $number = $products->currentPage() * 2;
-      $number -=2;
+      $number = $products->currentPage() * 10;
+      $number -=10;
 
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
 
-    public function view()
+    public function viewCreate()
     {
       $user = User::where('role_id','2')->get();
       return view('admin.create_product',['users'=>$user]);
+    }
+
+    public function viewUser()
+    {
+      $products = Product::latest()->paginate(8);
+
+      return view('categories',['products' => $products]);
     }
 
     public function create(Request $request)
@@ -53,8 +60,8 @@ class ProductController extends Controller
 
       $id_admin = 1;
       $products = Product::latest()->paginate(10);
-      $number = $products->currentPage() * 2;
-      $number -=2;
+      $number = $products->currentPage() * 10;
+      $number -=10;
       //dd($users);
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
@@ -80,8 +87,8 @@ class ProductController extends Controller
 
       $id_admin = 1;
       $products = Product::latest()->paginate(10);
-      $number = $products->currentPage() * 2;
-      $number -=2;
+      $number = $products->currentPage() * 10;
+      $number -=10;
       //dd($users);
       return view('admin.manage_product', compact('number', 'id_admin', 'products'));
     }
