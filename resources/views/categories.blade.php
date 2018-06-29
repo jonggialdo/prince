@@ -35,7 +35,7 @@
 
 	<div class="container product_section_container">
 		<div class="row">
-			<div class="col product_section clearfix" style="height: 1250px;">
+			<div class="col product_section clearfix" style="height: 800px;">
 
 				<!-- Breadcrumbs -->
 

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-		$products = \App\Product::latest()->simplePaginate(10);
+		$products = \App\Product::latest()->paginate(10);
 		return view('index',compact('products'));
 })->name('/');
 
