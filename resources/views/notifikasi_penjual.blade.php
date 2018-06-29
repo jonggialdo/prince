@@ -176,11 +176,13 @@
 							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Kembali
 							</button>
 							</a>
+							@if ($cart->transaction_status == 1)
 							<a href = "{{route('kirim_barang',$cart->transaction_id)}}"> 
 							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
 							<i class="fa fa-download">Kirim barang</i> 
 							</button>
 							</a>
+							@endif
 						</div>
 					</div>
 					</div>
