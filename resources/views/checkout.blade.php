@@ -142,17 +142,7 @@
 						<div class="table-responsive">
 							<table class="table">
 							<tr>
-								<th>Tax (10%):</th>
-								@php($tax = 10*$total/100)
-								<td>Rp {{$tax}}</td>
-							</tr>
-							<tr>
-								<th>Shipping:</th>
-								<td>Rp 10000</td>
-							</tr>
-							<tr>
 								<th>Total:</th>
-								@php($total = $total+$tax+10000)
 								<td>RP {{ $total}}</td>
 							</tr>
 							</table>
@@ -169,10 +159,6 @@
 							<a href =" {{ route('notifikasi') }}">
 							<button type="button" class="btn btn-success float-right"><i class="fa fa-credit-card"></i> Submit
 							Payment
-							</button>
-							<button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
-							<i class="fa fa-download"></i> Generate PDF
-							</button>
 						</div>
 					</div>
 					</div>

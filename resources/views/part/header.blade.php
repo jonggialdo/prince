@@ -31,13 +31,11 @@
               <li class="checkout">
                 <a href="{{ route('notifikasi_view') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
-                  <span id="checkout_items" class="checkout_items">0</span>
                 </a>
               @else
               <li class="checkout">
                 <a href="{{ route('notifikasi_pembeli') }}" style="margin-left: 5px;">
                   <i class="fa fa-bell" aria-hidden="true"></i>
-                  <span id="checkout_items" class="checkout_items">0</span>
                 </a>
               @endif
               @if (Auth::user()->role_id != 2)

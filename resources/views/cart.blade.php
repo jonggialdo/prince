@@ -115,17 +115,17 @@
 															<div class="modal-dialog">
 																	<div class="modal-content">
 																			<div class="modal-header">
-																				<h4 class="modal-title">Delete Product</h4>
+																				<h4 class="modal-title">Hapus Produk</h4>
 																			</div>
 																			<div class="modal-body">
-																			Are you sure want to delete this product?
+																			Apa anda yakin ingin menghapus produk ini?
 																			</div>
 																			<div class="modal-footer">
 																				<form method="POST" action="{{ route('delete.cart', $cart) }}">
 																					{{ csrf_field() }}
 																					{{ method_field('DELETE') }}
-																					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">No</button>
-																					<button type="submit" class="btn btn-danger">Yes</button>
+																					<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Tidak</button>
+																					<button type="submit" class="btn btn-danger">Ya</button>
 																				</form>
 																			</div>
 																			</form>

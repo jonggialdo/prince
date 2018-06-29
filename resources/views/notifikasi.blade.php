@@ -58,7 +58,7 @@
 					@php($boo = 1)
 				@endif
 			@endforeach
-			@if ($totalDuration < 1000 and $boo == 1)
+			@if ($boo == 1)
 			<div class="invoice p-3 mb-3">
 					<!-- title row -->
 					<div class="row">

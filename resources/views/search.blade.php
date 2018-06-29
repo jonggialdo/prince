@@ -75,23 +75,7 @@
 
 								<div class="product_sorting_container product_sorting_container_top">
 									<ul class="product_sorting">
-										<li>
-											<span class="type_sorting_text">Default Sorting</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_type">
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default Sorting</span></li>
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-												<li class="type_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Product Name</span></li>
-											</ul>
-										</li>
-										<li>
-											<span>Show</span>
-											<span class="num_sorting_text">8</span>
-											<i class="fa fa-angle-down"></i>
-											<ul class="sorting_num">
-												<li class="num_sorting_btn"><span>8</span></li>
-											</ul>
-										</li>
+										
 									</ul>
 									<div class="pages d-flex flex-row align-items-center">
 										@if( $datas->currentPage() > 1)
@@ -133,7 +117,7 @@
 
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
+												<h6 class="product_name"><a href="/single/{{$data->id}}">{{$data->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$data->price}}</div>
 											</div>
 										</div>
@@ -182,7 +166,7 @@
 
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
+												<h6 class="product_name"><a href="/single/{{$data->id}}">{{$data->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$data->price}}</div>
 											</div>
 										</div>
@@ -229,7 +213,7 @@
 
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
-												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
+												<h6 class="product_name"><a href="/single/{{$data->id}}">{{$data->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$data->price}}</div>
 											</div>
 										</div>
