@@ -70,8 +70,7 @@
 
 					<div class="products_iso">
 						<div class="row">
-							<div class="col">
-
+							<div class="col"style="height: 380px;">
 								<!-- Product Sorting -->
 
 								<div class="product_sorting_container product_sorting_container_top">
