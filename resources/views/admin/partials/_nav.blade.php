@@ -7,7 +7,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('home') }}" class="nav-link">Home</a>
       </li>
-      
+
     </ul>
 
     <!-- Right navbar links -->
@@ -39,7 +39,7 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      
+
       <li class="nav-item">
         <a class="nav-link" href="{{ URL::route('account-sign-out') }}">
           <i class="fa fa-sign-out" aria-hidden="true"></i>

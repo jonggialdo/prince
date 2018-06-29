@@ -96,7 +96,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" name="gender" type="radio" value="Male" {{ $user->gender == 'Male' ? 'checked' : ''}}>
                                                 <label class="form-check-label">Male</label>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <!-- <div class="form-group">
                                             <label>Gender</label>
@@ -227,7 +227,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" name="gender" type="radio" value="Male" {{ $user->gender == 'Male' ? 'checked' : ''}}>
                                                 <label class="form-check-label">Male</label>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <!-- <div class="form-group">
                                             <label>Gender</label>
@@ -359,7 +359,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" name="gender" type="radio" value="Male" {{ $user->gender == 'Male' ? 'checked' : ''}}>
                                                 <label class="form-check-label">Male</label>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <!-- <div class="form-group">
                                             <label>Gender</label>

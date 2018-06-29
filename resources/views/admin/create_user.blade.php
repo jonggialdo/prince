@@ -89,7 +89,7 @@
                                   <input class="form-check-input" name="gender" type="radio" value="Male">
                                   <label class="form-check-label"> Male</label>
                                 </div>
-                                
+
                                 @if ($errors->has('gender'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('gender') }}</strong>
@@ -126,16 +126,6 @@
                             </div>
                         </div>
 
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
