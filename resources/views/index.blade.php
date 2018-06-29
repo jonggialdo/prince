@@ -71,6 +71,9 @@
 				</div>
 			</div>
 			<div class="row">
+				{{ $products->links() }}
+			</div>
+			<div class="row">
 				<div class="col" style="height: 850px;">
 					<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
@@ -112,6 +115,7 @@
 									</div>
 									@endif
 									@endforeach
+									
 							</div>
 
 					</div>

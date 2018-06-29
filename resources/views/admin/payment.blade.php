@@ -45,7 +45,7 @@
                     <th>Id_Order</th>
                     <th>Buyer</th>
                     <th>Time Order</th>
-                    <th>Status payment</th>
+                    <th>Status</th>
                     <th>Total</th>
                   </tr>
 
@@ -62,11 +62,17 @@
                     <td>{{ $tr->transaction_id }}</td>
                     <td>{{ $n->name }}</td>
                     <td>{{ $tr->date_insert }} </td>
-                    <td>{{ $tr->transaction_status }}</td>
+                    <td>
+                      @if($tr->transaction_status == 0)
+                        BELUM DIBAYAR
+                      @else
+                        LUNAS
+                      @endif
+                    </td>
                     <td>Rp. {{$total }}</td>
                     <td>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{$tr->transaction_id}}">
-                        <i class="fa fa-eye nav-icon"></i>
+                        <i class="fa fa-edit nav-icon"></i>
                        </button>
                           <div class="modal fade" id="modal-edit{{$tr->transaction_id}}">
                             <div class="modal-dialog">

@@ -158,14 +158,11 @@
                    @endforeach
                    </tbody>
                   </table>
-                    {!! $users->render() !!}
                   <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-right">
-                      <li class="page-item"><a class="page-link" href="#">«</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->previousPageUrl() }}">«</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->currentPage() }}">{{ $users->currentPage() }}</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->nextPageUrl() }}">»</a></li>
                     </ul>
                   </div>
                   <!-- ./ card-footer -->
@@ -292,14 +289,11 @@
                    @endforeach
                    </tbody>
                   </table>
-                    {!! $users->render() !!}
                   <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-right">
-                      <li class="page-item"><a class="page-link" href="#">«</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->previousPageUrl() }}">«</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->currentPage() }}">{{ $users->currentPage() }}</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->nextPageUrl() }}">»</a></li>
                     </ul>
                   </div>
                   <!-- ./ card-footer -->
@@ -427,14 +421,11 @@
                    @endforeach
                    </tbody>
                   </table>
-                    {!! $users->render() !!}
                   <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-right">
-                      <li class="page-item"><a class="page-link" href="#">«</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">»</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->previousPageUrl() }}">«</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->currentPage() }}">{{ $users->currentPage() }}</a></li>
+                      <li class="page-item"><a class="page-link" href="{{ $users->nextPageUrl() }}">»</a></li>
                     </ul>
                   </div>
                   <!-- ./ card-footer -->

@@ -45,7 +45,6 @@
                     <th>Id_Order</th>
                     <th>Buyer</th>
                     <th>Time Order</th>
-                    <th>Status payment</th>
                     <th>Total</th>
                   </tr>
 
@@ -63,7 +62,6 @@
                     <td>{{ $tr->transaction_id }}</td>
                     <td>{{ $n->name }}</td>
                     <td>{{ $tr->date_insert }} </td>
-                    <td>{{ $tr->transaction_status }}</td>
                     <td>Rp. {{$total }}</td>
                     <td>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-edit{{$tr->transaction_id}}">
@@ -76,10 +74,8 @@
                                       <h4 class="modal-title">Detail</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <form method="POST" role="form" action="#">
-                                        {{ csrf_field() }}
-                                        {{ method_field('PATCH')}}
-                                    </div>
+                                  
+                                    
                                     <!-- Main content -->
           <div class="invoice p-3 mb-3">
           <!-- title row -->
@@ -189,18 +185,13 @@
           </div>
           <!-- /.row -->
           <!-- /.invoice -->
+          </div>
                                     <div class="modal-footer">
-                                <div class="pull-right">
-                                  <a href="{{ route('updateStatus', ['id' => $tr->transaction_id]) }}">
-                                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;"><i class="fa fa-reply-all"></i>
-                                      Lunas
-                                        </button>
-                                        </a>
-
-                                </div>
+                                      <div class="pull-right">
+                                        PESANAN SELESAI
+                                      </div>
                                     </div>
 
-                                    </form>
                                   </div>
                                   <!-- /.modal-content -->
                               </div>
