@@ -48,11 +48,14 @@
 					</div>
 			<!--BARANG KE-1-->
 			<!-- Main content -->
+			
+							<div class="invoice p-3 mb-3">
+
 			@php($trans = \App\Cart::where('id_user','=',\Auth::user()->id)->select('transaction_id','transaction_status','id_seller')->distinct()->get())
+			@php($bef = -1)
 			@foreach($trans as $trans_id)
-				@php($id_sellers = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->select('id_seller')->distinct()->get())
-					@foreach($id_sellers as $id_seller)
-					<!-- title row -->
+			@if ($bef != $trans_id->transaction_id)
+				<!-- title row -->
 							<div class="row">
 								<div class="col-12">
 								<h4>
@@ -63,14 +66,15 @@
 								</div>
 								<!-- /.col -->
 							</div>
+							<div>
+				@php($id_sellers = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->select('id_seller')->distinct()->get())
+					@foreach($id_sellers as $id_seller)
 					@php($carts = \App\Cart::where('transaction_id','=',$trans_id->transaction_id)->where('id_seller','=',$id_seller->id_seller)->get())
 					@php($Date = \Carbon\Carbon::parse($trans_id->date_insert))
 					@php($totalDuration = Carbon\Carbon::now()->diffInSeconds($Date))
 					@if ($totalDuration < 1000000)
 					<!--BARANG KE-1-->				
-							<!-- Main content -->
-							<div class="invoice p-3 mb-3">
-									<!-- title row -->
+							<!-- Main content -->									<!-- title row -->
 									<div class="row">
 										<div class="col-12">
 										<h4>
@@ -107,8 +111,6 @@
 									</div>
 										<!-- /.col -->
 							</div>
-					@foreach($carts as $cart)
-					<div class="invoice p-3 mb-3">
 							<section class="content">
 							<div class="container-fluid">
 								<div class="row">
@@ -134,6 +136,7 @@
 												</tr>
 											</thead>
 											<tbody>
+												@foreach($carts as $cart)
 												<tr>
 													<td>
 													Dikirim ke :
@@ -156,6 +159,7 @@
 													
 													<td>Rp {{$cart->subtotal}}</td>
 												</tr>
+												@endforeach
 											</tbody>
 										</table>
 										</div>
@@ -166,17 +170,17 @@
 								</div><!-- /.row -->
 							</div><!-- /.container-fluid -->			
 							</section>
-					</div>
-					@endforeach
 					
 				@endif
-					
+				@php($bef = $trans_id->transaction_id)
 					@endforeach
-				
-			@endforeach
+			
 									<!-- /.row -->
-								</div><!-- /.col -->
+								
 								</div><!-- /.row -->
+			@endif
+			@endforeach
+			</div><!-- /.col -->
 							</div><!-- /.container-fluid -->
 
 	</section>

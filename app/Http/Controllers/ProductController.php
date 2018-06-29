@@ -102,4 +102,9 @@ class ProductController extends Controller
 
       return view('search', compact('searchdata','datas'));
     }
+    public function view_item($id)
+    {
+      $product = Product::find($id);
+      return view('single',compact('product'));
+    }
 }
