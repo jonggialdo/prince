@@ -130,18 +130,18 @@
 											<div class="product_image">
 												<img src="/images/{{$data->photo_product}}" alt="">
 											</div>
-										
+
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
 												<div class="product_price"> Rp {{$data->price}}</div>
 											</div>
 										</div>
-										
+
 										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}" style="width: 218px;">
 											<a href="#">add to cart</a>
 										</div>
-												
+
 										<!-- .modal delete -->
 			                        <div class="modal fade" id="modal-cart{{ $data->id }}">
 			                            <div class="modal-dialog">
@@ -171,15 +171,15 @@
 			                              <!-- /.modal-dialog -->
 			                          </div>
 									</div>
-								
-									
+
+
 									@elseif($data->category == "Umum")
 									<div class="product-item umum" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
 												<img src="/images/{{$data->photo_product}}" alt="">
 											</div>
-										
+
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
@@ -189,9 +189,7 @@
 										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}" style="width: 218px;">
 											<a href="#">add to cart</a>
 										</div>
-										
-										
-												
+
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $data->id }}">
 			                            <div class="modal-dialog">
@@ -221,14 +219,14 @@
 			                              <!-- /.modal-dialog -->
 			                          </div>
 									</div>
-								
+
 									@elseif($data->category == "Pertanian")
 									<div class="product-item pertanian" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
 												<img src="/images/{{$data->photo_product}}" alt="">
 											</div>
-										
+
 										<div class="favorite favorite_left"></div>
 											<div class="product_info">
 												<h6 class="product_name"><a href="single.html">{{$data->product_name}}</a></h6>
@@ -238,9 +236,9 @@
 										<div class="red_button add_to_cart_button" data-toggle="modal" data-target="#modal-cart{{ $data->id }}" style="width: 218px;">
 											<a href="#">add to cart</a>
 										</div>
-										
-										
-												
+
+
+
 										<!-- .modal delete -->
 			                          <div class="modal fade" id="modal-cart{{ $data->id }}">
 			                            <div class="modal-dialog">

@@ -129,31 +129,31 @@
 									<div class="product-item teknologi" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
+												<a href="{{ route('single',$product) }}"> <img src="/images/{{$product->photo_product}}" alt=""></a>
 											</div>
 											@include('product-item');
-										
-			                          	</div>
+
+			               </div>
 									</div>
-								
-									
+
+
 									@elseif($product->category == "Umum")
 									<div class="product-item umum" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
+												<a href="{{ route('single',$product) }}"><img src="/images/{{$product->photo_product}}" alt=""></a>
 											</div>
 											@include('product-item');
 			                          </div>
 									</div>
-								
+
 									@elseif($product->category == "Pertanian")
 									<div class="product-item pertanian" style="position: absolute;left: 0px;top: 0px; width: 218px;">
 										<div class="product discount product_filter">
 											<div class="product_image">
-												<img src="/images/{{$product->photo_product}}" alt="">
+												<a href="{{ route('single',$product) }}"><img src="/images/{{$product->photo_product}}" alt=""></a>
 											</div>
-										
+
 											@include('product-item');
 			                          </div>
 									</div>

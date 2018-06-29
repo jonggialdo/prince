@@ -66,7 +66,7 @@ class UserController extends Controller
     $id = Auth::user()->id;
     if (Auth::user()->role_id == 2){
       $products =Product::where('id_user','=',$id)->latest()->paginate(2);
-      $number = $users->currentPage() * 2;
+      $number = $products->currentPage() * 2;
       $number -=2;
       return view('productuser',compact('products','number'));
     }

@@ -25,7 +25,7 @@
 										</div>
 										@endif
 										@endif
-										@endif	
+										@endif
 										<!-- .modal delete -->
 			                        <div class="modal fade" id="modal-cart{{ $product->id }}">
 			                            <div class="modal-dialog">

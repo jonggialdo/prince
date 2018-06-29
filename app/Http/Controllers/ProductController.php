@@ -32,7 +32,7 @@ class ProductController extends Controller
 
     public function viewUser()
     {
-      $products = Product::latest()->paginate(8);
+      $products = Product::latest()->paginate(10);
 
       return view('categories',['products' => $products]);
     }
@@ -99,5 +99,5 @@ class ProductController extends Controller
       return redirect('manage-product');
     }
 
-    
+
 }
