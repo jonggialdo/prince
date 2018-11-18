@@ -98,10 +98,6 @@
                                                 <label class="form-check-label">Male</label>
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label>Gender</label>
-                                            <input type="text" class="form-control" name = "gender" placeholder="{{ $user->address }}" value="{{ $user->gender }}" required>
-                                        </div> -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

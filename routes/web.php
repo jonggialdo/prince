@@ -52,13 +52,16 @@ Route::get('/notifikasi_penjual', function () {
 Auth::routes();
 // sidebar
 Route::get('/create-user', 'SidebarController@create_user')->name('admin.create_user');
+
 Route::get('/manage-user', 'UserController@manage_user')->name('admin.manage_user');
+
 Route::get('/payment/{id}', 'CartController@updateStatus')->name('updateStatus');
 Route::get('/create-product', 'ProductController@viewCreate')->name('admin.create_product');
 Route::get('/manage-product', 'ProductController@manage_product')->name('admin.manage_product');
 Route::get('/payment', 'SidebarController@payment')->name('admin.payment');
 Route::get('/shipping', 'SidebarController@shipping')->name('admin.shipping');
 Route::get('/completed', 'SidebarController@completed')->name('admin.completed');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(array('before' => 'auth'), function() {
@@ -112,6 +115,7 @@ Route::get('/notifikasi/{id}/kirim', 'CartController@kirim_barang') -> name('kir
 Route::get('/cart/', 'CartController@view') -> name('cart');
 
 Route::get('/search', 'SearchController@searchFP')->name('searchFP');
+
 
 Route::get('/productuser','UserController@displayProduct')->name('productuser');
 Route::put('/productuser/{id}','UserController@updateProduct')->name('updateproduct');
